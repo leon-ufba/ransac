@@ -1,6 +1,7 @@
-#include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
+// #include <time.h>
 
 #define P 2    // - The minimum number of data points required to estimate the model parameters.
 #define T 100  // - The maximum number of iterations allowed in the algorithm.
@@ -10,6 +11,7 @@
 volatile double bestModel[2] = {0, 0};
 volatile double bestFit = INFINITY;
 volatile int verbose = 0;
+// volatile double totalTime = 0;
 
 double** malloc2d(int n) {
   double** arr = malloc(n * sizeof(double*));
@@ -26,33 +28,19 @@ void free2d(double** arr, int n) {
   free(arr);
 }
 
-double dimSum(double** data, int n, int dim) {
-  double sum = 0.0;
-  for (int i = 0; i < n; i++) {
-    sum += data[i][dim];
-  }
-  return sum;
-}
-
-double dimsProdSum(double** data, int n, int dim1, int dim2) {
-  double sum = 0.0;
-  for (int i = 0; i < n; i++) {
-    sum += data[i][dim1] * data[i][dim2];
-  }
-  return sum;
-}
-
 double coefficientOfDetermination(double** data, int n, double model[2]) {
+  double y_avg = 0;
   double ss_res = 0;
+  double ss_tot = 0;
+  for (int i = 0; i < n; i++) {
+    y_avg += data[i][1];
+  }
+  y_avg /= n;
   for (int i = 0; i < n; i++) {
     double f = model[0] * data[i][0] + model[1];
     double y_f = (data[i][1] - f);
-    ss_res += y_f * y_f;
-  }
-  double y_avg = dimSum(data, n, 1) / n;
-  double ss_tot = 0;
-  for (int i = 0; i < n; i++) {
     double y_y = (data[i][1] - y_avg);
+    ss_res += y_f * y_f;
     ss_tot += y_y * y_y;
   }
   // double r = 1 - (ss_res / ss_tot); // original coefficient
@@ -61,10 +49,16 @@ double coefficientOfDetermination(double** data, int n, double model[2]) {
 }
 
 void leastSquare(double** data, int n, double model[2]) {
-  double sx = dimSum(data, n, 0);
-  double sy = dimSum(data, n, 1);
-  double sxy = dimsProdSum(data, n, 0, 1);
-  double sx2 = dimsProdSum(data, n, 0, 0);
+  double sx = 0;
+  double sy = 0;
+  double sxy = 0;
+  double sx2 = 0;
+  for (int i = 0; i < n; i++) {
+    sx += data[i][0];
+    sy += data[i][1];
+    sxy += data[i][0] * data[i][1];
+    sx2 += data[i][0] * data[i][0];
+  }
   double a = (n * sxy - sx * sy) / (n * sx2 - sx * sx);
   double b = (sy / n) - a * (sx / n);
   model[0] = a;
@@ -72,12 +66,7 @@ void leastSquare(double** data, int n, double model[2]) {
 }
 
 double distToLine(double* point, double model[2]) {
-  double x = point[0];
-  double y = point[1];
-  double a = model[0];
-  double b = -1;
-  double c = model[1];
-  return fabs(a * x + b * y + c) / sqrt(a * a + b * b);
+  return fabs(model[0] * point[0] - point[1] + model[1]) / sqrt(model[0] * model[0] + 1.0);
 }
 
 void checkModel(double** data, double** temp, int data_size, int temp_size) {
@@ -89,7 +78,11 @@ void checkModel(double** data, double** temp, int data_size, int temp_size) {
   int inlinersQty = 0;
 
   for (int k = 0; k < data_size; k++) {
+    // clock_t t;
+    // t = clock();
     double dist = distToLine(data[k], model);
+    // t = clock() - t;
+    // totalTime += ((double)t);
     if (dist <= E) {
       inliers[inlinersQty][0] = data[k][0];
       inliers[inlinersQty][1] = data[k][1];
@@ -121,26 +114,7 @@ void checkModel(double** data, double** temp, int data_size, int temp_size) {
 
 }
 
-void combinationUtil(double** data, double** temp, int start, int end, int index, int data_size, int temp_size) {
-  if (index == temp_size) {
-    checkModel(data, temp, data_size, temp_size);
-    return;
-  }
-  for (int i = start; i <= end && end - i + 1 >= temp_size - index; i++) {
-    temp[index][0] = data[i][0];
-    temp[index][1] = data[i][1];
-    combinationUtil(data, temp, i + 1, end, index + 1, data_size, temp_size);
-  }
-}
-
 void RANSAC(double** data, int data_size) {
-  // FOR MORE THAN P INITIAL POINTS
-  // for (int temp_size = P; temp_size <= data_size; temp_size++) {
-  //   double** temp = malloc2d(temp_size);
-  //   combinationUtil(data, temp, 0, data_size - 1, 0, data_size, temp_size);
-  //   free2d(temp, temp_size);
-  // }
-
   int temp_size = P;
   double** temp = malloc2d(temp_size);
   for (int i = 0; i < data_size; i++) {
@@ -167,6 +141,8 @@ int main() {
   RANSAC(data, data_size);
   free2d(data, data_size);
 
+  // printf("\n------------------------\n");
+  // printf("totalTime - %lf\n", totalTime/CLOCKS_PER_SEC);
   printf("\n------------------------\n");
   printf("\n");
   printf("bestFit:  \t%lf\n", bestFit);
