@@ -25,18 +25,13 @@ volatile float totalDistToPointTime = 0;
 volatile float totalLeastSquareTime = 0;
 volatile float totalFitTime = 0;
 
-float coefficientOfDetermination(Point* data, int n, float model[2]) {
-  float y_avg = 0;
+float coefficientOfDetermination(Point* data, int n, float model[2], float* avg_y) {
   float ss_res = 0;
   float ss_tot = 0;
   for (int i = 0; i < n; i++) {
-    y_avg += data[i].y;
-  }
-  y_avg /= n;
-  for (int i = 0; i < n; i++) {
     float f = model[0] * data[i].x + model[1];
     float y_f = (data[i].y - f);
-    float y_y = (data[i].y - y_avg);
+    float y_y = (data[i].y - *(avg_y));
     ss_res += y_f * y_f;
     ss_tot += y_y * y_y;
   }
@@ -45,7 +40,7 @@ float coefficientOfDetermination(Point* data, int n, float model[2]) {
   return r;
 }
 
-void leastSquare(Point* data, int n, float model[2]) {
+void leastSquare(Point* data, int n, float model[2], float* avg_y) {
   float sx = 0;
   float sy = 0;
   float sxy = 0;
@@ -58,6 +53,7 @@ void leastSquare(Point* data, int n, float model[2]) {
   }
   float a = (n * sxy - sx * sy) / (n * sx2 - sx * sx);
   float b = (sy / n) - a * (sx / n);
+  *avg_y = sy / n;
   model[0] = a;
   model[1] = b;
 }
@@ -66,36 +62,39 @@ float distToLine(Point point, float model[2], float square) {
   return fabs(model[0] * point.x - point.y + model[1]) / square;
 }
 
+
 void checkModel(Point* data, Point* temp, int data_size, int temp_size) {
   float model[2];
-  leastSquare(temp, temp_size, model);
+  
+  float *avg_y;
+  leastSquare(temp, temp_size, model, avg_y);
   
   clock_t t;
 
   Point inliers[MAX_POINTS];
   int inlinersQty = 0;
   float square = E * sqrt(model[0] * model[0] + 1.0);
+  t = clock();
   for (int k = 0; k < data_size; k++) {
-    t = clock();
     float dist = (model[0] * data[k].x - data[k].y + model[1]);
-    t = clock() - t;
-    totalDistToPointTime += ((float)t);
     if (dist <= square) {
       inliers[inlinersQty] = data[k];
       inlinersQty++;
     }
   }
+  t = clock() - t;
+  totalDistToPointTime += ((float)t);
 
   if (inlinersQty >= 2 && inlinersQty >= (int)(data_size * C)) {
     float inliersModel[2];
     float fit;
     t = clock();
-    leastSquare(inliers, inlinersQty, inliersModel);
+    leastSquare(inliers, inlinersQty, inliersModel, avg_y);
     t = clock() - t;
     totalLeastSquareTime += ((float)t);
     
     t = clock();
-    fit = coefficientOfDetermination(data, data_size, inliersModel);
+    fit = coefficientOfDetermination(data, data_size, inliersModel, avg_y);
     t = clock() - t;
     totalFitTime += ((float)t);
 
