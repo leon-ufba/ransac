@@ -5,7 +5,7 @@
 
 #define MIN_POINTS 2        // - The minimum number of data points required to estimate the model parameters.
 #define MAX_ITERATIONS 100  // - The maximum number of iterations allowed in the algorithm.
-#define C 0.10              // - The percent of close data points (inliers) required to assert that the model fits well to the data.
+#define C 0.00              // - The percent of close data points (inliers) required to assert that the model fits well to the data.
 #define E 0.10              // - A threshold value to determine data points that are fit well by the model (inlier).
 
 typedef struct {
@@ -21,7 +21,9 @@ typedef struct {
 volatile float bestModel[2] = {0, 0};
 volatile float bestFit = INFINITY;
 volatile int verbose = 0;
-volatile float totalTime = 0;
+volatile float totalDistToPointTime = 0;
+volatile float totalLeastSquareTime = 0;
+volatile float totalFitTime = 0;
 
 float coefficientOfDetermination(Point* data, int n, float model[2]) {
   float y_avg = 0;
@@ -67,28 +69,36 @@ float distToLine(Point point, float model[2], float square) {
 void checkModel(Point* data, Point* temp, int data_size, int temp_size) {
   float model[2];
   leastSquare(temp, temp_size, model);
-
-
+  
   clock_t t;
-  t = clock();
+
   Point inliers[MAX_POINTS];
   int inlinersQty = 0;
-  float square = sqrt(model[0] * model[0] + 1.0);
+  float square = E * sqrt(model[0] * model[0] + 1.0);
   for (int k = 0; k < data_size; k++) {
-    float dist = distToLine(data[k], model, square);
-    if (dist <= E) {
+    t = clock();
+    float dist = (model[0] * data[k].x - data[k].y + model[1]);
+    t = clock() - t;
+    totalDistToPointTime += ((float)t);
+    if (dist <= square) {
       inliers[inlinersQty] = data[k];
       inlinersQty++;
     }
   }
-  t = clock() - t;
-  totalTime += ((float)t);
 
   if (inlinersQty >= 2 && inlinersQty >= (int)(data_size * C)) {
     float inliersModel[2];
     float fit;
+    t = clock();
     leastSquare(inliers, inlinersQty, inliersModel);
+    t = clock() - t;
+    totalLeastSquareTime += ((float)t);
+    
+    t = clock();
     fit = coefficientOfDetermination(data, data_size, inliersModel);
+    t = clock() - t;
+    totalFitTime += ((float)t);
+
     if (verbose) {
       for (int o = 0; o < temp_size; o++) printf("{%f, %f}  ", temp[o].x, temp[o].y);
       printf("\n");
@@ -145,12 +155,14 @@ int main() {
   t = clock();
   RANSAC(data, data_size);
   t = clock() - t;
-
+  float totalTime = ((float)t);
 
 
   printf("\n------------------------\n");
-  printf("totalTime - %f\n", (float)(totalTime/CLOCKS_PER_SEC));
-  printf("totalTime2 - %f\n", (float)((float)t/CLOCKS_PER_SEC));
+  printf("totalDistToPointTime - %f\t%f\n", totalDistToPointTime / CLOCKS_PER_SEC, totalDistToPointTime / totalTime);
+  printf("totalLeastSquareTime - %f\t%f\n", totalLeastSquareTime / CLOCKS_PER_SEC, totalLeastSquareTime / totalTime);
+  printf("totalFitTime         - %f\t%f\n", totalFitTime         / CLOCKS_PER_SEC, totalFitTime         / totalTime);
+  printf("totalTime            - %f\t%f\n", totalTime            / CLOCKS_PER_SEC, totalTime            / totalTime);
   printf("\n------------------------\n");
   printf("\n");
   printf("bestFit:  \t%f\n", bestFit);
