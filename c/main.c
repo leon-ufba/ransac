@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#include <time.h>
 
 typedef struct {
   float x;
@@ -25,9 +24,6 @@ typedef struct {
 volatile Line bestModel = { 0.0, 0.0 };
 volatile float bestFit = INFINITY;
 volatile int verbose = 0;
-volatile float totalDistToPointTime = 0;
-volatile float totalLeastSquareTime = 0;
-volatile float totalFitTime = 0;
 
 float coefficientOfDetermination(Point* data, int n, Line model, float avg_y) {
   float ss_res = 0;
@@ -61,38 +57,28 @@ void leastSquare(Point* data, int n, Line* model, float* avg_y) {
 }
 
 void checkModel(Point* data, Point* temp, int data_size, int temp_size) {
-  clock_t t;
   Line model;
   float avg_y;
   leastSquare(temp, temp_size, &model, &avg_y);
 
   Point inliers[MAX_POINTS];
   int inlinersQty = 0;
-  float square = E * sqrt(model.a * model.a + 1.0);
-  t = clock();
+  float square2 = E * E * (model.a * model.a + 1.0);
   for (int k = 0; k < data_size; k++) {
     float dist = (model.a * data[k].x - data[k].y + model.b);
-    if (dist <= square) {
+    if (dist * dist <= square2) {
       inliers[inlinersQty] = data[k];
       inlinersQty++;
     }
   }
-  t = clock() - t;
-  totalDistToPointTime += ((float)t);
 
   if (inlinersQty >= 2 && inlinersQty >= (int)(data_size * C)) {
     Line inliersModel;
     float fit;
 
-    t = clock();
     leastSquare(inliers, inlinersQty, &inliersModel, &avg_y);
-    t = clock() - t;
-    totalLeastSquareTime += ((float)t);
     
-    t = clock();
     fit = coefficientOfDetermination(data, data_size, inliersModel, avg_y);
-    t = clock() - t;
-    totalFitTime += ((float)t);
 
     if (fit < bestFit) {
       bestFit = fit;
@@ -151,19 +137,9 @@ int main() {
     data[i] = newPoint;
   }
 
-  clock_t t;
-  t = clock();
   RANSAC(data, data_size);
-  t = clock() - t;
-  float totalTime = ((float)t);
 
   printf("\n------------------------\n");
-  printf("totalDistToPointTime - %f\t%f\n", totalDistToPointTime / CLOCKS_PER_SEC, totalDistToPointTime / totalTime);
-  printf("totalLeastSquareTime - %f\t%f\n", totalLeastSquareTime / CLOCKS_PER_SEC, totalLeastSquareTime / totalTime);
-  printf("totalFitTime         - %f\t%f\n", totalFitTime         / CLOCKS_PER_SEC, totalFitTime         / totalTime);
-  printf("totalTime            - %f\t%f\n", totalTime            / CLOCKS_PER_SEC, totalTime            / totalTime);
-  printf("\n------------------------\n");
-  printf("\n");
   printf("bestFit:  \t%f\n", bestFit);
   printf("bestModel:\t%f\t%f\n", bestModel.a, bestModel.b);
   printf("\n");
