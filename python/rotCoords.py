@@ -43,7 +43,3 @@ def viewedCoords(dataset, origin=(0,0), degrees=0, view_range=1):
   rot_coords        = rotate(pre_clip_coords, origin, degrees)
   prost_clip_coords = post_clip(rot_coords, origin, view_range)
   return prost_clip_coords
-
-dataset = 'dataset_test'
-viewed_coordinates = viewedCoords(dataset, origin=(1,1), degrees=30, view_range=1)
-print(viewed_coordinates)
