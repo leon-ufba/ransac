@@ -1,4 +1,5 @@
 import numpy as np
+from PIL import Image
 from rotCoords import viewedCoords
 from ransac import RANSAC
 
@@ -12,6 +13,7 @@ def printRansac(rs):
   print("bestInliersQty:\t\t%f" % rs.bestOutliersQty)
   print("bestOutliersModel:\t%f\t%f" % (rs.bestOutliersModel.a, rs.bestOutliersModel.b))
   print("------------------------\n")
+  return
 
 
 def testRansac():
@@ -39,14 +41,32 @@ def testRansac():
   data = np.column_stack([dataX, dataY])
   ransacRes = RANSAC(data)
   printRansac(ransacRes)
+  return
+
+def plotView(view_coords, origin, view_range):
+  height, width = (view_range * 2, view_range * 2)
+  new_img = np.ones((height, width), dtype='int') * 127
+  initial_coord = np.array([500,0])
+  translated_coords = view_coords - (np.array(origin) - initial_coord)
+  rounded_coords = (np.rint(translated_coords)).astype(int)
+  for c in rounded_coords:
+    if(0 <= c[0] and c[0] < width and 0 <= c[1] and c[1] < height):
+      new_img[c[1]][c[0]] = 0 # Note: SCREEN COORDS ARE INVERTED (y, x)
+  im = Image.fromarray(new_img)
+  im.show()
+  # im.convert('RGB').save("out_test.bmp")
+  return
 
 
 def main():
-  dataset = 'dataset_test'
-  viewed_coordinates = viewedCoords(dataset, origin=(1,1), degrees=30, view_range=1)
-  print(viewed_coordinates)
-  ransacRes = RANSAC(viewed_coordinates)
-  printRansac(ransacRes)
+  dataset = 'dataset_test_1'
+  view_range = 500
+  origin = (500,1000)
+  viewed_coordinates = viewedCoords(dataset, origin=origin, degrees=15, view_range=view_range)
+  plotView(viewed_coordinates, origin, view_range)
+  # ransacRes = RANSAC(viewed_coordinates)
+  # printRansac(ransacRes)
+  return
 
 
 main()

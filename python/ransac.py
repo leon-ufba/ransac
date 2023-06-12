@@ -3,6 +3,7 @@ import math
 
 C = 0.00              # The percent of close data points (inliers) required to assert that the model fits well to the data.
 E = 0.10              # A threshold value to determine data points that are fit well by the model (inlier).
+T = 100
 
 class Line:
   def __init__(self, a, b):
@@ -39,14 +40,19 @@ def leastSquare(data):
   sxy = 0
   sx2 = 0
   n = len(data)
+  if(n == 0):
+    return Line(math.inf, 0), math.inf
   for i in range(n):
     sx += data[i][0]
     sy += data[i][1]
     sxy += data[i][0] * data[i][1]
     sx2 += data[i][0] * data[i][0]
-  a = (n * sxy - sx * sy) / (n * sx2 - sx * sx)
-  b = (sy / n) - a * (sx / n)
   avg_y = sy / n
+  den = (n * sx2 - sx * sx)
+  if(den == 0):
+    return Line(math.inf, 0), avg_y
+  a = (n * sxy - sx * sy) / den
+  b = (sy / n) - a * (sx / n)
   return Line(a, b), avg_y
 
 def checkModel(data, temp):
@@ -79,7 +85,7 @@ def checkModel(data, temp):
 def RANSAC(data):
   global rs
   np.seterr(divide='ignore', invalid='ignore')
-  for i in range(len(data)):
-    for j in range(i + 1, len(data)):
-      checkModel(data, [data[i], data[j]])
+  initial_point = np.array([500,0])
+  for i in range(min(len(data), T)):
+    checkModel(data, [initial_point, data[i]])
   return rs

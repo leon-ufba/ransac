@@ -12,24 +12,18 @@ def genCoords(dataset):
   dataset_path = os.path.join(dirname, dataset_path)
 
   img = Image.open(dataset_path).convert('L')
-  width, height = img.size
 
-  print(width, height)
+  np_img = np.array(img)
+  coordinates = np.argwhere(np_img != 255)
+  coordinates = np.flip(coordinates, axis=1)
 
-  np_img = np.array(img).clip(max = 1)
-
-  print(np_img)
-
-  coordinates = np.argwhere(np_img == 0)
-  print(coordinates)
-  
   coords_path = 'coords/' + dataset + '.pickle'
   coords_path = os.path.join(dirname, coords_path)
 
   with open(coords_path, 'wb') as file:
     pickle.dump(coordinates, file)
 
-dataset = 'dataset_test'
+dataset = 'dataset_test_1'
 genCoords(dataset)
 
 
