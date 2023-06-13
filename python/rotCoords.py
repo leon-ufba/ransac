@@ -25,10 +25,10 @@ def pre_clip(coords, origin, view_range):
   return clipped
 
 def post_clip(coords, origin, view_range):
-  x_min = origin[0] - view_range
-  x_max = origin[0] + view_range
-  y_min = origin[1]
-  y_max = origin[1] + 2 * view_range
+  x_min = origin[0]
+  x_max = origin[0] + 2 * view_range
+  y_min = origin[1] - view_range
+  y_max = origin[1] + view_range
   cond_x = np.logical_and(x_min <= coords[:,0], coords[:,0] <= x_max)
   cond_y = np.logical_and(y_min <= coords[:,1], coords[:,1] <= y_max)
   clipped = coords[np.logical_and(cond_x, cond_y)]
