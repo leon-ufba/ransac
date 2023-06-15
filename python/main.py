@@ -1,13 +1,13 @@
 import numpy as np
 from PIL import Image
-from rotCoords import viewedCoords
+from rotCoords import viewedCoords, rotate
 from ransac import RANSAC
 
 def printRansac(rs):
   print("\n------------------------")
-  print("bestInliersFit:\t\t%f" % rs.bestInliersFit)
-  print("bestInliersQty:\t\t%f" % rs.bestInliersQty)
-  print("bestInliersModel:\t%f\t%f" % (rs.bestInliersModel.a, rs.bestInliersModel.b))
+  print("bestFit:\t\t%f" % rs.bestFit)
+  print("bestQty:\t\t%f" % rs.bestQty)
+  print("bestModel:\t%f\t%f" % (rs.bestModel.a, rs.bestModel.b))
   print("------------------------\n")
   return
 
@@ -53,17 +53,37 @@ def plotView(view_coords, origin, view_range):
 
 
 def main():
-  dataset = 'dataset_test_1'
+  dataset = 'dataset_test_2'
   view_range = 500
-  origin = np.array([1500,500])
-  viewed_coordinates = viewedCoords(dataset, origin=origin, degrees=0, view_range=view_range)
-  
-  initial_coord = np.array([0,500])
-  translated_coords = viewed_coordinates - (np.array(origin) - initial_coord)
-  plotView(translated_coords, origin, view_range)
-  # print(translated_coords)
-  ransacRes = RANSAC(translated_coords)
-  printRansac(ransacRes)
+  bot_coords = np.array([0,view_range])
+  angle = 0
+  delta = 0
+
+  for i in range(10):
+    viewed_coordinates = viewedCoords(dataset, origin=bot_coords, angle=angle, view_range=view_range)
+    
+    initial_view_coord = np.array([0,view_range])
+    translated_coords = viewed_coordinates - (np.array(bot_coords) - initial_view_coord)
+    plotView(translated_coords, bot_coords, view_range)
+    # print(translated_coords)
+    ransacRes = RANSAC(translated_coords, view_range)
+    printRansac(ransacRes)
+
+    model = ransacRes.bestModel
+    if(model.a == 0):
+      delta = 2 * view_range
+    else:
+      delta = (view_range - model.b) / model.a
+    rotated_delta = np.array([delta * np.cos(angle), delta * np.sin(-angle)])
+    angle += -np.arctan(model.a)
+    print(delta, angle)
+    bot_coords = bot_coords + rotated_delta
+
+    print(rotated_delta)
+    print(bot_coords)
+
+    # input()
+
   return
 
 

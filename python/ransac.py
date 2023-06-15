@@ -2,7 +2,7 @@ import numpy as np
 import math
 
 C = 0.50              # The percent of close data points (inliers) required to assert that the model fits well to the data.
-E = 5.0               # A threshold value to determine data points that are fit well by the model (inlier).
+E = 8.0               # A threshold value to determine data points that are fit well by the model (inlier).
 T = 100
 
 class Line:
@@ -12,9 +12,9 @@ class Line:
 
 class RansacResult:
   def __init__(self, model = Line(0.0, 0.0)):
-    self.bestInliersModel = model
-    self.bestInliersFit = math.inf
-    self.bestInliersQty = 0
+    self.bestModel = model
+    self.bestFit = math.inf
+    self.bestQty = 0
 
 rs = RansacResult()
 
@@ -76,19 +76,21 @@ def checkModel(data, temp):
 
   inliers, _ = inliersOutliers(data, model)
 
-  if (len(inliers) >= rs.bestInliersQty and len(inliers) >= int(len(data) * C)):
+  if (len(inliers) >= rs.bestQty and len(inliers) >= int(len(data) * C)):
     inliersModel, inlinersAvg_y = leastSquare(inliers)
     inliersFit = coefficientOfDetermination(data, inliersModel, inlinersAvg_y)
-    if (inliersFit < rs.bestInliersFit):
-      rs.bestInliersModel = inliersModel
-      rs.bestInliersFit = inliersFit
-      rs.bestInliersQty = len(inliers)
+    if (inliersFit < rs.bestFit):
+      rs.bestModel = inliersModel
+      rs.bestFit = inliersFit
+      rs.bestQty = len(inliers)
 
-def RANSAC(data):
+def RANSAC(data, view_range):
   global rs
   np.seterr(divide='ignore', invalid='ignore')
 
-  initial_model = Line(0.0, 500)
+  rs = RansacResult()
+
+  initial_model = Line(0.0, view_range)
 
   _, outliers = inliersOutliers(data, initial_model)
 

@@ -4,8 +4,7 @@ import os
 
 dirname = os.path.dirname(__file__)
 
-def rotate(p, origin, degrees):
-  angle = -np.deg2rad(degrees)
+def rotate(p, origin, angle):
   R = np.array([
     [np.cos(angle), -np.sin(angle)],
     [np.sin(angle),  np.cos(angle)],
@@ -34,12 +33,12 @@ def post_clip(coords, origin, view_range):
   clipped = coords[np.logical_and(cond_x, cond_y)]
   return clipped
 
-def viewedCoords(dataset, origin=(0,0), degrees=0, view_range=1):
+def viewedCoords(dataset, origin=(0,0), angle=0, view_range=1):
   coords_path = 'coords/' + dataset + '.pickle'
   coords_path = os.path.join(dirname, coords_path)
   with open(coords_path, 'rb') as file:
     coords = pickle.load(file)
   pre_clip_coords  = pre_clip(coords, origin, view_range)
-  rot_coords       = rotate(pre_clip_coords, origin, degrees)
+  rot_coords       = rotate(pre_clip_coords, origin, angle)
   post_clip_coords = post_clip(rot_coords, origin, view_range)
   return post_clip_coords

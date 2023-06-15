@@ -23,7 +23,7 @@ def genCoords(dataset):
   with open(coords_path, 'wb') as file:
     pickle.dump(coordinates, file)
 
-dataset = 'dataset_test_1'
+dataset = 'dataset_test_2'
 genCoords(dataset)
 
 
