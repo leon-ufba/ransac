@@ -70,23 +70,26 @@ int main() {
     Point shape[1];
     Point data[MAX_POINTS];
     Point data2[MAX_POINTS];
-
+    RansacResult ransacResult;
     readPoints(data, shape);
 
     int data_size = (int)shape[0].x; // number of data points
 
     if(data_size > MAX_POINTS) data_size = MAX_POINTS;
-    
-    model1 = RANSAC(data, data_size);
 
-    int inliers_size = bestInlinersQty;
-    int outliers_size = (int)(data_size-bestInlinersQty);
+    ransacResult = RANSAC(data, data_size);
+    model1 = ransacResult.bestModel;
+    int inliers_size = ransacResult.bestQty;
+    int outliers_size = (int)(data_size-ransacResult.bestQty);
 
     for (int k=0; k<outliers_size; k++) {
         data2[k] = data[indexOutliers[k]];
     }
 
-    if (outliers_size>10) model2 = RANSAC(data2, outliers_size);
+    if (outliers_size>10) {
+        ransacResult = RANSAC(data2, outliers_size);
+        model2 = ransacResult.bestModel;
+    }
 
     Point intersection = { 0.0, 0.0 };
     float distance = 0.0;
