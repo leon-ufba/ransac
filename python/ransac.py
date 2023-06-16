@@ -91,9 +91,10 @@ def RANSAC(data, view_range):
   rs = RansacResult()
 
   initial_model = Line(0.0, view_range)
-
+  #print(inliersOutliers(data, initial_model))
+  
   _, outliers = inliersOutliers(data, initial_model)
-
+  
   if(len(outliers) == 0):
     return RansacResult(initial_model)
 
