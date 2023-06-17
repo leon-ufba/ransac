@@ -1,32 +1,48 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdlib.h>
 #include <math.h>
+#include <string.h>
 #include "ransac.c"
 
 #define PI 3.14
-#define file_path "..\\python\\coords\\dataset_test_2.txt"
+#define file_path "dataset_test_2"
 
-int readPoints(Point* data, Point* shape) {
-    FILE* file = fopen(file_path, "r");
+int readPoints(Point* data, Point* shape, int index) {
+    char* fileName;
+    if(index == 0 ){
+        fileName="data0.txt";
+    }else if(index == 1 ){
+       fileName="data1.txt";
+    }else if(index == 2 ){
+       fileName="data2.txt";
+    }else if(index == 3 ){
+       fileName="data3.txt";
+    }else if(index == 4 ){
+       fileName="data4.txt";
+    }
+
+    FILE* file = fopen(fileName, "r");
+
     if (!file) {
         fprintf(stderr, "Erro ao abrir o arquivo\n");
         return 1;
     }
 
     if (fscanf(file, "%d %d", &shape[0].x, &shape[0].y) == 1) {
-            
+
     }
     int i = 0;
     while (fscanf(file, "%d %d", &data[i].x, &data[i].y) != EOF) {
+        //printf("%d %d - %d\n", data[i].x, data[i].y, i);
         i++;
     }
-
     fclose(file);
-    
-    return 0;
+
+    return i;
 }
 
-int saveResult(Line* f, Line* s, Point* begin, Point* intersection, float distance, float angle) { 
+int saveResult(Line* f, Line* s, Point* begin, Point* intersection, float distance, float angle) {
     FILE *file = fopen("resultados.csv", "w");
     if (!file) {
         fprintf(stderr, "Erro ao abrir o arquivo\n");
@@ -39,7 +55,7 @@ int saveResult(Line* f, Line* s, Point* begin, Point* intersection, float distan
     fprintf(file, "%d, %d\n", begin->x, begin->y);
     fprintf(file, "%d, %d\n", intersection->x, intersection->y);
     fprintf(file, "%.6f, %.6f\n", distance, angle);
-    
+
 
     fclose(file);
 
@@ -66,18 +82,28 @@ float getAngleFromModel(float a) {
 int main() {
     srand(time(NULL));
     Line model1 = { 0.0, 0.0 };
-    Line model2 = { 0.0, 0.0 };
     Point shape[1];
-    Point data[MAX_POINTS];
+
     Point data2[MAX_POINTS];
     RansacResult ransacResult;
-    readPoints(data, shape);
 
-    int data_size = (int)shape[0].x; // number of data points
 
-    if(data_size > MAX_POINTS) data_size = MAX_POINTS;
+     // number of data points
 
-    ransacResult = RANSAC(data, data_size);
+
+    for(int i = 0; i < 5; i++){
+        Point data[20*MAX_POINTS];
+        int points =readPoints(data, shape,i);
+        int data_size = (int)shape[0].x;
+        if(data_size > MAX_POINTS) data_size = MAX_POINTS;
+        ransacResult = RANSAC(data, points,data_size);
+        printf("\n----------------------\n");
+        printf("bestFit: %f\n", ransacResult.bestFit);
+        printf("bestQty: %d\n", ransacResult.bestQty);
+        printf("bestModel: %f\t%f\n", ransacResult.bestModel.a,ransacResult.bestModel.b );
+        printf("\n----------------------\n");
+    }
+/*
     model1 = ransacResult.bestModel;
     int inliers_size = ransacResult.bestQty;
     int outliers_size = (int)(data_size-ransacResult.bestQty);
@@ -95,15 +121,15 @@ int main() {
     float distance = 0.0;
     float angle = 0.0;
     Point begin = data[data_size-2];
-    if (model2.a != 0 & model2.b != 0) { 
+    if (model2.a != 0 & model2.b != 0) {
         intersection = calculateIntersection(&model1, &model2);
         distance = squareDistanceBetweenPoints(&intersection, &begin);
         angle = getAngleFromModel(model2.a);
     }
-    
-    
+
+
     saveResult(&model1, &model2, &begin, &intersection, distance, angle);
-    
+    printf("\n------------------------\n");
     printf("data_size: \t%d\n", data_size);
     printf("initial position:\t%d\t%d\n", begin.x, begin.y);
     printf("\n--------Step 1----------\n");
@@ -117,6 +143,6 @@ int main() {
     printf("square distance:\t%f\n", distance);
     printf("angle: \t%f\n", angle);
     printf("\n");
-
+*/
     return 0;
 }
