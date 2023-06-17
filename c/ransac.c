@@ -130,25 +130,6 @@ void nearestOutliers(Point* data,  Line model, Point* outliers, int numData) {
 
 
 }
-/*
-void nearestOutliers(Point* data, Line model, Point* nearest_outliers, int view_range) {
-  for (int i = 0; i < view_range; i++) {
-    nearest_outliers[i].x = fabs(model.a * (data[i].x - data[i].y + model.b));
-    nearest_outliers[i].y = data[i].x;
-  }
-  for (int i = 0; i < view_range - 1; i++) {
-    int minIndex = i;
-    for (int j = i + 1; j < view_range; j++) {
-      if (nearest_outliers[j].x < nearest_outliers[minIndex].x) {
-        minIndex = j;
-      }
-    }
-    Point temp = nearest_outliers[i];
-    nearest_outliers[i] = nearest_outliers[minIndex];
-    nearest_outliers[minIndex] = temp;
-  }
-}
-*/
 void checkModel(Point* data, Point* temp, int data_size, int temp_size) {
 
   Point inliers[data_size];

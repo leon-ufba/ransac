@@ -34,7 +34,6 @@ int readPoints(Point* data, Point* shape, int index) {
     }
     int i = 0;
     while (fscanf(file, "%d %d", &data[i].x, &data[i].y) != EOF) {
-        //printf("%d %d - %d\n", data[i].x, data[i].y, i);
         i++;
     }
     fclose(file);
@@ -86,11 +85,6 @@ int main() {
 
     Point data2[MAX_POINTS];
     RansacResult ransacResult;
-
-
-     // number of data points
-
-
     for(int i = 0; i < 5; i++){
         Point data[20*MAX_POINTS];
         int points =readPoints(data, shape,i);
@@ -103,46 +97,6 @@ int main() {
         printf("bestModel: %f\t%f\n", ransacResult.bestModel.a,ransacResult.bestModel.b );
         printf("\n----------------------\n");
     }
-/*
-    model1 = ransacResult.bestModel;
-    int inliers_size = ransacResult.bestQty;
-    int outliers_size = (int)(data_size-ransacResult.bestQty);
 
-    for (int k=0; k<outliers_size; k++) {
-        data2[k] = data[indexOutliers[k]];
-    }
-
-    if (outliers_size>10) {
-        ransacResult = RANSAC(data2, outliers_size);
-        model2 = ransacResult.bestModel;
-    }
-
-    Point intersection = { 0.0, 0.0 };
-    float distance = 0.0;
-    float angle = 0.0;
-    Point begin = data[data_size-2];
-    if (model2.a != 0 & model2.b != 0) {
-        intersection = calculateIntersection(&model1, &model2);
-        distance = squareDistanceBetweenPoints(&intersection, &begin);
-        angle = getAngleFromModel(model2.a);
-    }
-
-
-    saveResult(&model1, &model2, &begin, &intersection, distance, angle);
-    printf("\n------------------------\n");
-    printf("data_size: \t%d\n", data_size);
-    printf("initial position:\t%d\t%d\n", begin.x, begin.y);
-    printf("\n--------Step 1----------\n");
-    printf("inliers_size: \t%d\n", inliers_size);
-    printf("outliers_size:\t%d\n", outliers_size);
-    printf("\n--------Ransac Result----------\n");
-    printf("bestModel 1:\t%f\t%f\n", model1.a, model1.b);
-    printf("bestModel 2:\t%f\t%f\n", model2.a, model2.b);
-    printf("\n--------Result----------\n");
-    printf("intersection point:\t%d\t%d\n", intersection.x, intersection.y);
-    printf("square distance:\t%f\n", distance);
-    printf("angle: \t%f\n", angle);
-    printf("\n");
-*/
     return 0;
 }
