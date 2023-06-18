@@ -1,0 +1,22 @@
+<Step>
+<Step Bot Coords X,Y>
+<Quantidade de inliers>
+<inliers[]>
+<Quantidade de outliers>
+<outliers[]>
+
+<Step>
+<Step Bot Coords X,Y>
+<Quantidade de inliers>
+<inliers[]>
+<Quantidade de outliers>
+<outliers[]>
+
+<Step>
+<Step Bot Coords X,Y>
+<Quantidade de inliers>
+<inliers[]>
+<Quantidade de outliers>
+<outliers[]>
+
+EOF
