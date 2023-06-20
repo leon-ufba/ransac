@@ -1,0 +1,6 @@
+18:07:27 **** Clean-only build of configuration Nios II for project RansacSoftware_bsp ****
+make clean 
+[BSP clean complete]
+18:07:36 **** Clean-only build of configuration Nios II for project RansacSoftware ****
+make clean 
+[RansacSoftware clean complete]

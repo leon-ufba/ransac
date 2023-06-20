@@ -1,0 +1,4 @@
+eclipse.preferences.version=1
+newSoftwareExampleWizardPage.defaultLocation=C\:\\ti\\projetos\\LAB4\\ransac\\hardware\\Quartus\\software\\RansacSoftware
+newSoftwareExampleWizardPage.sopcinfoFile=C\:\\ti\\projetos\\LAB4\\ransac\\hardware\\Quartus\\RANSAC_NIOS.sopcinfo
+newSoftwareExampleWizardPage2.newBspLocation=C\:\\ti\\projetos\\LAB4\\ransac\\hardware\\Quartus\\software\\RansacSoftware_bsp
