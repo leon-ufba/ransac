@@ -1,0 +1,32 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/ti/projetos/LAB4/ransac/hardware/Quartus/software/RansacSoftware/obj/default/runtime/sim/mentor
+vRANSAC_NIOS_memoria
+!s110 1687709169
+!i10b 1
+!s100 EY6b6?^1`1fhihol]mU`61
+I@S4RBW11XY7?gQ9cNKWfg3
+VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1687703163
+8C:/ti/projetos/LAB4/ransac/hardware/Quartus/RANSAC_NIOS/testbench/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_memoria.v
+FC:/ti/projetos/LAB4/ransac/hardware/Quartus/RANSAC_NIOS/testbench/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_memoria.v
+L0 21
+OV;L;10.5b;63
+r1
+!s85 0
+31
+!s108 1687709169.000000
+!s107 C:/ti/projetos/LAB4/ransac/hardware/Quartus/RANSAC_NIOS/testbench/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_memoria.v|
+!s90 -reportprogress|300|C:/ti/projetos/LAB4/ransac/hardware/Quartus/RANSAC_NIOS/testbench/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_memoria.v|-work|memoria|
+!i113 1
+o-work memoria
+tCvgOpt 0
+n@r@a@n@s@a@c_@n@i@o@s_memoria

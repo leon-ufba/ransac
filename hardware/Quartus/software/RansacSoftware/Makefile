@@ -142,7 +142,8 @@ ACDS_VERSION := 18.1
 ELF := RansacSoftware.elf
 
 # Paths to C, C++, and assembly source files.
-C_SRCS := RansacPrograma.c
+C_SRCS += RansacPrograma.c
+C_SRCS += ransac.c
 CXX_SRCS :=
 ASM_SRCS :=
 

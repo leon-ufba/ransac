@@ -3,7 +3,7 @@
 # Machine generated for CPU 'Processador' in SOPC Builder design 'RANSAC_NIOS'
 # SOPC Builder design path: ../../RANSAC_NIOS.sopcinfo
 #
-# Generated: Tue Jun 20 18:07:25 BRT 2023
+# Generated: Sun Jun 25 11:28:24 BRT 2023
 
 # DO NOT MODIFY THIS FILE
 #
@@ -47,4 +47,7 @@
 # by allowing GDB to cache memory contents on the host.
 
 # memoria
-memory 0x20000 0x30000 cache
+memory 0x0 0x40000 cache
+
+# memoria_dados
+memory 0x40000 0x50000 cache

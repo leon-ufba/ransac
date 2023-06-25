@@ -1,0 +1,32 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/ti/projetos/LAB4/ransac/hardware/Quartus/software/RansacSoftware/obj/default/runtime/sim/mentor
+vRANSAC_NIOS_mm_interconnect_0
+!s110 1687709169
+!i10b 1
+!s100 HeUl=^afR^SI9l]z]WnC80
+IiD8<gckf?jcV=ebl@El1f3
+VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1687703197
+8C:/ti/projetos/LAB4/ransac/hardware/Quartus/RANSAC_NIOS/testbench/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_mm_interconnect_0.v
+FC:/ti/projetos/LAB4/ransac/hardware/Quartus/RANSAC_NIOS/testbench/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_mm_interconnect_0.v
+L0 9
+OV;L;10.5b;63
+r1
+!s85 0
+31
+!s108 1687709169.000000
+!s107 C:/ti/projetos/LAB4/ransac/hardware/Quartus/RANSAC_NIOS/testbench/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_mm_interconnect_0.v|
+!s90 -reportprogress|300|C:/ti/projetos/LAB4/ransac/hardware/Quartus/RANSAC_NIOS/testbench/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_mm_interconnect_0.v|-work|mm_interconnect_0|
+!i113 1
+o-work mm_interconnect_0
+tCvgOpt 0
+n@r@a@n@s@a@c_@n@i@o@s_mm_interconnect_0

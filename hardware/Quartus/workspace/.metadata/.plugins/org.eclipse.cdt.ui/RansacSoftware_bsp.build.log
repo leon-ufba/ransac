@@ -1,6 +1,6 @@
-18:07:27 **** Clean-only build of configuration Nios II for project RansacSoftware_bsp ****
-make clean 
-[BSP clean complete]
+13:21:56 **** Incremental Build of configuration Nios II for project RansacSoftware_bsp ****
+make all 
+[BSP build complete]
 
-18:07:30 Build Finished (took 3s.122ms)
+13:21:57 Build Finished (took 1s.99ms)
 

@@ -1,0 +1,60 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/ti/projetos/LAB4/ransac/hardware/Quartus/software/RansacSoftware/obj/default/runtime/sim/mentor
+vRANSAC_NIOS_mm_interconnect_0_router
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 !s110 1687709167
+!i10b 1
+!s100 on6o2^nA]0R0M7=Yz?fb71
+IdfZk:c7VV[O7clgcR=SGV2
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+Z4 !s105 RANSAC_NIOS_mm_interconnect_0_router_sv_unit
+S1
+R0
+Z5 w1687703197
+Z6 8C:/ti/projetos/LAB4/ransac/hardware/Quartus/RANSAC_NIOS/testbench/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_mm_interconnect_0_router.sv
+Z7 FC:/ti/projetos/LAB4/ransac/hardware/Quartus/RANSAC_NIOS/testbench/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_mm_interconnect_0_router.sv
+L0 84
+Z8 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z9 !s108 1687709167.000000
+Z10 !s107 C:/ti/projetos/LAB4/ransac/hardware/Quartus/RANSAC_NIOS/testbench/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_mm_interconnect_0_router.sv|
+Z11 !s90 -reportprogress|300|-sv|C:/ti/projetos/LAB4/ransac/hardware/Quartus/RANSAC_NIOS/testbench/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_mm_interconnect_0_router.sv|-L|altera_common_sv_packages|-work|router|
+!i113 1
+Z12 o-sv -L altera_common_sv_packages -work router
+Z13 tCvgOpt 0
+n@r@a@n@s@a@c_@n@i@o@s_mm_interconnect_0_router
+vRANSAC_NIOS_mm_interconnect_0_router_default_decode
+R1
+R2
+!i10b 1
+!s100 1lB9f4OZCILoc;JAm<;952
+I:=T03YbS233Rmo[JV3T4A0
+R3
+R4
+S1
+R0
+R5
+R6
+R7
+L0 45
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+R13
+n@r@a@n@s@a@c_@n@i@o@s_mm_interconnect_0_router_default_decode

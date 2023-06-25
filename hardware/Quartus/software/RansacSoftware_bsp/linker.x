@@ -4,7 +4,7 @@
  * Machine generated for CPU 'Processador' in SOPC Builder design 'RANSAC_NIOS'
  * SOPC Builder design path: ../../RANSAC_NIOS.sopcinfo
  *
- * Generated: Tue Jun 20 18:07:25 BRT 2023
+ * Generated: Sun Jun 25 11:28:24 BRT 2023
  */
 
 /*
@@ -50,12 +50,14 @@
 
 MEMORY
 {
-    reset : ORIGIN = 0x20000, LENGTH = 32
-    memoria : ORIGIN = 0x20020, LENGTH = 65504
+    reset : ORIGIN = 0x0, LENGTH = 32
+    memoria : ORIGIN = 0x20, LENGTH = 262112
+    memoria_dados : ORIGIN = 0x40000, LENGTH = 65536
 }
 
 /* Define symbols for each memory base-address */
-__alt_mem_memoria = 0x20000;
+__alt_mem_memoria = 0x0;
+__alt_mem_memoria_dados = 0x40000;
 
 OUTPUT_FORMAT( "elf32-littlenios2",
                "elf32-littlenios2",
@@ -321,6 +323,23 @@ SECTIONS
     PROVIDE (_alt_partition_memoria_load_addr = LOADADDR(.memoria));
 
     /*
+     *
+     * This section's LMA is set to the .text region.
+     * crt0 will copy to this section's specified mapped region virtual memory address (VMA)
+     *
+     */
+
+    .memoria_dados : AT ( LOADADDR (.memoria) + SIZEOF (.memoria) )
+    {
+        PROVIDE (_alt_partition_memoria_dados_start = ABSOLUTE(.));
+        *(.memoria_dados .memoria_dados. memoria_dados.*)
+        . = ALIGN(4);
+        PROVIDE (_alt_partition_memoria_dados_end = ABSOLUTE(.));
+    } > memoria_dados
+
+    PROVIDE (_alt_partition_memoria_dados_load_addr = LOADADDR(.memoria_dados));
+
+    /*
      * Stabs debugging sections.
      *
      */
@@ -367,7 +386,7 @@ SECTIONS
 /*
  * Don't override this, override the __alt_stack_* symbols instead.
  */
-__alt_data_end = 0x30000;
+__alt_data_end = 0x40000;
 
 /*
  * The next two symbols define the location of the default stack.  You can
@@ -383,4 +402,4 @@ PROVIDE( __alt_stack_limit   = __alt_stack_base );
  * Override this symbol to put the heap in a different memory.
  */
 PROVIDE( __alt_heap_start    = end );
-PROVIDE( __alt_heap_limit    = 0x30000 );
+PROVIDE( __alt_heap_limit    = 0x40000 );

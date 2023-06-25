@@ -62,13 +62,18 @@ def main():
   for i in range(10):
     viewed_coordinates = viewedCoords(dataset, origin=bot_coords, angle=angle, view_range=view_range)
     
+    data = viewed_coordinates;
+
     initial_view_coord = np.array([0,view_range])
     translated_coords = viewed_coordinates - (np.array(bot_coords) - initial_view_coord)
     plotView(translated_coords, bot_coords, view_range)
-    # print(translated_coords)
-    ransacRes = RANSAC(translated_coords, view_range)
-    printRansac(ransacRes)
+    print(translated_coords)
 
+    with open('.\coords\data'+str(i)+'.txt', 'w') as file:
+     file.write(f"{len(translated_coords)} 0\n")
+     for pair in translated_coords:
+       file.write(f"{int(pair[0])} {int(pair[1])}\n")
+    ransacRes = RANSAC(translated_coords, view_range)
     model = ransacRes.bestModel
     if(model.a == 0):
       delta = 2 * view_range
