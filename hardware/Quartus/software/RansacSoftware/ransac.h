@@ -14,6 +14,6 @@
 
 #define SIZEOF_MEM ((MAX_POINTS * 2) + MIN_POINTS) * POINT_SIZE
 
-RansacResult RANSAC(Point* data, int data_size, int view_range);
+RansacResult RANSAC(int data_size, int view_range);
 
 void readStructFromMemory(Point* structPtr, uint32_t address);

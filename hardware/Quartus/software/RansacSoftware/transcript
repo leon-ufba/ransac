@@ -1,0 +1,8 @@
+# Reading D:/Quartus/modelsim_ase/tcl/vsim/pref.tcl
+# vsim -gui null_sim.mpf 
+# Start time: 13:38:03 on Jun 25,2023
+# ** Error (suppressible): (vsim-19) Failed to access library 'null_sim' at "null_sim".
+# No such file or directory. (errno = ENOENT)
+# Error loading design
+# End time: 13:38:04 on Jun 25,2023, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 0

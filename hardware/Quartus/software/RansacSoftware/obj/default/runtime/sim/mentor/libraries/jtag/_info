@@ -9,13 +9,13 @@ z2
 cModel Technology
 Z0 dC:/ti/projetos/LAB4/ransac/hardware/Quartus/software/RansacSoftware/obj/default/runtime/sim/mentor
 vRANSAC_NIOS_jtag
-Z1 !s110 1687709170
+Z1 !s110 1687719912
 !i10b 1
 !s100 88ic;b0fHdL`>0IY`h_li3
 I=T^W_06:7NZECdhhGBB3O3
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 R0
-Z3 w1687703162
+Z3 w1687712035
 Z4 8C:/ti/projetos/LAB4/ransac/hardware/Quartus/RANSAC_NIOS/testbench/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_jtag.v
 Z5 FC:/ti/projetos/LAB4/ransac/hardware/Quartus/RANSAC_NIOS/testbench/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_jtag.v
 L0 331
@@ -23,7 +23,7 @@ Z6 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z7 !s108 1687709170.000000
+Z7 !s108 1687719912.000000
 Z8 !s107 C:/ti/projetos/LAB4/ransac/hardware/Quartus/RANSAC_NIOS/testbench/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_jtag.v|
 Z9 !s90 -reportprogress|300|C:/ti/projetos/LAB4/ransac/hardware/Quartus/RANSAC_NIOS/testbench/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_jtag.v|-work|jtag|
 !i113 1

@@ -11,7 +11,7 @@ Z0 dC:/ti/projetos/LAB4/ransac/hardware/Quartus/software/RansacSoftware/obj/defa
 valtera_avalon_reset_source
 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
 DXx25 altera_common_sv_packages 13 verbosity_pkg 0 22 <6cVAj<CDD@3=on08lSFe1
-!s110 1687709172
+!s110 1687719913
 !i10b 1
 !s100 3a?19XA<0CCRW>1VRc_7<0
 ILO=>]aH2d7Sh^4_W7`e`b3
@@ -19,7 +19,7 @@ VDg1SIo80bB@j0V0VzS_@n1
 !s105 altera_avalon_reset_source_sv_unit
 S1
 R0
-w1687703156
+w1687712030
 8C:/ti/projetos/LAB4/ransac/hardware/Quartus/RANSAC_NIOS/testbench/RANSAC_NIOS_tb/simulation/submodules/altera_avalon_reset_source.sv
 FC:/ti/projetos/LAB4/ransac/hardware/Quartus/RANSAC_NIOS/testbench/RANSAC_NIOS_tb/simulation/submodules/altera_avalon_reset_source.sv
 L0 23
@@ -27,7 +27,7 @@ OV;L;10.5b;63
 r1
 !s85 0
 31
-!s108 1687709171.000000
+!s108 1687719913.000000
 !s107 C:/ti/projetos/LAB4/ransac/hardware/Quartus/RANSAC_NIOS/testbench/RANSAC_NIOS_tb/simulation/submodules/altera_avalon_reset_source.sv|
 !s90 -reportprogress|300|-sv|C:/ti/projetos/LAB4/ransac/hardware/Quartus/RANSAC_NIOS/testbench/RANSAC_NIOS_tb/simulation/submodules/altera_avalon_reset_source.sv|-L|altera_common_sv_packages|-work|RANSAC_NIOS_inst_reset_bfm|
 !i113 1

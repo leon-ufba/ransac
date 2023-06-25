@@ -7,7 +7,7 @@
 
 
 
-volatile int indexOutliers[MAX_POINTS];
+
 RansacResult rs;
 Line leastSquare(Point* data, int size) {
     float sx = 0;
@@ -37,21 +37,31 @@ Line leastSquare(Point* data, int size) {
 }
 
 
-void inliersOutliers(Point* data, Line model, Point* inliers, Point* outliers, int dataSize, int* inlierSize, int* outlierSize) {
+void inliersOutliersFromInternalMemory( Line model, Point* inliers, Point* outliers, int dataSize, int* inlierSize, int* outlierSize) {
+	Point data;
+
     float square2 = E * E * (model.a * model.a + 1.0);
     for (int k = 0; k < dataSize; k++) {
-        float dist = (model.a * data[k].x - data[k].y + model.b);
+    	readStructFromMemory(&data,k+1);
+        float dist = (model.a * data.x - data.y + model.b);
         if (dist * dist <= square2) {
-            inliers[*inlierSize].x = data[k].x;
-            inliers[*inlierSize].y = data[k].y;
+            inliers[*inlierSize].x = data.x;
+            inliers[*inlierSize].y = data.y;
+            /*fprintf(stdout,"k: %d\n", &k);
+            fprintf(stdout,"square2: %.3f\n", &square2);
+            fprintf(stdout,"square2: %.3f\n", &dist);
+        	fprintf(stdout,"Inl X: %d\n", inliers[*inlierSize].x);
+        	fprintf(stdout,"Inl Y: %d\n", inliers[*inlierSize].y);
+        	fprintf(stdout,"-------------------------\n");*/
             (*inlierSize)++;
         } else {
-            outliers[*outlierSize].x = data[k].x;
-            outliers[*outlierSize].y = data[k].y;
+            outliers[*outlierSize].x = data.x;
+            outliers[*outlierSize].y = data.y;
             (*outlierSize)++;
         }
     }
 }
+
 
 float coefficientOfDetermination(Point* data, Line model, float avg_y, int data_size) {
     float ss_res = 0;
@@ -96,10 +106,26 @@ void nearestOutliers(Point* data,  Line model, Point* outliers, int numData) {
 
 
 }
+
+void inliersOutliers(Point* data, Line model, Point* inliers, Point* outliers, int dataSize, int* inlierSize, int* outlierSize) {
+    float square2 = E * E * (model.a * model.a + 1.0);
+    for (int k = 0; k < dataSize; k++) {
+        float dist = (model.a * data[k].x - data[k].y + model.b);
+        if (dist * dist <= square2) {
+            inliers[*inlierSize].x = data[k].x;
+            inliers[*inlierSize].y = data[k].y;
+            (*inlierSize)++;
+        } else {
+            outliers[*outlierSize].x = data[k].x;
+            outliers[*outlierSize].y = data[k].y;
+            (*outlierSize)++;
+        }
+    }
+}
 void checkModel(Point* data, Point* temp, int data_size, int temp_size) {
 
-  Point inliers[data_size];
-  Point outliers[data_size];
+  Point inliers[MAX_POINTS];
+  Point outliers[MAX_POINTS];
   int inlinersSize = 0;
   int outlierSize = 0;
   Line model = leastSquare(temp, temp_size);
@@ -123,9 +149,9 @@ void checkModel(Point* data, Point* temp, int data_size, int temp_size) {
 
 }
 
-void readStructFromMemory(Point* structPtr, uint32_t address) {
+void readStructFromMemory(Point* structPtr, uint32_t position) {
     // Ponteiro para o endereço de memória externa
-    volatile int* memoryPtr = (volatile uint32_t*)address;
+    volatile int* memoryPtr = (volatile uint32_t*)MEMORY_DATA+ 2*position;
 
     // Realiza a leitura dos dados da memória externa
     structPtr->x = *((uint32_t*)memoryPtr);
@@ -140,22 +166,24 @@ float squareDistanceBetweenPoints (Point* a, Point* b){
   return (dx * dx) + (dy * dy);
 }
 
-RansacResult RANSAC(Point* data, int data_size, int view_range) {
+RansacResult RANSAC( int data_size, int view_range) {
   rs.bestModel.a = 0.0;
   rs.bestModel.b = view_range;
   rs.bestFit = INFINITY;
   rs.bestQty = 0;
-
+  //fprintf(stdout,"data_size: %d\n", data_size);
+  //fprintf(stdout,"view_range: %d\n", view_range);
   int temp_size = MIN_POINTS;
-  Point inliers[data_size];
-  Point outliers[data_size];
+  Point inliers[MAX_POINTS];
+  Point outliers[MAX_POINTS];
   int loopCounter= 0;
   int inlinersSize = 0;
   int outlierSize = 0;
 
-  inliersOutliers(data, rs.bestModel, inliers, outliers, data_size, &inlinersSize, &outlierSize);
+  inliersOutliersFromInternalMemory(rs.bestModel, inliers, outliers, data_size, &inlinersSize, &outlierSize);
 
   if (outlierSize == 0) {
+	  fprintf(stdout,"No outliers\n");
     return rs;
   }
 

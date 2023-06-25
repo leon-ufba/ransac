@@ -1,4 +1,0 @@
-#include "types.h"
-
-RansacResult RANSAC(Point* data, int data_size, int view_range);
-

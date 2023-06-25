@@ -1,3 +1,0 @@
-#include "ransa.c"
-RansacResult RANSAC(Point* data, int data_size, int view_range);
-

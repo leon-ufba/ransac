@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>25/06/2023 11:28:23</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1687703303537</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>25/06/2023 14:23:41</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1687713821891</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\ti\projetos\LAB4\ransac\hardware\Quartus\software\RansacSoftware_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\RANSAC_NIOS.sopcinfo</SopcDesignFile>

@@ -9,13 +9,13 @@ z2
 cModel Technology
 Z0 dC:/ti/projetos/LAB4/ransac/hardware/Quartus/software/RansacSoftware/obj/default/runtime/sim/mentor
 vRANSAC_NIOS_Processador
-Z1 !s110 1687709171
+Z1 !s110 1687719913
 !i10b 1
 !s100 UT@OziRlOHP0J0HIX:?ML3
 IHz[lMQ8g1G3d5A7Wj?@EL3
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 R0
-Z3 w1687703161
+Z3 w1687712035
 Z4 8C:/ti/projetos/LAB4/ransac/hardware/Quartus/RANSAC_NIOS/testbench/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_Processador.v
 Z5 FC:/ti/projetos/LAB4/ransac/hardware/Quartus/RANSAC_NIOS/testbench/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_Processador.v
 L0 3188
@@ -23,7 +23,7 @@ Z6 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z7 !s108 1687709170.000000
+Z7 !s108 1687719912.000000
 Z8 !s107 C:/ti/projetos/LAB4/ransac/hardware/Quartus/RANSAC_NIOS/testbench/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_Processador.v|
 Z9 !s90 -reportprogress|300|C:/ti/projetos/LAB4/ransac/hardware/Quartus/RANSAC_NIOS/testbench/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_Processador.v|-work|Processador|
 !i113 1
@@ -45,7 +45,7 @@ R6
 r1
 !s85 0
 31
-Z13 !s108 1687709171.000000
+Z13 !s108 1687719913.000000
 !s107 C:/ti/projetos/LAB4/ransac/hardware/Quartus/RANSAC_NIOS/testbench/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_Processador_jtag_debug_module_sysclk.v|
 !s90 -reportprogress|300|C:/ti/projetos/LAB4/ransac/hardware/Quartus/RANSAC_NIOS/testbench/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_Processador_jtag_debug_module_sysclk.v|-work|Processador|
 !i113 1
@@ -97,7 +97,7 @@ R10
 R11
 n@r@a@n@s@a@c_@n@i@o@s_@processador_jtag_debug_module_wrapper
 vRANSAC_NIOS_Processador_nios2_avalon_reg
-R1
+Z14 !s110 1687719912
 !i10b 1
 !s100 W9]?hDZg?UFXiJf^U8hBT1
 ILJSd7o=c>m_=felFg@lJ51
@@ -141,7 +141,7 @@ R10
 R11
 n@r@a@n@s@a@c_@n@i@o@s_@processador_nios2_oci
 vRANSAC_NIOS_Processador_nios2_oci_break
-R1
+R14
 !i10b 1
 !s100 B<U;iR2bo?J;KD<PdjznB2
 IY?l47K^klGGQlkDnUJPkQ3
@@ -163,7 +163,7 @@ R10
 R11
 n@r@a@n@s@a@c_@n@i@o@s_@processador_nios2_oci_break
 vRANSAC_NIOS_Processador_nios2_oci_compute_input_tm_cnt
-R1
+R14
 !i10b 1
 !s100 78:F7RLO6fPKod_jPZMMZ2
 IiF=8HGLgIzlULcHTJM]dB3
@@ -185,7 +185,7 @@ R10
 R11
 n@r@a@n@s@a@c_@n@i@o@s_@processador_nios2_oci_compute_input_tm_cnt
 vRANSAC_NIOS_Processador_nios2_oci_dbrk
-R1
+R14
 !i10b 1
 !s100 kIhn]BCZGa=R1@R64MXn02
 IZT:bHX38:ROoBoOQQcjGM2
@@ -207,7 +207,7 @@ R10
 R11
 n@r@a@n@s@a@c_@n@i@o@s_@processador_nios2_oci_dbrk
 vRANSAC_NIOS_Processador_nios2_oci_debug
-R1
+R14
 !i10b 1
 !s100 >3Whaeo:>9;VWJ>l@IGFS0
 IjYf=LaggKL@L5<ek9OJ8Y3
@@ -229,7 +229,7 @@ R10
 R11
 n@r@a@n@s@a@c_@n@i@o@s_@processador_nios2_oci_debug
 vRANSAC_NIOS_Processador_nios2_oci_dtrace
-R1
+R14
 !i10b 1
 !s100 4KbD@ZDQ8[?=N5`L9hdbF1
 ILf^d@:iR>48Ve[_ne9Z150
@@ -295,7 +295,7 @@ R10
 R11
 n@r@a@n@s@a@c_@n@i@o@s_@processador_nios2_oci_fifo_cnt_inc
 vRANSAC_NIOS_Processador_nios2_oci_fifo_wrptr_inc
-R1
+R14
 !i10b 1
 !s100 MH4YRdGB6`MDAo?RfMZbn2
 I=;KJ[1N7iN_[iFU0Ei1961
@@ -339,7 +339,7 @@ R10
 R11
 n@r@a@n@s@a@c_@n@i@o@s_@processador_nios2_oci_im
 vRANSAC_NIOS_Processador_nios2_oci_itrace
-R1
+R14
 !i10b 1
 !s100 GCA<>eR3kI:NTM6WLHEdj2
 I4_Kn20>4k1C8QQc1?TJO20
@@ -383,7 +383,7 @@ R10
 R11
 n@r@a@n@s@a@c_@n@i@o@s_@processador_nios2_oci_pib
 vRANSAC_NIOS_Processador_nios2_oci_td_mode
-R1
+R14
 !i10b 1
 !s100 S;k;OEgge<m_CoMUUmJIX3
 Ieza`UHj6OziYGY9S_[eH73
@@ -405,7 +405,7 @@ R10
 R11
 n@r@a@n@s@a@c_@n@i@o@s_@processador_nios2_oci_td_mode
 vRANSAC_NIOS_Processador_nios2_oci_xbrk
-R1
+R14
 !i10b 1
 !s100 kadoo9YDmhO1:KXe@oD7g2
 I]DhjY[L>E^VmKIJ]V3;da0
@@ -427,7 +427,7 @@ R10
 R11
 n@r@a@n@s@a@c_@n@i@o@s_@processador_nios2_oci_xbrk
 vRANSAC_NIOS_Processador_nios2_ocimem
-R1
+R14
 !i10b 1
 !s100 >cLaGHiWPAQi4^jCPfSkW1
 I5jZNCKR[R4fTb1:`BKZ9X2
@@ -493,7 +493,7 @@ R10
 R11
 n@r@a@n@s@a@c_@n@i@o@s_@processador_oci_test_bench
 vRANSAC_NIOS_Processador_ociram_sp_ram_module
-R1
+R14
 !i10b 1
 !s100 E5SKag3TC>ebVW4CYM:Nj2
 IYlmZ;PKCmg:R44o46gZm[1
@@ -515,7 +515,7 @@ R10
 R11
 n@r@a@n@s@a@c_@n@i@o@s_@processador_ociram_sp_ram_module
 vRANSAC_NIOS_Processador_register_bank_a_module
-R1
+R14
 !i10b 1
 !s100 E5h5B0`G]=6DTdomE`cEK2
 IZaTnJ8H]a0KKO@eTAEz@n3
@@ -537,7 +537,7 @@ R10
 R11
 n@r@a@n@s@a@c_@n@i@o@s_@processador_register_bank_a_module
 vRANSAC_NIOS_Processador_register_bank_b_module
-R1
+R14
 !i10b 1
 !s100 3ohkHV45ROeezeL=ZzjDZ0
 I@iAQTFWg26M<:=iP`AejC1
@@ -565,7 +565,7 @@ R1
 I8S]H1@4E07KaR6;Z<a[J22
 R2
 R0
-w1687703162
+R3
 8C:/ti/projetos/LAB4/ransac/hardware/Quartus/RANSAC_NIOS/testbench/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_Processador_test_bench.v
 FC:/ti/projetos/LAB4/ransac/hardware/Quartus/RANSAC_NIOS/testbench/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_Processador_test_bench.v
 R12
