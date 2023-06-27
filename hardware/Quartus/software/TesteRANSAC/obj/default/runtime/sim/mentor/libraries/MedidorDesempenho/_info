@@ -1,0 +1,54 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Eduardo/Documents/UFBA/2023.1/ENGG57/25.06.23/ransac-ransac_v2_review/ransac-ransac_v2_review/hardware/Quartus/software/TesteRANSAC/obj/default/runtime/sim/mentor
+vClock_Counter
+Z1 !s110 1687819350
+!i10b 1
+!s100 hAbh9<HJh558ZEmMP>40@1
+I7BZ96L3oB<k>h`d<2JKz`2
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1687798698
+8C:/Users/Eduardo/Documents/UFBA/2023.1/ENGG57/25.06.23/ransac-ransac_v2_review/ransac-ransac_v2_review/hardware/Quartus/RANSAC_NIOS/testbench/RANSAC_NIOS_tb/simulation/submodules/Clock_Counter.v
+FC:/Users/Eduardo/Documents/UFBA/2023.1/ENGG57/25.06.23/ransac-ransac_v2_review/ransac-ransac_v2_review/hardware/Quartus/RANSAC_NIOS/testbench/RANSAC_NIOS_tb/simulation/submodules/Clock_Counter.v
+L0 1
+Z4 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z5 !s108 1687819350.000000
+!s107 C:/Users/Eduardo/Documents/UFBA/2023.1/ENGG57/25.06.23/ransac-ransac_v2_review/ransac-ransac_v2_review/hardware/Quartus/RANSAC_NIOS/testbench/RANSAC_NIOS_tb/simulation/submodules/Clock_Counter.v|
+!s90 -reportprogress|300|C:/Users/Eduardo/Documents/UFBA/2023.1/ENGG57/25.06.23/ransac-ransac_v2_review/ransac-ransac_v2_review/hardware/Quartus/RANSAC_NIOS/testbench/RANSAC_NIOS_tb/simulation/submodules/Clock_Counter.v|-work|MedidorDesempenho|
+!i113 1
+Z6 o-work MedidorDesempenho
+Z7 tCvgOpt 0
+n@clock_@counter
+vClock_Counter_Interface
+R1
+!i10b 1
+!s100 ReeJOOzL4RA0?mW5e30PD2
+IUl9hk0Hgg9`AhIKLSFehW2
+R2
+R0
+R3
+8C:/Users/Eduardo/Documents/UFBA/2023.1/ENGG57/25.06.23/ransac-ransac_v2_review/ransac-ransac_v2_review/hardware/Quartus/RANSAC_NIOS/testbench/RANSAC_NIOS_tb/simulation/submodules/Clock_Counter_Interface.v
+FC:/Users/Eduardo/Documents/UFBA/2023.1/ENGG57/25.06.23/ransac-ransac_v2_review/ransac-ransac_v2_review/hardware/Quartus/RANSAC_NIOS/testbench/RANSAC_NIOS_tb/simulation/submodules/Clock_Counter_Interface.v
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/Eduardo/Documents/UFBA/2023.1/ENGG57/25.06.23/ransac-ransac_v2_review/ransac-ransac_v2_review/hardware/Quartus/RANSAC_NIOS/testbench/RANSAC_NIOS_tb/simulation/submodules/Clock_Counter_Interface.v|
+!s90 -reportprogress|300|C:/Users/Eduardo/Documents/UFBA/2023.1/ENGG57/25.06.23/ransac-ransac_v2_review/ransac-ransac_v2_review/hardware/Quartus/RANSAC_NIOS/testbench/RANSAC_NIOS_tb/simulation/submodules/Clock_Counter_Interface.v|-work|MedidorDesempenho|
+!i113 1
+R6
+R7
+n@clock_@counter_@interface

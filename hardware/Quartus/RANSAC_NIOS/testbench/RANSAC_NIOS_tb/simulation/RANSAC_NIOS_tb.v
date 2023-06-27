@@ -6,12 +6,14 @@
 module RANSAC_NIOS_tb (
 	);
 
-	wire    ransac_nios_inst_clk_bfm_clk_clk;       // RANSAC_NIOS_inst_clk_bfm:clk -> [RANSAC_NIOS_inst:clk_clk, RANSAC_NIOS_inst_reset_bfm:clk]
-	wire    ransac_nios_inst_reset_bfm_reset_reset; // RANSAC_NIOS_inst_reset_bfm:reset -> RANSAC_NIOS_inst:reset_reset_n
+	wire         ransac_nios_inst_clk_bfm_clk_clk;                    // RANSAC_NIOS_inst_clk_bfm:clk -> [RANSAC_NIOS_inst:clk_clk, RANSAC_NIOS_inst_medidordesempenho_conduit_bfm:clk, RANSAC_NIOS_inst_reset_bfm:clk]
+	wire  [31:0] ransac_nios_inst_medidordesempenho_conduit_readdata; // RANSAC_NIOS_inst:medidordesempenho_conduit_readdata -> RANSAC_NIOS_inst_medidordesempenho_conduit_bfm:sig_readdata
+	wire         ransac_nios_inst_reset_bfm_reset_reset;              // RANSAC_NIOS_inst_reset_bfm:reset -> [RANSAC_NIOS_inst:reset_reset_n, RANSAC_NIOS_inst_medidordesempenho_conduit_bfm:reset]
 
 	RANSAC_NIOS ransac_nios_inst (
-		.clk_clk       (ransac_nios_inst_clk_bfm_clk_clk),       //   clk.clk
-		.reset_reset_n (ransac_nios_inst_reset_bfm_reset_reset)  // reset.reset_n
+		.clk_clk                            (ransac_nios_inst_clk_bfm_clk_clk),                    //                       clk.clk
+		.medidordesempenho_conduit_readdata (ransac_nios_inst_medidordesempenho_conduit_readdata), // medidordesempenho_conduit.readdata
+		.reset_reset_n                      (ransac_nios_inst_reset_bfm_reset_reset)               //                     reset.reset_n
 	);
 
 	altera_avalon_clock_source #(
@@ -19,6 +21,12 @@ module RANSAC_NIOS_tb (
 		.CLOCK_UNIT (1)
 	) ransac_nios_inst_clk_bfm (
 		.clk (ransac_nios_inst_clk_bfm_clk_clk)  // clk.clk
+	);
+
+	altera_conduit_bfm ransac_nios_inst_medidordesempenho_conduit_bfm (
+		.clk          (ransac_nios_inst_clk_bfm_clk_clk),                    //     clk.clk
+		.reset        (~ransac_nios_inst_reset_bfm_reset_reset),             //   reset.reset
+		.sig_readdata (ransac_nios_inst_medidordesempenho_conduit_readdata)  // conduit.readdata
 	);
 
 	altera_avalon_reset_source #(

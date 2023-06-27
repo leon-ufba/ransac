@@ -1,4 +1,3 @@
- # ----------------------------------------
 # # TOP-LEVEL TEMPLATE - BEGIN
 # #
 # # QSYS_SIMDIR is used in the Quartus-generated IP simulation script to
@@ -9,10 +8,10 @@
 # # generated the IP script, relative to the directory from which you launch
 # # the simulator.
 # #
-set QSYS_SIMDIR  C:/ti/projetos/LAB4/ransac/hardware/Quartus/RANSAC_NIOS/testbench/mentor
+set QSYS_SIMDIR C:/Users/Eduardo/Documents/UFBA/2023.1/ENGG57/25.06.23/ransac-ransac_v2_review/ransac-ransac_v2_review/hardware/Quartus/RANSAC_NIOS/testbench/mentor
 # #
 # # Source the generated IP simulation script.
-# source C:/ti/projetos/LAB4/ransac/hardware/Quartus/RANSAC_NIOS/simulation/mentor
+# source $QSYS_SIMDIR/mentor/msim_setup.tcl
 # #
 # # Set any compilation options you require (this is unusual).
 # set USER_DEFINED_COMPILE_OPTIONS <compilation options>
@@ -29,7 +28,9 @@ set QSYS_SIMDIR  C:/ti/projetos/LAB4/ransac/hardware/Quartus/RANSAC_NIOS/testben
 # # the top level. (These are all the files required for simulation other
 # # than the files compiled by the Quartus-generated IP simulation script)
 # #
-# vlog $QSYS_SIMDIR <compilation options> <design and testbench files>
+vlog $QSYS_SIMDIR/../../../RANSAC.v
+vlog $QSYS_SIMDIR/../../../RANSAC_NIOS/RANSACNiosTB.v
+ 
 # #
 # # Set the top-level simulation or testbench module/entity name, which is
 # # used by the elab command to elaborate the top level.
@@ -41,8 +42,7 @@ set QSYS_SIMDIR  C:/ti/projetos/LAB4/ransac/hardware/Quartus/RANSAC_NIOS/testben
 # #
 # # Call command to elaborate your design and testbench.
 elab
-#do simulacao.do
-# #
+do formato.do
 # # Run the simulation.
 # run -a
 # #
@@ -50,4 +50,3 @@ elab
 # exit -code 0
 # #
 # # TOP-LEVEL TEMPLATE - END
-# ----------------------------------------

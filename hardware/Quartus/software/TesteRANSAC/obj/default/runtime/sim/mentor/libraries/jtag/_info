@@ -1,0 +1,120 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Eduardo/Documents/UFBA/2023.1/ENGG57/25.06.23/ransac-ransac_v2_review/ransac-ransac_v2_review/hardware/Quartus/software/TesteRANSAC/obj/default/runtime/sim/mentor
+vRANSAC_NIOS_jtag
+Z1 !s110 1687819348
+!i10b 1
+!s100 88ic;b0fHdL`>0IY`h_li3
+IK;fF94hi3CWZH5f@:YTk;1
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1687798716
+Z4 8C:/Users/Eduardo/Documents/UFBA/2023.1/ENGG57/25.06.23/ransac-ransac_v2_review/ransac-ransac_v2_review/hardware/Quartus/RANSAC_NIOS/testbench/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_jtag.v
+Z5 FC:/Users/Eduardo/Documents/UFBA/2023.1/ENGG57/25.06.23/ransac-ransac_v2_review/ransac-ransac_v2_review/hardware/Quartus/RANSAC_NIOS/testbench/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_jtag.v
+L0 331
+Z6 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z7 !s108 1687819348.000000
+Z8 !s107 C:/Users/Eduardo/Documents/UFBA/2023.1/ENGG57/25.06.23/ransac-ransac_v2_review/ransac-ransac_v2_review/hardware/Quartus/RANSAC_NIOS/testbench/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_jtag.v|
+Z9 !s90 -reportprogress|300|C:/Users/Eduardo/Documents/UFBA/2023.1/ENGG57/25.06.23/ransac-ransac_v2_review/ransac-ransac_v2_review/hardware/Quartus/RANSAC_NIOS/testbench/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_jtag.v|-work|jtag|
+!i113 1
+Z10 o-work jtag
+Z11 tCvgOpt 0
+n@r@a@n@s@a@c_@n@i@o@s_jtag
+vRANSAC_NIOS_jtag_scfifo_r
+R1
+!i10b 1
+!s100 Y4QVZj1liRWIC[_F:4[DC0
+I>H8C8=Yo@^N?Q6>K:JCRh0
+R2
+R0
+R3
+R4
+R5
+L0 243
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+n@r@a@n@s@a@c_@n@i@o@s_jtag_scfifo_r
+vRANSAC_NIOS_jtag_scfifo_w
+R1
+!i10b 1
+!s100 OC3PeBHK>Roc:NP4fFF^E2
+IbNh^i6aI8eDKOj[M]]?[U2
+R2
+R0
+R3
+R4
+R5
+L0 78
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+n@r@a@n@s@a@c_@n@i@o@s_jtag_scfifo_w
+vRANSAC_NIOS_jtag_sim_scfifo_r
+R1
+!i10b 1
+!s100 JgR_nL[1KbBT3odjYJ<C]0
+I;3kQE^Rn3io?OaIAX7Pd>3
+R2
+R0
+R3
+R4
+R5
+L0 164
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+n@r@a@n@s@a@c_@n@i@o@s_jtag_sim_scfifo_r
+vRANSAC_NIOS_jtag_sim_scfifo_w
+R1
+!i10b 1
+!s100 U_`<e^eY[mYXK;;bMAg>A2
+ID^1]3_cXn@Mh07CLQKZ`]3
+R2
+R0
+R3
+R4
+R5
+L0 21
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+n@r@a@n@s@a@c_@n@i@o@s_jtag_sim_scfifo_w

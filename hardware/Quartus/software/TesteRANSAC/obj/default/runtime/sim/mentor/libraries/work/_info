@@ -1,0 +1,73 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Eduardo/Documents/UFBA/2023.1/ENGG57/25.06.23/ransac-ransac_v2_review/ransac-ransac_v2_review/hardware/Quartus/software/TesteRANSAC/obj/default/runtime/sim/mentor
+vRANSAC
+Z1 !s110 1687820234
+!i10b 1
+!s100 ZWI9ldi4GYJ]8go^Xd<be2
+I2ZcWP4zV^kDoTf3IgJXYm3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1687799937
+8C:/Users/Eduardo/Documents/UFBA/2023.1/ENGG57/25.06.23/ransac-ransac_v2_review/ransac-ransac_v2_review/hardware/Quartus/RANSAC_NIOS/testbench/mentor/../../../RANSAC.v
+FC:/Users/Eduardo/Documents/UFBA/2023.1/ENGG57/25.06.23/ransac-ransac_v2_review/ransac-ransac_v2_review/hardware/Quartus/RANSAC_NIOS/testbench/mentor/../../../RANSAC.v
+L0 19
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1687820234.000000
+!s107 C:/Users/Eduardo/Documents/UFBA/2023.1/ENGG57/25.06.23/ransac-ransac_v2_review/ransac-ransac_v2_review/hardware/Quartus/RANSAC_NIOS/testbench/mentor/../../../RANSAC.v|
+!s90 -reportprogress|300|C:/Users/Eduardo/Documents/UFBA/2023.1/ENGG57/25.06.23/ransac-ransac_v2_review/ransac-ransac_v2_review/hardware/Quartus/RANSAC_NIOS/testbench/mentor/../../../RANSAC.v|
+!i113 1
+Z5 tCvgOpt 0
+n@r@a@n@s@a@c
+vRANSAC_NIOS_tb
+!s110 1687819351
+!i10b 1
+!s100 <;`4G53Kd[PmA3`Sl_CTF0
+IAihD6K0[M3KNN593bN<3>3
+R2
+R0
+w1687798686
+8C:/Users/Eduardo/Documents/UFBA/2023.1/ENGG57/25.06.23/ransac-ransac_v2_review/ransac-ransac_v2_review/hardware/Quartus/RANSAC_NIOS/testbench/RANSAC_NIOS_tb/simulation/RANSAC_NIOS_tb.v
+FC:/Users/Eduardo/Documents/UFBA/2023.1/ENGG57/25.06.23/ransac-ransac_v2_review/ransac-ransac_v2_review/hardware/Quartus/RANSAC_NIOS/testbench/RANSAC_NIOS_tb/simulation/RANSAC_NIOS_tb.v
+L0 6
+R3
+r1
+!s85 0
+31
+!s108 1687819351.000000
+!s107 C:/Users/Eduardo/Documents/UFBA/2023.1/ENGG57/25.06.23/ransac-ransac_v2_review/ransac-ransac_v2_review/hardware/Quartus/RANSAC_NIOS/testbench/RANSAC_NIOS_tb/simulation/RANSAC_NIOS_tb.v|
+!s90 -reportprogress|300|C:/Users/Eduardo/Documents/UFBA/2023.1/ENGG57/25.06.23/ransac-ransac_v2_review/ransac-ransac_v2_review/hardware/Quartus/RANSAC_NIOS/testbench/RANSAC_NIOS_tb/simulation/RANSAC_NIOS_tb.v|
+!i113 1
+R5
+n@r@a@n@s@a@c_@n@i@o@s_tb
+vRANSACNiosTB
+R1
+!i10b 1
+!s100 ?QNWAMEX2kQHEIJkKA2AZ1
+I`?MV>H>j:hD[`IlEALZN32
+R2
+R0
+w1687813348
+8C:/Users/Eduardo/Documents/UFBA/2023.1/ENGG57/25.06.23/ransac-ransac_v2_review/ransac-ransac_v2_review/hardware/Quartus/RANSAC_NIOS/testbench/mentor/../../../RANSAC_NIOS/RANSACNiosTB.v
+FC:/Users/Eduardo/Documents/UFBA/2023.1/ENGG57/25.06.23/ransac-ransac_v2_review/ransac-ransac_v2_review/hardware/Quartus/RANSAC_NIOS/testbench/mentor/../../../RANSAC_NIOS/RANSACNiosTB.v
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/Eduardo/Documents/UFBA/2023.1/ENGG57/25.06.23/ransac-ransac_v2_review/ransac-ransac_v2_review/hardware/Quartus/RANSAC_NIOS/testbench/mentor/../../../RANSAC_NIOS/RANSACNiosTB.v|
+!s90 -reportprogress|300|C:/Users/Eduardo/Documents/UFBA/2023.1/ENGG57/25.06.23/ransac-ransac_v2_review/ransac-ransac_v2_review/hardware/Quartus/RANSAC_NIOS/testbench/mentor/../../../RANSAC_NIOS/RANSACNiosTB.v|
+!i113 1
+R5
+n@r@a@n@s@a@c@nios@t@b

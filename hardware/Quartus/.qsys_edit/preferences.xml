@@ -3,12 +3,13 @@
  <debug showDebugMenu="0" />
  <systemtable filter="All Interfaces">
   <columns>
-   <connections preferredWidth="127" />
+   <connections preferredWidth="143" />
    <irq preferredWidth="34" />
+   <name preferredWidth="189" />
+   <export preferredWidth="184" />
   </columns>
  </systemtable>
- <library
-   expandedCategories="Project,Library/Basic Functions/On Chip Memory,Library/DSP,Library/Basic Functions,Library" />
- <window width="1366" height="720" x="4" y="-899" />
+ <library expandedCategories="Project/Meus componentes,Library,Project" />
+ <window width="1382" height="784" x="-8" y="-8" />
  <generation simulation="NONE" path="_PROJECT_NAME_" />
 </preferences>

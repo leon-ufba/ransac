@@ -35,7 +35,7 @@ Info: Reading index C:\ti\projetos\LAB4\ransac\hardware\Quartus\RANSAC_NIOS\test
 Progress: Loading Quartus/RANSAC_NIOS.qsys
 Info: C:/ti/projetos/LAB4/ransac/hardware/Quartus/* matched 18 files in 0,00 seconds
 Info: C:/ti/projetos/LAB4/ransac/hardware/Quartus/ip/**/* matched 0 files in 0,00 seconds
-Info: C:/ti/projetos/LAB4/ransac/hardware/Quartus/*/* matched 325 files in 0,02 seconds
+Info: C:/ti/projetos/LAB4/ransac/hardware/Quartus/*/* matched 326 files in 0,03 seconds
 Info: C:\ti\projetos\LAB4\ransac\hardware\Quartus\RANSAC_NIOS\testbench\RANSAC_NIOS.ipx described 0 plugins, 3 paths, in 0,03 seconds
 Progress: Loading testbench/RANSAC_NIOS_tb.qsys
 Info: C:/ti/projetos/LAB4/ransac/hardware/Quartus/RANSAC_NIOS/testbench/* matched 12 files in 0,03 seconds
@@ -45,18 +45,18 @@ Info: D:/quartus/quartus/sopc_builder/bin/$$QUARTUS_IP_PROJECTDIR/* matched 0 fi
 Info: D:/quartus/quartus/sopc_builder/bin/$$QUARTUS_IP_USERDIR/* matched 0 files in 0,00 seconds
 Info: D:/quartus/quartus/sopc_builder/bin/$$QUARTUS_IP_GLOBALDIR/* matched 0 files in 0,00 seconds
 Info: Reading index D:\quartus\ip\altera\altera_components.ipx
-Info: D:\quartus\ip\altera\altera_components.ipx described 2035 plugins, 0 paths, in 0,16 seconds
-Info: D:/quartus/ip/**/* matched 139 files in 0,16 seconds
+Info: D:\quartus\ip\altera\altera_components.ipx described 2035 plugins, 0 paths, in 0,19 seconds
+Info: D:/quartus/ip/**/* matched 139 files in 0,19 seconds
 Info: D:/ip/**/* matched 0 files in 0,00 seconds
 Info: Reading index D:\quartus\quartus\sopc_builder\builtin.ipx
 Info: D:\quartus\quartus\sopc_builder\builtin.ipx described 83 plugins, 0 paths, in 0,01 seconds
 Info: D:/quartus/quartus/sopc_builder/**/* matched 8 files in 0,01 seconds
 Info: Reading index D:\quartus\quartus\common\librarian\factories\index.ipx
 Info: D:\quartus\quartus\common\librarian\factories\index.ipx described 151 plugins, 0 paths, in 0,01 seconds
-Info: D:/quartus/quartus/common/librarian/factories/**/* matched 4 files in 0,01 seconds
+Info: D:/quartus/quartus/common/librarian/factories/**/* matched 4 files in 0,02 seconds
 Info: D:/quartus/quartus/sopc_builder/bin/$IP_IPX_PATH matched 1 files in 0,00 seconds
-Info: D:\quartus\quartus\sopc_builder\bin\root_components.ipx described 0 plugins, 13 paths, in 0,23 seconds
-Info: D:/quartus/quartus/sopc_builder/bin/root_components.ipx matched 1 files in 0,23 seconds
+Info: D:\quartus\quartus\sopc_builder\bin\root_components.ipx described 0 plugins, 13 paths, in 0,26 seconds
+Info: D:/quartus/quartus/sopc_builder/bin/root_components.ipx matched 1 files in 0,26 seconds
 Progress: 
 Progress: 
 Progress: 
@@ -158,32 +158,32 @@ Info: RANSAC_NIOS_inst_clk_bfm: "RANSAC_NIOS_tb" instantiated altera_avalon_cloc
 Info: RANSAC_NIOS_inst_reset_bfm: "RANSAC_NIOS_tb" instantiated altera_avalon_reset_source "RANSAC_NIOS_inst_reset_bfm"
 Info: Reusing file C:/ti/projetos/LAB4/ransac/hardware/Quartus/RANSAC_NIOS/testbench/RANSAC_NIOS_tb/simulation/submodules/verbosity_pkg.sv
 Info: Processador: Starting RTL generation for module 'RANSAC_NIOS_Processador'
-Info: Processador:   Generation command is [exec D:/quartus/quartus/bin64/eperlcmd.exe -I D:/quartus/quartus/bin64/perl/lib -I D:/quartus/quartus/sopc_builder/bin/europa -I D:/quartus/quartus/sopc_builder/bin/perl_lib -I D:/quartus/quartus/sopc_builder/bin -I D:/quartus/quartus/../ip/altera/nios2_ip/altera_nios2/cpu_lib -I D:/quartus/quartus/../ip/altera/nios2_ip/altera_nios2/nios_lib -I D:/quartus/quartus/../ip/altera/nios2_ip/altera_nios2 -I D:/quartus/quartus/../ip/altera/nios2_ip/altera_nios2 -- D:/quartus/quartus/../ip/altera/nios2_ip/altera_nios2/generate_rtl.epl --name=RANSAC_NIOS_Processador --dir=C:/Users/diego/AppData/Local/Temp/alt9532_9010644643717128564.dir/0091_Processador_gen/ --quartus_bindir=D:/quartus/quartus/bin64 --verilog --config=C:/Users/diego/AppData/Local/Temp/alt9532_9010644643717128564.dir/0091_Processador_gen//RANSAC_NIOS_Processador_processor_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/diego/AppData/Local/Temp/alt9532_9010644643717128564.dir/0091_Processador_gen/  ]
-Info: Processador: # 2023.06.24 22:06:16 (*) Starting Nios II generation
-Info: Processador: # 2023.06.24 22:06:16 (*)   Checking for plaintext license.
-Info: Processador: # 2023.06.24 22:06:17 (*)   Couldn't query license setup in Quartus directory D:/quartus/quartus/bin64
-Info: Processador: # 2023.06.24 22:06:17 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
-Info: Processador: # 2023.06.24 22:06:17 (*)   LM_LICENSE_FILE environment variable is empty
-Info: Processador: # 2023.06.24 22:06:17 (*)   Plaintext license not found.
-Info: Processador: # 2023.06.24 22:06:17 (*)   No license required to generate encrypted Nios II/e.
-Info: Processador: # 2023.06.24 22:06:17 (*)   Elaborating CPU configuration settings
-Info: Processador: # 2023.06.24 22:06:17 (*)   Creating all objects for CPU
-Info: Processador: # 2023.06.24 22:06:18 (*)   Creating 'C:/Users/diego/AppData/Local/Temp/alt9532_9010644643717128564.dir/0091_Processador_gen//RANSAC_NIOS_Processador_nios2_waves.do'
-Info: Processador: # 2023.06.24 22:06:18 (*)   Generating RTL from CPU objects
-Info: Processador: # 2023.06.24 22:06:18 (*)   Creating plain-text RTL
-Info: Processador: # 2023.06.24 22:06:20 (*) Done Nios II generation
+Info: Processador:   Generation command is [exec D:/quartus/quartus/bin64/eperlcmd.exe -I D:/quartus/quartus/bin64/perl/lib -I D:/quartus/quartus/sopc_builder/bin/europa -I D:/quartus/quartus/sopc_builder/bin/perl_lib -I D:/quartus/quartus/sopc_builder/bin -I D:/quartus/quartus/../ip/altera/nios2_ip/altera_nios2/cpu_lib -I D:/quartus/quartus/../ip/altera/nios2_ip/altera_nios2/nios_lib -I D:/quartus/quartus/../ip/altera/nios2_ip/altera_nios2 -I D:/quartus/quartus/../ip/altera/nios2_ip/altera_nios2 -- D:/quartus/quartus/../ip/altera/nios2_ip/altera_nios2/generate_rtl.epl --name=RANSAC_NIOS_Processador --dir=C:/Users/diego/AppData/Local/Temp/alt9532_9010644643717128564.dir/0163_Processador_gen/ --quartus_bindir=D:/quartus/quartus/bin64 --verilog --config=C:/Users/diego/AppData/Local/Temp/alt9532_9010644643717128564.dir/0163_Processador_gen//RANSAC_NIOS_Processador_processor_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/diego/AppData/Local/Temp/alt9532_9010644643717128564.dir/0163_Processador_gen/  ]
+Info: Processador: # 2023.06.25 11:25:57 (*) Starting Nios II generation
+Info: Processador: # 2023.06.25 11:25:57 (*)   Checking for plaintext license.
+Info: Processador: # 2023.06.25 11:25:58 (*)   Couldn't query license setup in Quartus directory D:/quartus/quartus/bin64
+Info: Processador: # 2023.06.25 11:25:58 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
+Info: Processador: # 2023.06.25 11:25:58 (*)   LM_LICENSE_FILE environment variable is empty
+Info: Processador: # 2023.06.25 11:25:58 (*)   Plaintext license not found.
+Info: Processador: # 2023.06.25 11:25:58 (*)   No license required to generate encrypted Nios II/e.
+Info: Processador: # 2023.06.25 11:25:58 (*)   Elaborating CPU configuration settings
+Info: Processador: # 2023.06.25 11:25:58 (*)   Creating all objects for CPU
+Info: Processador: # 2023.06.25 11:25:59 (*)   Creating 'C:/Users/diego/AppData/Local/Temp/alt9532_9010644643717128564.dir/0163_Processador_gen//RANSAC_NIOS_Processador_nios2_waves.do'
+Info: Processador: # 2023.06.25 11:25:59 (*)   Generating RTL from CPU objects
+Info: Processador: # 2023.06.25 11:25:59 (*)   Creating plain-text RTL
+Info: Processador: # 2023.06.25 11:26:01 (*) Done Nios II generation
 Info: Processador: Done RTL generation for module 'RANSAC_NIOS_Processador'
 Info: Processador: "RANSAC_NIOS_inst" instantiated altera_nios2_qsys "Processador"
 Info: jtag: Starting RTL generation for module 'RANSAC_NIOS_jtag'
-Info: jtag:   Generation command is [exec D:/quartus/quartus/bin64/perl/bin/perl.exe -I D:/quartus/quartus/bin64/perl/lib -I D:/quartus/quartus/sopc_builder/bin/europa -I D:/quartus/quartus/sopc_builder/bin/perl_lib -I D:/quartus/quartus/sopc_builder/bin -I D:/quartus/quartus/../ip/altera/sopc_builder_ip/common -I D:/quartus/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- D:/quartus/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=RANSAC_NIOS_jtag --dir=C:/Users/diego/AppData/Local/Temp/alt9532_9010644643717128564.dir/0092_jtag_gen/ --quartus_dir=D:/quartus/quartus --verilog --config=C:/Users/diego/AppData/Local/Temp/alt9532_9010644643717128564.dir/0092_jtag_gen//RANSAC_NIOS_jtag_component_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/diego/AppData/Local/Temp/alt9532_9010644643717128564.dir/0092_jtag_gen/  ]
+Info: jtag:   Generation command is [exec D:/quartus/quartus/bin64/perl/bin/perl.exe -I D:/quartus/quartus/bin64/perl/lib -I D:/quartus/quartus/sopc_builder/bin/europa -I D:/quartus/quartus/sopc_builder/bin/perl_lib -I D:/quartus/quartus/sopc_builder/bin -I D:/quartus/quartus/../ip/altera/sopc_builder_ip/common -I D:/quartus/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- D:/quartus/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=RANSAC_NIOS_jtag --dir=C:/Users/diego/AppData/Local/Temp/alt9532_9010644643717128564.dir/0164_jtag_gen/ --quartus_dir=D:/quartus/quartus --verilog --config=C:/Users/diego/AppData/Local/Temp/alt9532_9010644643717128564.dir/0164_jtag_gen//RANSAC_NIOS_jtag_component_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/diego/AppData/Local/Temp/alt9532_9010644643717128564.dir/0164_jtag_gen/  ]
 Info: jtag: Done RTL generation for module 'RANSAC_NIOS_jtag'
 Info: jtag: "RANSAC_NIOS_inst" instantiated altera_avalon_jtag_uart "jtag"
 Info: memoria: Starting RTL generation for module 'RANSAC_NIOS_memoria'
-Info: memoria:   Generation command is [exec D:/quartus/quartus/bin64/perl/bin/perl.exe -I D:/quartus/quartus/bin64/perl/lib -I D:/quartus/quartus/sopc_builder/bin/europa -I D:/quartus/quartus/sopc_builder/bin/perl_lib -I D:/quartus/quartus/sopc_builder/bin -I D:/quartus/quartus/../ip/altera/sopc_builder_ip/common -I D:/quartus/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- D:/quartus/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=RANSAC_NIOS_memoria --dir=C:/Users/diego/AppData/Local/Temp/alt9532_9010644643717128564.dir/0093_memoria_gen/ --quartus_dir=D:/quartus/quartus --verilog --config=C:/Users/diego/AppData/Local/Temp/alt9532_9010644643717128564.dir/0093_memoria_gen//RANSAC_NIOS_memoria_component_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/diego/AppData/Local/Temp/alt9532_9010644643717128564.dir/0093_memoria_gen/  ]
+Info: memoria:   Generation command is [exec D:/quartus/quartus/bin64/perl/bin/perl.exe -I D:/quartus/quartus/bin64/perl/lib -I D:/quartus/quartus/sopc_builder/bin/europa -I D:/quartus/quartus/sopc_builder/bin/perl_lib -I D:/quartus/quartus/sopc_builder/bin -I D:/quartus/quartus/../ip/altera/sopc_builder_ip/common -I D:/quartus/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- D:/quartus/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=RANSAC_NIOS_memoria --dir=C:/Users/diego/AppData/Local/Temp/alt9532_9010644643717128564.dir/0165_memoria_gen/ --quartus_dir=D:/quartus/quartus --verilog --config=C:/Users/diego/AppData/Local/Temp/alt9532_9010644643717128564.dir/0165_memoria_gen//RANSAC_NIOS_memoria_component_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/diego/AppData/Local/Temp/alt9532_9010644643717128564.dir/0165_memoria_gen/  ]
 Info: memoria: Done RTL generation for module 'RANSAC_NIOS_memoria'
 Info: memoria: "RANSAC_NIOS_inst" instantiated altera_avalon_onchip_memory2 "memoria"
 Info: memoria_dados: Starting RTL generation for module 'RANSAC_NIOS_memoria_dados'
-Info: memoria_dados:   Generation command is [exec D:/quartus/quartus/bin64/perl/bin/perl.exe -I D:/quartus/quartus/bin64/perl/lib -I D:/quartus/quartus/sopc_builder/bin/europa -I D:/quartus/quartus/sopc_builder/bin/perl_lib -I D:/quartus/quartus/sopc_builder/bin -I D:/quartus/quartus/../ip/altera/sopc_builder_ip/common -I D:/quartus/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- D:/quartus/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=RANSAC_NIOS_memoria_dados --dir=C:/Users/diego/AppData/Local/Temp/alt9532_9010644643717128564.dir/0094_memoria_dados_gen/ --quartus_dir=D:/quartus/quartus --verilog --config=C:/Users/diego/AppData/Local/Temp/alt9532_9010644643717128564.dir/0094_memoria_dados_gen//RANSAC_NIOS_memoria_dados_component_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/diego/AppData/Local/Temp/alt9532_9010644643717128564.dir/0094_memoria_dados_gen/  ]
+Info: memoria_dados:   Generation command is [exec D:/quartus/quartus/bin64/perl/bin/perl.exe -I D:/quartus/quartus/bin64/perl/lib -I D:/quartus/quartus/sopc_builder/bin/europa -I D:/quartus/quartus/sopc_builder/bin/perl_lib -I D:/quartus/quartus/sopc_builder/bin -I D:/quartus/quartus/../ip/altera/sopc_builder_ip/common -I D:/quartus/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- D:/quartus/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=RANSAC_NIOS_memoria_dados --dir=C:/Users/diego/AppData/Local/Temp/alt9532_9010644643717128564.dir/0166_memoria_dados_gen/ --quartus_dir=D:/quartus/quartus --verilog --config=C:/Users/diego/AppData/Local/Temp/alt9532_9010644643717128564.dir/0166_memoria_dados_gen//RANSAC_NIOS_memoria_dados_component_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/diego/AppData/Local/Temp/alt9532_9010644643717128564.dir/0166_memoria_dados_gen/  ]
 Info: memoria_dados: Done RTL generation for module 'RANSAC_NIOS_memoria_dados'
 Info: memoria_dados: "RANSAC_NIOS_inst" instantiated altera_avalon_onchip_memory2 "memoria_dados"
 Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
@@ -214,7 +214,7 @@ Info: rsp_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "r
 Info: Reusing file C:/ti/projetos/LAB4/ransac/hardware/Quartus/RANSAC_NIOS/testbench/RANSAC_NIOS_tb/simulation/submodules/altera_merlin_arbitrator.sv
 Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
 Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
-Info: RANSAC_NIOS_tb: Done "RANSAC_NIOS_tb" with 29 modules, 52 files
+Info: RANSAC_NIOS_tb: Done "RANSAC_NIOS_tb" with 29 modules, 51 files
 Info: qsys-generate succeeded.
 Info: sim-script-gen --spd=C:\ti\projetos\LAB4\ransac\hardware\Quartus\RANSAC_NIOS_tb.spd --output-directory=C:/ti/projetos/LAB4/ransac/hardware/Quartus/RANSAC_NIOS/testbench/ --use-relative-paths=true
 Info: Doing: ip-make-simscript --spd=C:\ti\projetos\LAB4\ransac\hardware\Quartus\RANSAC_NIOS_tb.spd --output-directory=C:/ti/projetos/LAB4/ransac/hardware/Quartus/RANSAC_NIOS/testbench/ --use-relative-paths=true
