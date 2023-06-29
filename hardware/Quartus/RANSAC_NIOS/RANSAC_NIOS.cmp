@@ -1,8 +1,7 @@
 	component RANSAC_NIOS is
 		port (
-			clk_clk                            : in  std_logic                     := 'X'; -- clk
-			medidordesempenho_conduit_readdata : out std_logic_vector(31 downto 0);        -- readdata
-			reset_reset_n                      : in  std_logic                     := 'X'  -- reset_n
+			clk_clk       : in std_logic := 'X'; -- clk
+			reset_reset_n : in std_logic := 'X'  -- reset_n
 		);
 	end component RANSAC_NIOS;
 

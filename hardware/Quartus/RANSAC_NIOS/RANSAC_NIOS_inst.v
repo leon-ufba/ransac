@@ -1,6 +1,5 @@
 	RANSAC_NIOS u0 (
-		.clk_clk                            (<connected-to-clk_clk>),                            //                       clk.clk
-		.reset_reset_n                      (<connected-to-reset_reset_n>),                      //                     reset.reset_n
-		.medidordesempenho_conduit_readdata (<connected-to-medidordesempenho_conduit_readdata>)  // medidordesempenho_conduit.readdata
+		.clk_clk       (<connected-to-clk_clk>),       //   clk.clk
+		.reset_reset_n (<connected-to-reset_reset_n>)  // reset.reset_n
 	);
 

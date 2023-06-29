@@ -9,30 +9,6 @@
    categories="System" />
  <parameter name="bonusData"><![CDATA[bonusData 
 {
-   element MedidorDesempenho
-   {
-      datum _sortIndex
-      {
-         value = "5";
-         type = "int";
-      }
-   }
-   element MedidorDesempenho.Escrita
-   {
-      datum baseAddress
-      {
-         value = "331784";
-         type = "String";
-      }
-   }
-   element MedidorDesempenho.Leitura
-   {
-      datum baseAddress
-      {
-         value = "331788";
-         type = "String";
-      }
-   }
    element Processador
    {
       datum _sortIndex
@@ -137,17 +113,7 @@
  <parameter name="useTestBenchNamingPattern" value="false" />
  <instanceScript></instanceScript>
  <interface name="clk" internal="clock.clk_in" type="clock" dir="end" />
- <interface
-   name="medidordesempenho_conduit"
-   internal="MedidorDesempenho.conduit"
-   type="conduit"
-   dir="end" />
  <interface name="reset" internal="clock.clk_in_reset" type="reset" dir="end" />
- <module
-   name="MedidorDesempenho"
-   kind="MedidorDesempenho"
-   version="1.0"
-   enabled="1" />
  <module
    name="Processador"
    kind="altera_nios2_qsys"
@@ -162,7 +128,7 @@
   <parameter name="cpuReset" value="false" />
   <parameter name="customInstSlavesSystemInfo" value="&lt;info/&gt;" />
   <parameter name="dataAddrWidth" value="19" />
-  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='memoria.s1' start='0x0' end='0x40000' /><slave name='memoria_dados.s1' start='0x40000' end='0x50000' /><slave name='Processador.jtag_debug_module' start='0x50800' end='0x51000' /><slave name='jtag.avalon_jtag_slave' start='0x51000' end='0x51008' /><slave name='MedidorDesempenho.Escrita' start='0x51008' end='0x5100C' /><slave name='MedidorDesempenho.Leitura' start='0x5100C' end='0x51010' /></address-map>]]></parameter>
+  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='memoria.s1' start='0x0' end='0x40000' /><slave name='memoria_dados.s1' start='0x40000' end='0x50000' /><slave name='Processador.jtag_debug_module' start='0x50800' end='0x51000' /><slave name='jtag.avalon_jtag_slave' start='0x51000' end='0x51008' /></address-map>]]></parameter>
   <parameter name="dcache_bursts" value="false" />
   <parameter name="dcache_lineSize" value="32" />
   <parameter name="dcache_numTCDM" value="0" />
@@ -306,7 +272,7 @@
    version="18.1"
    enabled="1">
   <parameter name="allowInSystemMemoryContentEditor" value="false" />
-  <parameter name="autoInitializationFileName">$${FILENAME}_memoria</parameter>
+  <parameter name="autoInitializationFileName" value="RANSAC_NIOS_memoria" />
   <parameter name="blockType" value="AUTO" />
   <parameter name="copyInitFile" value="false" />
   <parameter name="dataWidth" value="32" />
@@ -338,7 +304,7 @@
    version="18.1"
    enabled="1">
   <parameter name="allowInSystemMemoryContentEditor" value="false" />
-  <parameter name="autoInitializationFileName">$${FILENAME}_memoria_dados</parameter>
+  <parameter name="autoInitializationFileName">RANSAC_NIOS_memoria_dados</parameter>
   <parameter name="blockType" value="AUTO" />
   <parameter name="copyInitFile" value="false" />
   <parameter name="dataWidth" value="32" />
@@ -364,24 +330,6 @@
   <parameter name="useShallowMemBlocks" value="false" />
   <parameter name="writable" value="false" />
  </module>
- <connection
-   kind="avalon"
-   version="18.1"
-   start="Processador.data_master"
-   end="MedidorDesempenho.Escrita">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00051008" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="18.1"
-   start="Processador.data_master"
-   end="MedidorDesempenho.Leitura">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0005100c" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
  <connection
    kind="avalon"
    version="18.1"
@@ -445,11 +393,6 @@
    start="clock.clk"
    end="memoria_dados.clk1" />
  <connection
-   kind="clock"
-   version="18.1"
-   start="clock.clk"
-   end="MedidorDesempenho.clock" />
- <connection
    kind="interrupt"
    version="18.1"
    start="Processador.d_irq"
@@ -457,11 +400,6 @@
   <parameter name="irqNumber" value="7" />
  </connection>
  <connection kind="reset" version="18.1" start="clock.clk_reset" end="jtag.reset" />
- <connection
-   kind="reset"
-   version="18.1"
-   start="clock.clk_reset"
-   end="MedidorDesempenho.reset" />
  <connection
    kind="reset"
    version="18.1"
@@ -482,11 +420,6 @@
    version="18.1"
    start="Processador.jtag_debug_module_reset"
    end="jtag.reset" />
- <connection
-   kind="reset"
-   version="18.1"
-   start="Processador.jtag_debug_module_reset"
-   end="MedidorDesempenho.reset" />
  <connection
    kind="reset"
    version="18.1"

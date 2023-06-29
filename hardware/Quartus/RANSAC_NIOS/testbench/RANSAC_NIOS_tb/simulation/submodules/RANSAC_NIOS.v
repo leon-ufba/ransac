@@ -4,9 +4,8 @@
 
 `timescale 1 ps / 1 ps
 module RANSAC_NIOS (
-		input  wire        clk_clk,                            //                       clk.clk
-		output wire [31:0] medidordesempenho_conduit_readdata, // medidordesempenho_conduit.readdata
-		input  wire        reset_reset_n                       //                     reset.reset_n
+		input  wire  clk_clk,       //   clk.clk
+		input  wire  reset_reset_n  // reset.reset_n
 	);
 
 	wire  [31:0] processador_data_master_readdata;                            // mm_interconnect_0:Processador_data_master_readdata -> Processador:d_readdata
@@ -21,10 +20,6 @@ module RANSAC_NIOS (
 	wire         processador_instruction_master_waitrequest;                  // mm_interconnect_0:Processador_instruction_master_waitrequest -> Processador:i_waitrequest
 	wire  [18:0] processador_instruction_master_address;                      // Processador:i_address -> mm_interconnect_0:Processador_instruction_master_address
 	wire         processador_instruction_master_read;                         // Processador:i_read -> mm_interconnect_0:Processador_instruction_master_read
-	wire         mm_interconnect_0_medidordesempenho_escrita_write;           // mm_interconnect_0:MedidorDesempenho_Escrita_write -> MedidorDesempenho:write
-	wire  [31:0] mm_interconnect_0_medidordesempenho_escrita_writedata;       // mm_interconnect_0:MedidorDesempenho_Escrita_writedata -> MedidorDesempenho:writedata
-	wire  [31:0] mm_interconnect_0_medidordesempenho_leitura_readdata;        // MedidorDesempenho:readdata -> mm_interconnect_0:MedidorDesempenho_Leitura_readdata
-	wire         mm_interconnect_0_medidordesempenho_leitura_read;            // mm_interconnect_0:MedidorDesempenho_Leitura_read -> MedidorDesempenho:read
 	wire         mm_interconnect_0_jtag_avalon_jtag_slave_chipselect;         // mm_interconnect_0:jtag_avalon_jtag_slave_chipselect -> jtag:av_chipselect
 	wire  [31:0] mm_interconnect_0_jtag_avalon_jtag_slave_readdata;           // jtag:av_readdata -> mm_interconnect_0:jtag_avalon_jtag_slave_readdata
 	wire         mm_interconnect_0_jtag_avalon_jtag_slave_waitrequest;        // jtag:av_waitrequest -> mm_interconnect_0:jtag_avalon_jtag_slave_waitrequest
@@ -57,21 +52,11 @@ module RANSAC_NIOS (
 	wire         mm_interconnect_0_memoria_dados_s1_clken;                    // mm_interconnect_0:memoria_dados_s1_clken -> memoria_dados:clken
 	wire         irq_mapper_receiver0_irq;                                    // jtag:av_irq -> irq_mapper:receiver0_irq
 	wire  [31:0] processador_d_irq_irq;                                       // irq_mapper:sender_irq -> Processador:d_irq
-	wire         rst_controller_reset_out_reset;                              // rst_controller:reset_out -> [MedidorDesempenho:reset_n, Processador:reset_n, irq_mapper:reset, jtag:rst_n, mm_interconnect_0:Processador_reset_n_reset_bridge_in_reset_reset, rst_translator:in_reset]
+	wire         rst_controller_reset_out_reset;                              // rst_controller:reset_out -> [Processador:reset_n, irq_mapper:reset, jtag:rst_n, mm_interconnect_0:Processador_reset_n_reset_bridge_in_reset_reset, rst_translator:in_reset]
 	wire         rst_controller_reset_out_reset_req;                          // rst_controller:reset_req -> [Processador:reset_req, rst_translator:reset_req_in]
 	wire         processador_jtag_debug_module_reset_reset;                   // Processador:jtag_debug_module_resetrequest -> rst_controller:reset_in1
 	wire         rst_controller_001_reset_out_reset;                          // rst_controller_001:reset_out -> [memoria:reset, memoria_dados:reset, mm_interconnect_0:memoria_reset1_reset_bridge_in_reset_reset]
 	wire         rst_controller_001_reset_out_reset_req;                      // rst_controller_001:reset_req -> [memoria:reset_req, memoria_dados:reset_req]
-
-	Clock_Counter_Interface medidordesempenho (
-		.clk       (clk_clk),                                               //   clock.clk
-		.reset_n   (~rst_controller_reset_out_reset),                       //   reset.reset_n
-		.read      (mm_interconnect_0_medidordesempenho_leitura_read),      // Leitura.read
-		.readdata  (mm_interconnect_0_medidordesempenho_leitura_readdata),  //        .readdata
-		.write     (mm_interconnect_0_medidordesempenho_escrita_write),     // Escrita.write
-		.writedata (mm_interconnect_0_medidordesempenho_escrita_writedata), //        .writedata
-		.clk_count (medidordesempenho_conduit_readdata)                     // conduit.readdata
-	);
 
 	RANSAC_NIOS_Processador processador (
 		.clk                                   (clk_clk),                                                     //                       clk.clk
@@ -167,10 +152,6 @@ module RANSAC_NIOS (
 		.jtag_avalon_jtag_slave_writedata                (mm_interconnect_0_jtag_avalon_jtag_slave_writedata),          //                                          .writedata
 		.jtag_avalon_jtag_slave_waitrequest              (mm_interconnect_0_jtag_avalon_jtag_slave_waitrequest),        //                                          .waitrequest
 		.jtag_avalon_jtag_slave_chipselect               (mm_interconnect_0_jtag_avalon_jtag_slave_chipselect),         //                                          .chipselect
-		.MedidorDesempenho_Escrita_write                 (mm_interconnect_0_medidordesempenho_escrita_write),           //                 MedidorDesempenho_Escrita.write
-		.MedidorDesempenho_Escrita_writedata             (mm_interconnect_0_medidordesempenho_escrita_writedata),       //                                          .writedata
-		.MedidorDesempenho_Leitura_read                  (mm_interconnect_0_medidordesempenho_leitura_read),            //                 MedidorDesempenho_Leitura.read
-		.MedidorDesempenho_Leitura_readdata              (mm_interconnect_0_medidordesempenho_leitura_readdata),        //                                          .readdata
 		.memoria_s1_address                              (mm_interconnect_0_memoria_s1_address),                        //                                memoria_s1.address
 		.memoria_s1_write                                (mm_interconnect_0_memoria_s1_write),                          //                                          .write
 		.memoria_s1_readdata                             (mm_interconnect_0_memoria_s1_readdata),                       //                                          .readdata

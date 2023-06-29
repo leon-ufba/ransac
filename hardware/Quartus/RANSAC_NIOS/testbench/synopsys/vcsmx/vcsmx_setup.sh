@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 18.1 625 win32 2023.06.26.13:59:12
+# ACDS 18.1 625 win32 2023.06.25.11:26:42
 
 # ----------------------------------------
 # vcsmx - auto-generated simulation script
@@ -107,12 +107,12 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 18.1 625 win32 2023.06.26.13:59:12
+# ACDS 18.1 625 win32 2023.06.25.11:26:42
 # ----------------------------------------
 # initialize variables
 TOP_LEVEL_NAME="RANSAC_NIOS_tb"
 QSYS_SIMDIR="./../../"
-QUARTUS_INSTALL_DIR="C:/intelfpga_lite/18.1/quartus/"
+QUARTUS_INSTALL_DIR="D:/quartus/quartus/"
 SKIP_FILE_COPY=0
 SKIP_DEV_COM=0
 SKIP_COM=0
@@ -153,18 +153,18 @@ mkdir -p ./libraries/avalon_st_adapter/
 mkdir -p ./libraries/rsp_mux_001/
 mkdir -p ./libraries/rsp_mux/
 mkdir -p ./libraries/rsp_demux/
-mkdir -p ./libraries/cmd_mux_003/
+mkdir -p ./libraries/cmd_mux_001/
 mkdir -p ./libraries/cmd_mux/
 mkdir -p ./libraries/cmd_demux_001/
 mkdir -p ./libraries/cmd_demux/
-mkdir -p ./libraries/router_005/
+mkdir -p ./libraries/router_003/
 mkdir -p ./libraries/router_002/
 mkdir -p ./libraries/router_001/
 mkdir -p ./libraries/router/
-mkdir -p ./libraries/MedidorDesempenho_Escrita_agent_rsp_fifo/
-mkdir -p ./libraries/MedidorDesempenho_Escrita_agent/
+mkdir -p ./libraries/jtag_avalon_jtag_slave_agent_rsp_fifo/
+mkdir -p ./libraries/jtag_avalon_jtag_slave_agent/
 mkdir -p ./libraries/Processador_data_master_agent/
-mkdir -p ./libraries/MedidorDesempenho_Escrita_translator/
+mkdir -p ./libraries/jtag_avalon_jtag_slave_translator/
 mkdir -p ./libraries/Processador_data_master_translator/
 mkdir -p ./libraries/rst_controller/
 mkdir -p ./libraries/irq_mapper/
@@ -173,9 +173,7 @@ mkdir -p ./libraries/memoria_dados/
 mkdir -p ./libraries/memoria/
 mkdir -p ./libraries/jtag/
 mkdir -p ./libraries/Processador/
-mkdir -p ./libraries/MedidorDesempenho/
 mkdir -p ./libraries/RANSAC_NIOS_inst_reset_bfm/
-mkdir -p ./libraries/RANSAC_NIOS_inst_medidordesempenho_conduit_bfm/
 mkdir -p ./libraries/RANSAC_NIOS_inst_clk_bfm/
 mkdir -p ./libraries/RANSAC_NIOS_inst/
 mkdir -p ./libraries/altera_ver/
@@ -214,50 +212,47 @@ fi
 # ----------------------------------------
 # compile design files in correct order
 if [ $SKIP_COM -eq 0 ]; then
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/verbosity_pkg.sv"                                                   -work altera_common_sv_packages                     
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_mm_interconnect_0_avalon_st_adapter_error_adapter_0.sv" -work error_adapter_0                               
-  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_mm_interconnect_0_avalon_st_adapter.v"                  -work avalon_st_adapter                             
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_mm_interconnect_0_rsp_mux_001.sv"                       -work rsp_mux_001                                   
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/altera_merlin_arbitrator.sv"                                        -work rsp_mux_001                                   
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_mm_interconnect_0_rsp_mux.sv"                           -work rsp_mux                                       
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/altera_merlin_arbitrator.sv"                                        -work rsp_mux                                       
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_mm_interconnect_0_rsp_demux.sv"                         -work rsp_demux                                     
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_mm_interconnect_0_cmd_mux_003.sv"                       -work cmd_mux_003                                   
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/altera_merlin_arbitrator.sv"                                        -work cmd_mux_003                                   
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_mm_interconnect_0_cmd_mux.sv"                           -work cmd_mux                                       
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/altera_merlin_arbitrator.sv"                                        -work cmd_mux                                       
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_mm_interconnect_0_cmd_demux_001.sv"                     -work cmd_demux_001                                 
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_mm_interconnect_0_cmd_demux.sv"                         -work cmd_demux                                     
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_mm_interconnect_0_router_005.sv"                        -work router_005                                    
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_mm_interconnect_0_router_002.sv"                        -work router_002                                    
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_mm_interconnect_0_router_001.sv"                        -work router_001                                    
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_mm_interconnect_0_router.sv"                            -work router                                        
-  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/altera_avalon_sc_fifo.v"                                            -work MedidorDesempenho_Escrita_agent_rsp_fifo      
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/altera_merlin_slave_agent.sv"                                       -work MedidorDesempenho_Escrita_agent               
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/altera_merlin_burst_uncompressor.sv"                                -work MedidorDesempenho_Escrita_agent               
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/altera_merlin_master_agent.sv"                                      -work Processador_data_master_agent                 
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/altera_merlin_slave_translator.sv"                                  -work MedidorDesempenho_Escrita_translator          
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/altera_merlin_master_translator.sv"                                 -work Processador_data_master_translator            
-  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/altera_reset_controller.v"                                          -work rst_controller                                
-  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/altera_reset_synchronizer.v"                                        -work rst_controller                                
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_irq_mapper.sv"                                          -work irq_mapper                                    
-  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_mm_interconnect_0.v"                                    -work mm_interconnect_0                             
-  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_memoria_dados.v"                                        -work memoria_dados                                 
-  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_memoria.v"                                              -work memoria                                       
-  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_jtag.v"                                                 -work jtag                                          
-  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_Processador.v"                                          -work Processador                                   
-  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_Processador_jtag_debug_module_sysclk.v"                 -work Processador                                   
-  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_Processador_jtag_debug_module_tck.v"                    -work Processador                                   
-  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_Processador_jtag_debug_module_wrapper.v"                -work Processador                                   
-  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_Processador_oci_test_bench.v"                           -work Processador                                   
-  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_Processador_test_bench.v"                               -work Processador                                   
-  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/Clock_Counter_Interface.v"                                          -work MedidorDesempenho                             
-  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/Clock_Counter.v"                                                    -work MedidorDesempenho                             
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/altera_avalon_reset_source.sv"                                      -work RANSAC_NIOS_inst_reset_bfm                    
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/altera_conduit_bfm.sv"                                              -work RANSAC_NIOS_inst_medidordesempenho_conduit_bfm
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/altera_avalon_clock_source.sv"                                      -work RANSAC_NIOS_inst_clk_bfm                      
-  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS.v"                                                      -work RANSAC_NIOS_inst                              
-  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/RANSAC_NIOS_tb.v"                                                                                                                  
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/verbosity_pkg.sv"                                                   -work altera_common_sv_packages            
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_mm_interconnect_0_avalon_st_adapter_error_adapter_0.sv" -work error_adapter_0                      
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_mm_interconnect_0_avalon_st_adapter.v"                  -work avalon_st_adapter                    
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_mm_interconnect_0_rsp_mux_001.sv"                       -work rsp_mux_001                          
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/altera_merlin_arbitrator.sv"                                        -work rsp_mux_001                          
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_mm_interconnect_0_rsp_mux.sv"                           -work rsp_mux                              
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/altera_merlin_arbitrator.sv"                                        -work rsp_mux                              
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_mm_interconnect_0_rsp_demux.sv"                         -work rsp_demux                            
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_mm_interconnect_0_cmd_mux_001.sv"                       -work cmd_mux_001                          
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/altera_merlin_arbitrator.sv"                                        -work cmd_mux_001                          
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_mm_interconnect_0_cmd_mux.sv"                           -work cmd_mux                              
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/altera_merlin_arbitrator.sv"                                        -work cmd_mux                              
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_mm_interconnect_0_cmd_demux_001.sv"                     -work cmd_demux_001                        
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_mm_interconnect_0_cmd_demux.sv"                         -work cmd_demux                            
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_mm_interconnect_0_router_003.sv"                        -work router_003                           
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_mm_interconnect_0_router_002.sv"                        -work router_002                           
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_mm_interconnect_0_router_001.sv"                        -work router_001                           
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_mm_interconnect_0_router.sv"                            -work router                               
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/altera_avalon_sc_fifo.v"                                            -work jtag_avalon_jtag_slave_agent_rsp_fifo
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/altera_merlin_slave_agent.sv"                                       -work jtag_avalon_jtag_slave_agent         
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/altera_merlin_burst_uncompressor.sv"                                -work jtag_avalon_jtag_slave_agent         
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/altera_merlin_master_agent.sv"                                      -work Processador_data_master_agent        
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/altera_merlin_slave_translator.sv"                                  -work jtag_avalon_jtag_slave_translator    
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/altera_merlin_master_translator.sv"                                 -work Processador_data_master_translator   
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/altera_reset_controller.v"                                          -work rst_controller                       
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/altera_reset_synchronizer.v"                                        -work rst_controller                       
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_irq_mapper.sv"                                          -work irq_mapper                           
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_mm_interconnect_0.v"                                    -work mm_interconnect_0                    
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_memoria_dados.v"                                        -work memoria_dados                        
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_memoria.v"                                              -work memoria                              
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_jtag.v"                                                 -work jtag                                 
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_Processador.v"                                          -work Processador                          
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_Processador_jtag_debug_module_sysclk.v"                 -work Processador                          
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_Processador_jtag_debug_module_tck.v"                    -work Processador                          
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_Processador_jtag_debug_module_wrapper.v"                -work Processador                          
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_Processador_oci_test_bench.v"                           -work Processador                          
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_Processador_test_bench.v"                               -work Processador                          
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/altera_avalon_reset_source.sv"                                      -work RANSAC_NIOS_inst_reset_bfm           
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/altera_avalon_clock_source.sv"                                      -work RANSAC_NIOS_inst_clk_bfm             
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS.v"                                                      -work RANSAC_NIOS_inst                     
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/RANSAC_NIOS_tb.v"                                                                                                         
 fi
 
 # ----------------------------------------

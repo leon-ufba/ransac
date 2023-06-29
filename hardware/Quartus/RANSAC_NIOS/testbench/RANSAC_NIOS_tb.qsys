@@ -25,14 +25,6 @@
          type = "int";
       }
    }
-   element RANSAC_NIOS_inst_medidordesempenho_conduit_bfm
-   {
-      datum _sortIndex
-      {
-         value = "3";
-         type = "int";
-      }
-   }
    element RANSAC_NIOS_inst_reset_bfm
    {
       datum _sortIndex
@@ -81,17 +73,6 @@
   <parameter name="CLOCK_UNIT" value="1" />
  </module>
  <module
-   name="RANSAC_NIOS_inst_medidordesempenho_conduit_bfm"
-   kind="altera_conduit_bfm"
-   version="18.1"
-   enabled="1">
-  <parameter name="CLOCKED_SIGNAL" value="true" />
-  <parameter name="ENABLE_RESET" value="true" />
-  <parameter name="SIGNAL_DIRECTIONS" value="input" />
-  <parameter name="SIGNAL_ROLES" value="readdata" />
-  <parameter name="SIGNAL_WIDTHS" value="32" />
- </module>
- <module
    name="RANSAC_NIOS_inst_reset_bfm"
    kind="altera_avalon_reset_source"
    version="18.1"
@@ -110,31 +91,10 @@
    start="RANSAC_NIOS_inst_clk_bfm.clk"
    end="RANSAC_NIOS_inst_reset_bfm.clk" />
  <connection
-   kind="clock"
-   version="18.1"
-   start="RANSAC_NIOS_inst_clk_bfm.clk"
-   end="RANSAC_NIOS_inst_medidordesempenho_conduit_bfm.clk" />
- <connection
-   kind="conduit"
-   version="18.1"
-   start="RANSAC_NIOS_inst_medidordesempenho_conduit_bfm.conduit"
-   end="RANSAC_NIOS_inst.medidordesempenho_conduit">
-  <parameter name="endPort" value="" />
-  <parameter name="endPortLSB" value="0" />
-  <parameter name="startPort" value="" />
-  <parameter name="startPortLSB" value="0" />
-  <parameter name="width" value="0" />
- </connection>
- <connection
    kind="reset"
    version="18.1"
    start="RANSAC_NIOS_inst_reset_bfm.reset"
    end="RANSAC_NIOS_inst.reset" />
- <connection
-   kind="reset"
-   version="18.1"
-   start="RANSAC_NIOS_inst_reset_bfm.reset"
-   end="RANSAC_NIOS_inst_medidordesempenho_conduit_bfm.reset" />
  <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
  <interconnectRequirement for="$system" name="qsys_mm.enableEccProtection" value="FALSE" />
  <interconnectRequirement for="$system" name="qsys_mm.insertDefaultSlave" value="FALSE" />

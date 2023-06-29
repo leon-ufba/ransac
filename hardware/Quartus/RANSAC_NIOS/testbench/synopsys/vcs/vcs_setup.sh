@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 18.1 625 win32 2023.06.26.13:59:12
+# ACDS 18.1 625 win32 2023.06.25.11:26:42
 
 # ----------------------------------------
 # vcs - auto-generated simulation script
@@ -94,12 +94,12 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 18.1 625 win32 2023.06.26.13:59:12
+# ACDS 18.1 625 win32 2023.06.25.11:26:42
 # ----------------------------------------
 # initialize variables
 TOP_LEVEL_NAME="RANSAC_NIOS_tb"
 QSYS_SIMDIR="./../../"
-QUARTUS_INSTALL_DIR="C:/intelfpga_lite/18.1/quartus/"
+QUARTUS_INSTALL_DIR="D:/quartus/quartus/"
 SKIP_FILE_COPY=0
 SKIP_SIM=0
 USER_DEFINED_ELAB_OPTIONS=""
@@ -156,11 +156,11 @@ vcs -lca -timescale=1ps/1ps -sverilog +verilog2001ext+.v -ntb_opts dtm $ELAB_OPT
   $QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/altera_merlin_arbitrator.sv \
   $QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_mm_interconnect_0_rsp_mux.sv \
   $QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_mm_interconnect_0_rsp_demux.sv \
-  $QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_mm_interconnect_0_cmd_mux_003.sv \
+  $QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_mm_interconnect_0_cmd_mux_001.sv \
   $QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_mm_interconnect_0_cmd_mux.sv \
   $QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_mm_interconnect_0_cmd_demux_001.sv \
   $QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_mm_interconnect_0_cmd_demux.sv \
-  $QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_mm_interconnect_0_router_005.sv \
+  $QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_mm_interconnect_0_router_003.sv \
   $QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_mm_interconnect_0_router_002.sv \
   $QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_mm_interconnect_0_router_001.sv \
   $QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_mm_interconnect_0_router.sv \
@@ -183,10 +183,7 @@ vcs -lca -timescale=1ps/1ps -sverilog +verilog2001ext+.v -ntb_opts dtm $ELAB_OPT
   $QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_Processador_jtag_debug_module_wrapper.v \
   $QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_Processador_oci_test_bench.v \
   $QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS_Processador_test_bench.v \
-  $QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/Clock_Counter_Interface.v \
-  $QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/Clock_Counter.v \
   $QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/altera_avalon_reset_source.sv \
-  $QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/altera_conduit_bfm.sv \
   $QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/altera_avalon_clock_source.sv \
   $QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/submodules/RANSAC_NIOS.v \
   $QSYS_SIMDIR/RANSAC_NIOS_tb/simulation/RANSAC_NIOS_tb.v \

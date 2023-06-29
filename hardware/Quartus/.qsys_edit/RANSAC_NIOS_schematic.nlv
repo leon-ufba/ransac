@@ -1,16 +1,15 @@
 # # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
 # 
 preplace inst RANSAC_NIOS -pg 1 -lvl 1 -y 40 -regy -20
-preplace inst RANSAC_NIOS.Processador -pg 1 -lvl 2 -y 80
-preplace inst RANSAC_NIOS.jtag -pg 1 -lvl 3 -y 100
-preplace inst RANSAC_NIOS.memoria -pg 1 -lvl 3 -y 200
-preplace inst RANSAC_NIOS.memoria_dados -pg 1 -lvl 3 -y 280
-preplace inst RANSAC_NIOS.clock -pg 1 -lvl 1 -y 120
-preplace netloc FAN_OUT<net_container>RANSAC_NIOS</net_container>(SLAVE)jtag.clk,(SLAVE)memoria_dados.clk1,(SLAVE)memoria.clk1,(SLAVE)Processador.clk,(MASTER)clock.clk) 1 1 2 260 30 610
-preplace netloc EXPORT<net_container>RANSAC_NIOS</net_container>(SLAVE)RANSAC_NIOS.reset,(SLAVE)clock.clk_in_reset) 1 0 1 NJ
-preplace netloc INTERCONNECT<net_container>RANSAC_NIOS</net_container>(MASTER)Processador.instruction_master,(SLAVE)memoria_dados.s1,(SLAVE)memoria.s1,(SLAVE)jtag.avalon_jtag_slave,(SLAVE)Processador.jtag_debug_module,(MASTER)Processador.data_master) 1 1 2 300 50 590
-preplace netloc EXPORT<net_container>RANSAC_NIOS</net_container>(SLAVE)RANSAC_NIOS.clk,(SLAVE)clock.clk_in) 1 0 1 NJ
-preplace netloc INTERCONNECT<net_container>RANSAC_NIOS</net_container>(MASTER)clock.clk_reset,(SLAVE)Processador.reset_n,(SLAVE)jtag.reset,(SLAVE)memoria.reset1,(MASTER)Processador.jtag_debug_module_reset,(SLAVE)memoria_dados.reset1) 1 1 2 280 70 550
-preplace netloc POINT_TO_POINT<net_container>RANSAC_NIOS</net_container>(SLAVE)jtag.irq,(MASTER)Processador.d_irq) 1 2 1 570
-levelinfo -pg 1 0 50 800
-levelinfo -hier RANSAC_NIOS 60 90 330 650 790
+preplace inst RANSAC_NIOS.Processador -pg 1 -lvl 2 -y 30
+preplace inst RANSAC_NIOS.jtag -pg 1 -lvl 3 -y 50
+preplace inst RANSAC_NIOS.memoria -pg 1 -lvl 3 -y 150
+preplace inst RANSAC_NIOS.clock -pg 1 -lvl 1 -y 70
+preplace netloc INTERCONNECT<net_container>RANSAC_NIOS</net_container>(MASTER)clock.clk_reset,(SLAVE)jtag.reset,(SLAVE)Processador.reset_n,(MASTER)Processador.jtag_debug_module_reset,(SLAVE)memoria.reset1) 1 1 2 260 180 550
+preplace netloc EXPORT<net_container>RANSAC_NIOS</net_container>(SLAVE)clock.clk_in,(SLAVE)RANSAC_NIOS.clk) 1 0 1 NJ
+preplace netloc EXPORT<net_container>RANSAC_NIOS</net_container>(SLAVE)clock.clk_in_reset,(SLAVE)RANSAC_NIOS.reset) 1 0 1 NJ
+preplace netloc FAN_OUT<net_container>RANSAC_NIOS</net_container>(MASTER)clock.clk,(SLAVE)jtag.clk,(SLAVE)memoria.clk1,(SLAVE)Processador.clk) 1 1 2 280 160 590
+preplace netloc POINT_TO_POINT<net_container>RANSAC_NIOS</net_container>(SLAVE)jtag.irq,(MASTER)Processador.d_irq) 1 2 1 550
+preplace netloc INTERCONNECT<net_container>RANSAC_NIOS</net_container>(MASTER)Processador.instruction_master,(MASTER)Processador.data_master,(SLAVE)Processador.jtag_debug_module,(SLAVE)memoria.s1,(SLAVE)jtag.avalon_jtag_slave) 1 1 2 300 200 570
+levelinfo -pg 1 0 50 790
+levelinfo -hier RANSAC_NIOS 60 90 330 640 780
