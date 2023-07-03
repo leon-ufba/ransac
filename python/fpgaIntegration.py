@@ -45,7 +45,9 @@ class FPGAintegration:
             #file.write(dots_string + "\n")
 
             for row in dots.astype(int):
-                    file.write(str(row) + '\n')
+                    dotString = str(row)
+                    dotstring = dotString.replace("[ ", "").replace("[", "").replace("]", "")
+                    file.write(dotstring + '\n')
 
             file.write("\n")
             
