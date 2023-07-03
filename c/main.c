@@ -1,48 +1,51 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdlib.h>
 #include <math.h>
-#include <string.h>
 #include "ransac.c"
 
 #define PI 3.14
-#define file_path "dataset_test_2"
+//#define file_path "..\\..\\python\\coords\\dataset_test_2.txt"
+#define file_path "step1.txt"
 
-int readPoints(Point* data, Point* shape, int index) {
-    char* fileName;
-    if(index == 0 ){
-        fileName="data0.txt";
-    }else if(index == 1 ){
-       fileName="data1.txt";
-    }else if(index == 2 ){
-       fileName="data2.txt";
-    }else if(index == 3 ){
-       fileName="data3.txt";
-    }else if(index == 4 ){
-       fileName="data4.txt";
-    }
-
-    FILE* file = fopen(fileName, "r");
-
+int readPoints(int* step, Point* StepXY, int* data_size, Point* data) {
+    FILE* file = fopen(file_path, "r");
     if (!file) {
         fprintf(stderr, "Erro ao abrir o arquivo\n");
         return 1;
     }
-
-    if (fscanf(file, "%d %d", &shape[0].x, &shape[0].y) == 1) {
-
+    
+    if (fscanf(file, "%d", step) != 1) {
+        fprintf(stderr, "Erro ao ler o valor de step\n");
+        fclose(file);
+        return 1;
     }
-    int i = 0;
-    while (fscanf(file, "%d %d", &data[i].x, &data[i].y) != EOF) {
-        i++;
+    
+    if (fscanf(file, "%f %f", &StepXY->x, &StepXY->y) != 2) {
+        fprintf(stderr, "Erro ao ler o valor de StepXY\n");
+        fclose(file);
+        return 1;
     }
+    
+    if (fscanf(file, "%d", data_size) != 1) {
+        fprintf(stderr, "Erro ao ler o valor de data_size\n");
+        fclose(file);
+        return 1;
+    }
+     for (int i = 0; i < *data_size; i++) {
+        if (fscanf(file, "%f %f", &(data)[i].x, &(data)[i].y) != 2) {
+            fprintf(stderr, "Erro ao ler os valores de data\n");
+            fclose(file);
+            return 1;
+        }
+    }
+
     fclose(file);
-
-    return i;
+    
+    return 0;
 }
 
 int saveResult(Line* f, Line* s, Point* begin, Point* intersection, float distance, float angle) {
-    FILE *file = fopen("resultados.csv", "w");
+    FILE *file = fopen("FPGAout.txt", "w");
     if (!file) {
         fprintf(stderr, "Erro ao abrir o arquivo\n");
         return 1;
@@ -68,35 +71,83 @@ Point calculateIntersection(Line* k, Line* l) {
     return intersection;
 }
 
-float radianToDegree(float radian) {
-    return radian * 180.0 / PI;
-}
+//float radianToDegree(float radian) {
+//   return radian * 180.0 / PI;
+//}
 
 float getAngleFromModel(float a) {
     float radian = atan(a);
-    float degree = radianToDegree(radian);
-    return degree;
+    //float degree = radianToDegree(radian);
+    return radian;
 }
 
 int main() {
-    srand(time(NULL));
-    Line model1 = { 0.0, 0.0 };
-    Point shape[1];
+    Point begin;
+    Point StepXY;
+    Point data[MAX_POINTS]= { 0.0, 0.0 };
+    Point outliers[MAX_POINTS] = { 0.0, 0.0 };
+    RansacResult models[2] = { 0.0, 0.0 };
+    int data_size;
+    int step;
 
-    Point data2[MAX_POINTS];
-    RansacResult ransacResult;
-    for(int i = 0; i < 5; i++){
-        Point data[20*MAX_POINTS];
-        int points =readPoints(data, shape,i);
-        int data_size = (int)shape[0].x;
-        if(data_size > MAX_POINTS) data_size = MAX_POINTS;
-        ransacResult = RANSAC(data, points,data_size);
-        printf("\n----------------------\n");
-        printf("bestFit: %f\n", ransacResult.bestFit);
-        printf("bestQty: %d\n", ransacResult.bestQty);
-        printf("bestModel: %f\t%f\n", ransacResult.bestModel.a,ransacResult.bestModel.b );
-        printf("\n----------------------\n");
+    if (readPoints(&step, &StepXY, &data_size, data) != 0) {
+        fprintf(stderr, "Erro ao ler os pontos do arquivo\n");
+        return 1;
     }
+
+    if(data_size > MAX_POINTS) data_size = MAX_POINTS;
+
+    // ------------ Calcula primeiro modelo de linha ------------//
+    //Posicao inical do robo
+    begin.x = 0;
+    begin.y = 25;
+    models[0] = RANSAC(&begin, data, outliers, data_size);
+    int inliers_size = models[0].bestQty;
+    int outliers_size = (int)(data_size-inliers_size);
+
+    // -------- Variaveis para segundo modelo de linha ---------//
+    Point beginSecond = outliers[0];
+    
+    // ------------ Variaveis para resultado final -------------//
+    Point intersection = { 0.0, 0.0 };
+    float distance = 0.0;
+    float angle = 0.0;
+
+    // ---- Condicao para conjunto de pontos com modelo unico ----//
+    if (outliers_size < 10) distance = data[data_size-1].x - begin.x;
+    // ---- Condicao para calcular segundo modelo de linha ----//
+    else { 
+
+     models[1] = RANSAC(&beginSecond, outliers, outliers, outliers_size);
+
+        if  (models[1].bestModel.a != 0 & models[1].bestModel.b != 0) { 
+            intersection = calculateIntersection(&models[0].bestModel,  &models[1].bestModel);
+            distance = squareDistanceBetweenPoints(&intersection, &begin);
+            angle = getAngleFromModel (models[1].bestModel.a);
+        }
+
+    }
+    
+    printf("data_size: \t%d\n", data_size);
+    printf("initial position:\t%d\t%d\n", begin.x, begin.y);
+    printf("initial position 2:\t%d\t%d\n", beginSecond.x, beginSecond.y);
+    printf("\n--------Step 1----------\n");
+    printf("inliers_size: \t%d\n", inliers_size);
+    printf("outliers_size:\t%d\n", outliers_size);
+    printf("\n--------Result----------\n");
+    printf("intersection point:\t%d\t%d\n", intersection.x, intersection.y);
+    printf("square distance:\t%f\n", distance);
+    printf("angle: \t%f\n", angle);
+    printf("\n");
+
+    printf("\n-------------------------------------------------------------\n");
+    printf("bestFit: %f\n", models[0].bestFit);
+    printf("bestQty: %d\n", models[0].bestQty);
+    printf("bestModel: %f\t%f\n", models[0].bestModel.a, models[0].bestModel.b );
+    printf("\n----------------------\n");
+    printf("bestFit: %f\n", models[1].bestFit);
+    printf("bestQty: %d\n", models[1].bestQty);
+    printf("bestModel: %f\t%f\n", models[1].bestModel.a, models[1].bestModel.b );
 
     return 0;
 }

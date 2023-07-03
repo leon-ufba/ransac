@@ -3,24 +3,9 @@
 #include <math.h>
 #include <time.h>
 
-// RANSAC parameters
-#define MIN_POINTS 2        // - The minimum number of data points required to estimate the model parameters.
-//#define C 0.00              // - The percent of close data points (inliers) required to assert that the model fits well to the data.
-#define C 0.50
-#define E 8.0                 // - A threshold value to determine data points that are fit well by the model (inlier).
-#define T 100
-#define N 20                // - Number of iterations required
-#define MIN_DIST_POINTS 10  // - The minimum points distance required to select the sample
-
-#define POINT_SIZE sizeof(Point)*2
-#define MAX_POINTS 500
-
-#define SIZEOF_MEM ((MAX_POINTS * 2) + MIN_POINTS) * POINT_SIZE
-
 typedef struct {
-  int x;
-  int y;
-  int* r;
+  float x;
+  float y;
 } Point;
 
 typedef struct {
@@ -34,15 +19,18 @@ typedef struct {
     int bestQty;
 } RansacResult;
 
+// RANSAC parameters
+#define MIN_POINTS 2        // - The minimum number of data points required to estimate the model parameters.            
+#define C 0.3              // - The percent of close data points (inliers) required to assert that the model fits well to the data.
+#define E 1               // - A threshold value to determine data points that are fit well by the model (inlier).
+#define N 10                // - Number of iterations required
+#define MIN_DIST_POINTS 10  // - The minimum points distance required to select the sample
 
-typedef struct {
-    float distance;
-    int x;
-    int y;
-} Outlier;
+#define POINT_SIZE sizeof(Point)*2
+#define MAX_POINTS 300
 
-volatile int indexOutliers[MAX_POINTS];
-RansacResult rs;
+#define SIZEOF_MEM ((MAX_POINTS * 2) + MIN_POINTS) * POINT_SIZE
+
 Line leastSquare(Point* data, int size) {
     float sx = 0;
     float sy = 0;
@@ -70,23 +58,6 @@ Line leastSquare(Point* data, int size) {
     return line;
 }
 
-
-void inliersOutliers(Point* data, Line model, Point* inliers, Point* outliers, int dataSize, int* inlierSize, int* outlierSize) {
-    float square2 = E * E * (model.a * model.a + 1.0);
-    for (int k = 0; k < dataSize; k++) {
-        float dist = (model.a * data[k].x - data[k].y + model.b);
-        if (dist * dist <= square2) {
-            inliers[*inlierSize].x = data[k].x;
-            inliers[*inlierSize].y = data[k].y;
-            (*inlierSize)++;
-        } else {
-            outliers[*outlierSize].x = data[k].x;
-            outliers[*outlierSize].y = data[k].y;
-            (*outlierSize)++;
-        }
-    }
-}
-
 float coefficientOfDetermination(Point* data, Line model, float avg_y, int data_size) {
     float ss_res = 0;
     float ss_tot = 0;
@@ -101,98 +72,104 @@ float coefficientOfDetermination(Point* data, Line model, float avg_y, int data_
     return r;
 }
 
-int compareOutliers(const void* a, const void* b) {
-    float distanceA = ((Outlier*)a)->distance;
-    float distanceB = ((Outlier*)b)->distance;
-      if ((int)distanceA < (int)distanceB) {
-        return -1;
-    } else if ((int)distanceA > (int)distanceB) {
-        return 1;
+void inliersOutliers(Point* data, Line model, Point* inliers, Point* outliers, int dataSize, int* inlierSize, int* outlierSize) {
+    
+    float square2 = E * E * (model.a * model.a + 1.0);
+    
+    for (int k = 0; k < dataSize; k++) {
+        float dist = (model.a * data[k].x - data[k].y + model.b);
+        if (dist * dist <= square2) {
+            inliers[*inlierSize].x = data[k].x;
+            inliers[*inlierSize].y = data[k].y;
+            (*inlierSize)++;
+        } else {
+            outliers[*outlierSize].x = data[k].x;
+            outliers[*outlierSize].y = data[k].y;
+            (*outlierSize)++;
+        }
     }
-    return 0;
-}
-void nearestOutliers(Point* data,  Line model, Point* outliers, int numData) {
-    Outlier tempOutliers[numData];
-
-    for (int i = 0; i < numData; i++) {
-        float distance = fabs(model.a * data[i].x - data[i].y + model.b);
-        tempOutliers[i].distance = distance;
-        tempOutliers[i].x = data[i].x;
-        tempOutliers[i].y = data[i].y;
-    }
-
-    qsort(tempOutliers, numData, sizeof(Outlier), compareOutliers);
-
-    for (int i = 0; i < numData; i++) {
-        outliers[i].x = tempOutliers[i].x;
-        outliers[i].y = tempOutliers[i].y;
-    }
-
-
-}
-void checkModel(Point* data, Point* temp, int data_size, int temp_size) {
-
-  Point inliers[data_size];
-  Point outliers[data_size];
-  int inlinersSize = 0;
-  int outlierSize = 0;
-  Line model = leastSquare(temp, temp_size);
-
-  inliersOutliers(data, model, inliers, outliers, data_size, &inlinersSize, &outlierSize);
-
-  if(inlinersSize >= rs.bestQty && inlinersSize >= (int)(data_size * C)){
-    Line inliersModel = leastSquare(inliers, inlinersSize);
-    float inliersAvg_y = 0;
-    for (int i = 0; i < inlinersSize; i++) {
-        inliersAvg_y += inliers[i].y;
-    }
-    inliersAvg_y /= inlinersSize;
-    float  inliersFit = coefficientOfDetermination(data, inliersModel, inliersAvg_y, data_size);
-    if (inliersFit < rs.bestFit) {
-      rs.bestModel = inliersModel;
-      rs.bestFit = inliersFit;
-      rs.bestQty = inlinersSize;
-    }
- }
-
 }
 
+void checkModel(Point* data, Point* temp, RansacResult* rs, int data_size, int temp_size) {
+  
+    Point inliers[MAX_POINTS];
+    Point outliers[MAX_POINTS];
+    int inlinersSize = 0;
+    int outlierSize = 0;
+    Line model = leastSquare(temp, temp_size);
 
+    inliersOutliers(data, model, inliers, outliers, data_size, &inlinersSize, &outlierSize);
+    
+    if(inlinersSize >= rs->bestQty && inlinersSize >= (int)(data_size * C)){
+        Line inliersModel = leastSquare(inliers, inlinersSize);
+        float inliersAvg_y = 0;
+        for (int i = 0; i < inlinersSize; i++) {
+            inliersAvg_y += inliers[i].y;
+        }
+        inliersAvg_y /= inlinersSize;
+        float  inliersFit = coefficientOfDetermination(inliers, inliersModel, inliersAvg_y, data_size);
+        if (inliersFit < rs->bestFit) {
+        rs->bestModel = inliersModel;
+        rs->bestFit = inliersFit;
+        rs->bestQty = inlinersSize;
+        }
+    } 
+}
 float squareDistanceBetweenPoints (Point* a, Point* b){
-  int dx = a->x - b->x;
-  int dy = a->y - b->y;
-  return (dx * dx) + (dy * dy);
+    int dx = a->x - b->x;
+    int dy = a->y - b->y;
+    return (dx * dx) + (dy * dy);
 }
 
-RansacResult RANSAC(Point* data, int data_size, int view_range) {
-  rs.bestModel.a = 0.0;
-  rs.bestModel.b = view_range;
-  rs.bestFit = INFINITY;
-  rs.bestQty = 0;
+RansacResult RANSAC(Point* botPos, Point* data, Point* outliers, int data_size) {
+    RansacResult rs;
+    
+    rs.bestModel.a = 0.0;
+    rs.bestModel.b = botPos->y;
+    rs.bestFit = INFINITY;
+    rs.bestQty = 0;
 
-  int temp_size = MIN_POINTS;
-  Point inliers[data_size];
-  Point outliers[data_size];
-  int loopCounter= 0;
-  int inlinersSize = 0;
-  int outlierSize = 0;
+    
+    Point inliers[MAX_POINTS];
+    //Point outliers[MAX_POINTS];
 
-  inliersOutliers(data, rs.bestModel, inliers, outliers, data_size, &inlinersSize, &outlierSize);
+    int temp_dist_points = 0;
+    int temp_index = 0;
 
-  if (outlierSize == 0) {
+    int loopCounter= 0;
+    int inlinersSize = 0;
+    int outlierSize = 0;
+
+    inliersOutliers(data, rs.bestModel, inliers, outliers, data_size, &inlinersSize, &outlierSize);
+
+    if (outlierSize == 0) {
+        rs.bestFit = INFINITY;
+        rs.bestQty = data_size;
+        return rs;
+    }
+    int temp_size = MIN_POINTS;
+    Point temp[temp_size]; // alocação tamanho P
+
+    //Posição inicial do robô
+    temp[0] = *botPos;
+
+    //Execute for N iterations
+    while(loopCounter < N) {
+        //Sorteia 2 coordenadas que tenham uma distância minima entre si
+        if(temp_dist_points < MIN_DIST_POINTS) {
+        for (int j = 1; j < temp_size; j++) {
+            temp_index = rand() % data_size;
+            temp[j] = data[temp_index];
+
+            temp_dist_points = squareDistanceBetweenPoints(&temp[0], &temp[1]);
+        }
+        }
+        else {
+            checkModel(data, temp, &rs, data_size, temp_size);
+            temp_dist_points = 0;
+            loopCounter++;
+        }
+    }
+
     return rs;
-  }
-
-  Point nearest_outliers[outlierSize];
-
-  nearestOutliers(outliers, rs.bestModel, nearest_outliers, outlierSize);
-  for (int i = 0; i < outlierSize; i++) {
-      for (int j = outlierSize - 1; j > 0; j--) {
-        checkModel(outliers, (Point[]){ nearest_outliers[i], nearest_outliers[j] }, outlierSize, temp_size);
-        loopCounter++;
-        if (loopCounter >= T)  break;
-      }
-      if (loopCounter >= T) break;
-  }
-  return rs;
 }
