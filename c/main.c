@@ -129,13 +129,13 @@ int main() {
     }
     
     printf("data_size: \t%d\n", data_size);
-    printf("initial position:\t%d\t%d\n", begin.x, begin.y);
-    printf("initial position 2:\t%d\t%d\n", beginSecond.x, beginSecond.y);
+    printf("initial position:\t%f\t%f\n", begin.x, begin.y);
+    printf("initial position 2:\t%f\t%f\n", beginSecond.x, beginSecond.y);
     printf("\n--------Step 1----------\n");
     printf("inliers_size: \t%d\n", inliers_size);
     printf("outliers_size:\t%d\n", outliers_size);
     printf("\n--------Result----------\n");
-    printf("intersection point:\t%d\t%d\n", intersection.x, intersection.y);
+    printf("intersection point:\t%f\t%f\n", intersection.x, intersection.y);
     printf("square distance:\t%f\n", distance);
     printf("angle: \t%f\n", angle);
     printf("\n");
