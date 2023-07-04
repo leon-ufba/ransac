@@ -21,15 +21,13 @@ typedef struct {
 
 // RANSAC parameters
 #define MIN_POINTS 2        // - The minimum number of data points required to estimate the model parameters.            
-#define C 0.3              // - The percent of close data points (inliers) required to assert that the model fits well to the data.
-#define E 1               // - A threshold value to determine data points that are fit well by the model (inlier).
+#define C 0.5              // - The percent of close data points (inliers) required to assert that the model fits well to the data.
+#define E 2               // - A threshold value to determine data points that are fit well by the model (inlier).
 #define N 10                // - Number of iterations required
 #define MIN_DIST_POINTS 10  // - The minimum points distance required to select the sample
 
 #define POINT_SIZE sizeof(Point)*2
 #define MAX_POINTS 300
-
-#define SIZEOF_MEM ((MAX_POINTS * 2) + MIN_POINTS) * POINT_SIZE
 
 Line leastSquare(Point* data, int size) {
     float sx = 0;
@@ -128,11 +126,9 @@ RansacResult RANSAC(Point* botPos, Point* data, Point* outliers, int data_size) 
     rs.bestModel.b = botPos->y;
     rs.bestFit = INFINITY;
     rs.bestQty = 0;
-
     
     Point inliers[MAX_POINTS];
-    //Point outliers[MAX_POINTS];
-
+    
     int temp_dist_points = 0;
     int temp_index = 0;
 
@@ -149,23 +145,27 @@ RansacResult RANSAC(Point* botPos, Point* data, Point* outliers, int data_size) 
     }
     int temp_size = MIN_POINTS;
     Point temp[temp_size]; // alocação tamanho P
+    
+    /**for (int i=0; i<=outlierSize; i++){
+        printf("%f, %f\n", outliers[i].x, outliers[i].y);
+    }**/
 
     //Posição inicial do robô
-    temp[0] = *botPos;
+    temp[0] = outliers[0];
 
     //Execute for N iterations
     while(loopCounter < N) {
         //Sorteia 2 coordenadas que tenham uma distância minima entre si
         if(temp_dist_points < MIN_DIST_POINTS) {
         for (int j = 1; j < temp_size; j++) {
-            temp_index = rand() % data_size;
+            temp_index = rand() % outlierSize;
             temp[j] = data[temp_index];
 
             temp_dist_points = squareDistanceBetweenPoints(&temp[0], &temp[1]);
         }
         }
         else {
-            checkModel(data, temp, &rs, data_size, temp_size);
+            checkModel(outliers, temp, &rs, outlierSize, temp_size);
             temp_dist_points = 0;
             loopCounter++;
         }
