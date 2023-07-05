@@ -4,7 +4,7 @@
 #include "ransac.c"
 
 //#define file_path "..\\..\\python\\coords\\dataset_test_2.txt"
-#define file_path "testes\\step0.txt"
+#define file_path "testes\\step1.txt"
 
 int readPoints(int* step, Point* StepXY, int* data_size, Point* data) {
     FILE* file = fopen(file_path, "r");
@@ -44,7 +44,7 @@ int readPoints(int* step, Point* StepXY, int* data_size, Point* data) {
 }
 
 int saveResult(int step, RansacResult rs, float distance, float angle) {
-    FILE *file = fopen("FPGAout0.txt", "w");
+    FILE *file = fopen("FPGAout1.txt", "w");
     if (!file) {
         fprintf(stderr, "Erro ao abrir o arquivo\n");
         return 1;
