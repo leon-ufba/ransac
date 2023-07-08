@@ -18,4 +18,6 @@ Binarios Quartus
 !*.sof
 ## tbd
 !*.tcl
-!*.exe
+LAB_IV_A/Quartus/RANSAC_NIOS/db/*
+LAB_IV_A/Quartus/RANSAC_NIOS/incremental_db/*
+LAB_IV_A/Quartus/RANSAC_NIOS/output_files/*
