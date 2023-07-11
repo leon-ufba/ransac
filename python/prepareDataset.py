@@ -103,4 +103,4 @@ else:
     if simplify == True:
         pickle_path = os.path.join(dirname, 'coords/' + dataset + '.pickle')
         pickle_path2 = os.path.join(dirname, 'coords/' + dataset + 'SIMP.pickle')
-        reduce_coordinates(pickle_path, pickle_path2, 10.0) 
+        reduce_coordinates(pickle_path, pickle_path2, 5.0) 
