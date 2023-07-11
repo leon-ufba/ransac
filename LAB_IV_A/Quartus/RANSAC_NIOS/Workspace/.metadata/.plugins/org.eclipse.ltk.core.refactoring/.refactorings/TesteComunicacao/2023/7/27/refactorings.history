@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;TesteComunicacao/ransac.h&apos; to &apos;data.h&apos;" description="Rename resource &apos;ransac.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="ransac.h" name="data.h" stamp="1688848805185" updateReferences="true"/>
+</session>

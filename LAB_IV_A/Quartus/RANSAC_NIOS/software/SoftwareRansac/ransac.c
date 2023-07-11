@@ -7,11 +7,22 @@
 
 // RANSAC parameters
 #define MIN_POINTS 2        // - The minimum number of data points required to estimate the model parameters.
-#define C 0.0              // - The percent of close data points (inliers) required to assert that the model fits well to the data.
+#define C 0.5              // - The percent of close data points (inliers) required to assert that the model fits well to the data.
 #define E 2               // - A threshold value to determine data points that are fit well by the model (inlier).
 #define N 10                // - Number of iterations required
 #define MIN_DIST_POINTS 10  // - The minimum points distance required to select the sample
 
+
+int square_root(int number) {
+    int x = number;
+    int y = 1;
+    float precision = 0.1;
+    while (x - y > precision) {
+        x = (x + y) / 2;
+        y = number / x;
+    }
+    return x;
+}
 
 Point calculateIntersection(Line* k, Line* l) {
     Point intersection;
@@ -143,7 +154,7 @@ RansacResult RANSAC(int* data, Point* botPos, Point* outliers, int data_size) {
     rs.bestFit = INFINITY;
     rs.bestQty = 0;
 
-    printf("RS-ModelInit: %f %f\n", rs.bestModel.a, rs.bestModel.b );
+    //printf("RS-ModelInit: %f %f\n", rs.bestModel.a, rs.bestModel.b );
 
     Point inliers[MAX_POINTS];
 
@@ -156,8 +167,8 @@ RansacResult RANSAC(int* data, Point* botPos, Point* outliers, int data_size) {
 
     inliersOutliersMemory(data, rs.bestModel, inliers, outliers, data_size, &inlinersSize, &outlierSize);
 
-    printf("RS-inlinersSize: %d\n", inlinersSize);
-    printf("RS-outliers: %d\n", outlierSize);
+    //printf("RS-inlinersSize: %d\n", inlinersSize);
+    //printf("RS-outliers: %d\n", outlierSize);
 
     if (outlierSize == 0) {
         rs.bestFit = INFINITY;

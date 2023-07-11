@@ -25,9 +25,9 @@ VP=Oe?0=o?bMCC^H_55`8o2
 !s100 MQNJz9T14WWPLfWCnWDWK2
 Z10 OV;C;10.5b;63
 32
-Z11 !s110 1688842610
+Z11 !s110 1689077385
 !i10b 1
-Z12 !s108 1688842610.000000
+Z12 !s108 1689077385.000000
 Z13 !s90 -reportprogress|300|C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/FPNeg_Abs/FPAbs.vhd|-work|fpci_combi|
 Z14 !s107 C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/FPNeg_Abs/FPAbs.vhd|
 !i113 1
@@ -40,11 +40,11 @@ R4
 R5
 R6
 R7
-DEx4 work 5 fpabs 0 22 P=Oe?0=o?bMCC^H_55`8o2
+Z17 DEx4 work 5 fpabs 0 22 P=Oe?0=o?bMCC^H_55`8o2
 l35
 L34
-ViEaGJ<L^MUT?a`A2IPAb01
-!s100 JD7Pa:ag>^W:JmUMSY39f1
+Z18 ViEaGJ<L^MUT?a`A2IPAb01
+Z19 !s100 JD7Pa:ag>^W:JmUMSY39f1
 R10
 32
 R11
@@ -64,8 +64,8 @@ R5
 R6
 R7
 R0
-Z17 8C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/FPCompareFused/FPCompareFused.vhd
-Z18 FC:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/FPCompareFused/FPCompareFused.vhd
+Z20 8C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/FPCompareFused/FPCompareFused.vhd
+Z21 FC:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/FPCompareFused/FPCompareFused.vhd
 l0
 L47
 V?dWGMo6PSGIek4j7UnRH:1
@@ -75,8 +75,8 @@ R10
 R11
 !i10b 1
 R12
-Z19 !s90 -reportprogress|300|C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/FPCompareFused/FPCompareFused.vhd|-work|fpci_combi|
-Z20 !s107 C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/FPCompareFused/FPCompareFused.vhd|
+Z22 !s90 -reportprogress|300|C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/FPCompareFused/FPCompareFused.vhd|-work|fpci_combi|
+Z23 !s107 C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/FPCompareFused/FPCompareFused.vhd|
 !i113 1
 R15
 R16
@@ -97,8 +97,8 @@ R10
 R11
 !i10b 1
 R12
-R19
-R20
+R22
+R23
 !i113 1
 R15
 R16
@@ -111,8 +111,8 @@ R5
 R6
 R7
 R0
-Z21 8C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/FPMinMaxFused/FPMinMaxFused.vhd
-Z22 FC:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/FPMinMaxFused/FPMinMaxFused.vhd
+Z24 8C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/FPMinMaxFused/FPMinMaxFused.vhd
+Z25 FC:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/FPMinMaxFused/FPMinMaxFused.vhd
 l0
 L48
 V[i0:`CHOHmZ<NPGJACggS3
@@ -122,8 +122,8 @@ R10
 R11
 !i10b 1
 R12
-Z23 !s90 -reportprogress|300|C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/FPMinMaxFused/FPMinMaxFused.vhd|-work|fpci_combi|
-Z24 !s107 C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/FPMinMaxFused/FPMinMaxFused.vhd|
+Z26 !s90 -reportprogress|300|C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/FPMinMaxFused/FPMinMaxFused.vhd|-work|fpci_combi|
+Z27 !s107 C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/FPMinMaxFused/FPMinMaxFused.vhd|
 !i113 1
 R15
 R16
@@ -144,8 +144,8 @@ R10
 R11
 !i10b 1
 R12
-R23
-R24
+R26
+R27
 !i113 1
 R15
 R16
@@ -158,8 +158,8 @@ R5
 R6
 R7
 R0
-Z25 8C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/FPNeg_Abs/FPNeg.vhd
-Z26 FC:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/FPNeg_Abs/FPNeg.vhd
+Z28 8C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/FPNeg_Abs/FPNeg.vhd
+Z29 FC:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/FPNeg_Abs/FPNeg.vhd
 l0
 L26
 V>f?2iJb5bhfKJfXmfLdKU2
@@ -169,8 +169,8 @@ R10
 R11
 !i10b 1
 R12
-Z27 !s90 -reportprogress|300|C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/FPNeg_Abs/FPNeg.vhd|-work|fpci_combi|
-Z28 !s107 C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/FPNeg_Abs/FPNeg.vhd|
+Z30 !s90 -reportprogress|300|C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/FPNeg_Abs/FPNeg.vhd|-work|fpci_combi|
+Z31 !s107 C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/FPNeg_Abs/FPNeg.vhd|
 !i113 1
 R15
 R16
@@ -191,8 +191,8 @@ R10
 R11
 !i10b 1
 R12
-R27
-R28
+R30
+R31
 !i113 1
 R15
 R16
@@ -203,8 +203,8 @@ R5
 R6
 R7
 R0
-Z29 8C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/fpoint2_combi.vhd
-Z30 FC:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/fpoint2_combi.vhd
+Z32 8C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/fpoint2_combi.vhd
+Z33 FC:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/fpoint2_combi.vhd
 l0
 L20
 Ve]kH`gK0C@J@;6SHl1aAg2
@@ -213,9 +213,9 @@ R10
 32
 R11
 !i10b 1
-R12
-Z31 !s90 -reportprogress|300|C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/fpoint2_combi.vhd|-work|fpci_combi|
-Z32 !s107 C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/fpoint2_combi.vhd|
+Z34 !s108 1689077384.000000
+Z35 !s90 -reportprogress|300|C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/fpoint2_combi.vhd|-work|fpci_combi|
+Z36 !s107 C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/fpoint2_combi.vhd|
 !i113 1
 R15
 R16
@@ -233,9 +233,9 @@ R10
 32
 R11
 !i10b 1
-R12
-R31
-R32
+R34
+R35
+R36
 !i113 1
 R15
 R16

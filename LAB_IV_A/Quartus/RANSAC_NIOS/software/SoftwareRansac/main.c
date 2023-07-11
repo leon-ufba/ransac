@@ -3,13 +3,10 @@
 #include <math.h>
 #include "ransac.h"
 #include "coords.h"
-#include "system.h"
 
 #define END_BASE_MEMO (int *) 0x0000
 #define END_BASE_CONTROLE (int *) 0x0004
-#define END_BASE_DISTANCE (int *) 0x0008
-#define END_BASE_ANGLE (int *) 0x00010
-#define END_BASE_DATA (int *) 0x0018
+#define END_BASE_DATA (int *) 0x0008
 #define STEP coords_2
 #define SIZE size_2
 
@@ -20,7 +17,7 @@ int main() {
     int data_size = 0;
 
     //read data_size
-    data_size = (int)(SIZE&0xFF);
+    data_size = SIZE;
     temp_data_size = (2*data_size);
 
     int j = 0;
@@ -49,19 +46,16 @@ int main() {
     float angle = 0.0;
 
 	if  (model.bestModel.a == 0.0){
-		distance = data[data_size-1]&0xFF;
+		distance = square_root(data[data_size-1]&0xFF);
 	}
 	else
 	{
 		intersection = calculateIntersection(&model.bestModel,  &reference);
-		distance = (int)squareDistanceBetweenPoints(&intersection, &start);
+		distance = square_root((int)squareDistanceBetweenPoints(&intersection, &start));
 		angle = getAngleFromModel (model.bestModel.a);
 	}
 
-	printf("-----LOG-----\n");
-    printf("%d %d\n", intersection.x, intersection.y);
-    printf("-----RESULTADO-----\n");
-    printf("%f %f\n", model.bestModel.a, model.bestModel.b );
+	printf("%f %f\n", model.bestModel.a, model.bestModel.b );
     printf("%f\n", model.bestFit);
     printf("%d\n", model.bestQty);
     printf("%f\n", angle);

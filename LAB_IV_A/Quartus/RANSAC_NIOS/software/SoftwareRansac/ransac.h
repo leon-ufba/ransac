@@ -29,6 +29,7 @@ typedef struct {
 } RansacResult;
 
 
+int square_root(int number);
 Point calculateIntersection(Line* k, Line* l);
 float getAngleFromModel(float a);
 Line leastSquare(Point* data, int size);

@@ -18,8 +18,7 @@ obj/default/main.o: main.c \
  ../SoftwareRansac_bsp//newlib/nios2-elf/include/stdlib.h \
  ../SoftwareRansac_bsp//newlib/nios2-elf/include/machine/stdlib.h \
  ../SoftwareRansac_bsp//newlib/nios2-elf/include/alloca.h \
- ../SoftwareRansac_bsp//newlib/nios2-elf/include/math.h ransac.h coords.h \
- ../SoftwareRansac_bsp/system.h ../SoftwareRansac_bsp/linker.h
+ ../SoftwareRansac_bsp//newlib/nios2-elf/include/math.h ransac.h coords.h
 
 ../SoftwareRansac_bsp//newlib/nios2-elf/include/stdio.h:
 
@@ -64,7 +63,3 @@ obj/default/main.o: main.c \
 ransac.h:
 
 coords.h:
-
-../SoftwareRansac_bsp/system.h:
-
-../SoftwareRansac_bsp/linker.h:

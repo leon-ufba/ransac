@@ -9,7 +9,7 @@ z2
 cModel Technology
 Z0 dC:/LAB_IV_A/Quartus/RANSAC_NIOS/software/SoftwareRansac/obj/default/runtime/sim/mentor
 vSistemaEmbarcado_Processador_cpu
-Z1 !s110 1688842610
+Z1 !s110 1689077385
 !i10b 1
 !s100 KAEkInzCzjmnGNh2bdBAd1
 I5<FCINPIdSTYh1XZSK=Tb3
@@ -23,7 +23,7 @@ Z6 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z7 !s108 1688842610.000000
+Z7 !s108 1689077385.000000
 Z8 !s107 C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/SistemaEmbarcado_Processador_cpu.v|
 Z9 !s90 -reportprogress|300|C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/SistemaEmbarcado_Processador_cpu.v|-work|cpu|
 !i113 1
@@ -75,7 +75,7 @@ R10
 R11
 n@sistema@embarcado_@processador_cpu_debug_slave_tck
 vSistemaEmbarcado_Processador_cpu_debug_slave_wrapper
-Z13 !s110 1688842611
+R1
 !i10b 1
 !s100 h=K;0lQ?lA56U]B7Dd51B2
 ImPYR3SMeeQKIVJ7@e[zgH3
@@ -537,7 +537,7 @@ R10
 R11
 n@sistema@embarcado_@processador_cpu_register_bank_b_module
 vSistemaEmbarcado_Processador_cpu_test_bench
-R13
+R1
 !i10b 1
 !s100 I>K^OZ4;WYGKTEH7961`i1
 I1SOA3EJOclR6`WAd@ZHXa2
@@ -551,7 +551,7 @@ R6
 r1
 !s85 0
 31
-!s108 1688842611.000000
+R7
 !s107 C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/SistemaEmbarcado_Processador_cpu_test_bench.v|
 !s90 -reportprogress|300|C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/SistemaEmbarcado_Processador_cpu_test_bench.v|-work|cpu|
 !i113 1

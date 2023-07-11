@@ -6,8 +6,10 @@ add wave -noupdate -radix decimal /SistemaEmbarcado_tb/sistemaembarcado_inst/mem
 add wave -noupdate -radix decimal /SistemaEmbarcado_tb/sistemaembarcado_inst/memoriadados/readdata
 add wave -noupdate -radix decimal /SistemaEmbarcado_tb/sistemaembarcado_inst/memoriadados/address
 add wave -noupdate -radix decimal /SistemaEmbarcado_tb/sistemaembarcado_inst/memoriadados/wren
+add wave -noupdate -radix float32 /SistemaEmbarcado_tb/sistemaembarcado_inst/nios_custom_instr_floating_point_2_0/s2_result
+add wave -noupdate -radix float32 /SistemaEmbarcado_tb/sistemaembarcado_inst/nios_custom_instr_floating_point_2_0/s1_result
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {1623705 ps} 0}
+WaveRestoreCursors {{Cursor 1} {17695823069 ps} 0}
 quietly wave cursor active 1
 configure wave -namecolwidth 150
 configure wave -valuecolwidth 100
@@ -23,4 +25,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ps
 update
-WaveRestoreZoom {24070172571 ps} {24070843549 ps}
+WaveRestoreZoom {17695602981 ps} {17696562690 ps}

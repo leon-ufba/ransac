@@ -11,7 +11,7 @@ Z0 dC:/LAB_IV_A/Quartus/RANSAC_NIOS/software/SoftwareRansac/obj/default/runtime/
 valtera_avalon_reset_source
 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
 DXx25 altera_common_sv_packages 13 verbosity_pkg 0 22 j1deUKfnIiz^2lV00>MjL0
-!s110 1688842612
+!s110 1689077386
 !i10b 1
 !s100 3a?19XA<0CCRW>1VRc_7<0
 I[5jnHVgh:?A_;WSTC<AmK1
@@ -27,7 +27,7 @@ OV;L;10.5b;63
 r1
 !s85 0
 31
-!s108 1688842612.000000
+!s108 1689077386.000000
 !s107 C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/altera_avalon_reset_source.sv|
 !s90 -reportprogress|300|-sv|C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/altera_avalon_reset_source.sv|-L|altera_common_sv_packages|-work|SistemaEmbarcado_inst_reset_bfm|
 !i113 1

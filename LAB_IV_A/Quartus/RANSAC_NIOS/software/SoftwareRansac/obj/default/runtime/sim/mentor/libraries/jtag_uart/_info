@@ -9,7 +9,7 @@ z2
 cModel Technology
 Z0 dC:/LAB_IV_A/Quartus/RANSAC_NIOS/software/SoftwareRansac/obj/default/runtime/sim/mentor
 vSistemaEmbarcado_jtag_uart
-Z1 !s110 1688842611
+Z1 !s110 1689077386
 !i10b 1
 !s100 9R2o9:K:ko2APaSIcJHGo2
 IdAhbVVez>BNT7=F<;3l023
@@ -23,7 +23,7 @@ Z6 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z7 !s108 1688842611.000000
+Z7 !s108 1689077386.000000
 Z8 !s107 C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/SistemaEmbarcado_jtag_uart.v|
 Z9 !s90 -reportprogress|300|C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/SistemaEmbarcado_jtag_uart.v|-work|jtag_uart|
 !i113 1
