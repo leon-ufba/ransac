@@ -67,7 +67,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
   </table>
   <table class="blueBar">
    <tr>
-    <td class="l">2023.07.08.14:16:11</td>
+    <td class="l">2023.07.10.20:54:33</td>
     <td class="r">Datasheet</td>
    </tr>
   </table>
@@ -90,6 +90,9 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      <a href="#module_SistemaEmbarcado_inst_Processador"><b>SistemaEmbarcado_inst_Processador</b>
      </a> Nios II 18.1
      <br/>All Components
+     <br/>&#160;&#160;
+     <a href="#module_SistemaEmbarcado_inst_MedidorDesempenho"><b>SistemaEmbarcado_inst_MedidorDesempenho</b>
+     </a> MedidorDesempenho 1.0
      <br/>&#160;&#160;
      <a href="#module_SistemaEmbarcado_inst_MemoriaDados"><b>SistemaEmbarcado_inst_MemoriaDados</b>
      </a> altera_avalon_onchip_memory2 18.1
@@ -117,6 +120,24 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    <tr>
     <td class="masterl">&#160;data_master</td>
     <td class="masterr">&#160;instruction_master</td>
+   </tr>
+   <tr>
+    <td class="slavemodule">&#160;
+     <a href="#module_SistemaEmbarcado_inst_MedidorDesempenho"><b>SistemaEmbarcado_inst_MedidorDesempenho</b>
+     </a>
+    </td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slavem">Leitura&#160;</td>
+    <td class="addr"><span style="color:#989898">0x</span>0001100c</td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slavem">Escrita&#160;</td>
+    <td class="addr"><span style="color:#989898">0x</span>00011008</td>
+    <td class="empty"></td>
    </tr>
    <tr>
     <td class="slavemodule">&#160;
@@ -185,7 +206,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <table>
        <tr>
         <td class="parametername">AUTO_GENERATION_ID</td>
-        <td class="parametervalue">1688836571</td>
+        <td class="parametervalue">1689033273</td>
        </tr>
        <tr>
         <td class="parametername">AUTO_UNIQUE_ID</td>
@@ -218,6 +239,93 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        <tr>
         <td class="parametername">deviceFamily</td>
         <td class="parametervalue">Cyclone IV E</td>
+       </tr>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_SistemaEmbarcado_inst_MedidorDesempenho"> </a>
+  <div>
+   <hr/>
+   <h2>SistemaEmbarcado_inst_MedidorDesempenho</h2>MedidorDesempenho v1.0
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="6">
+       <a href="#module_SistemaEmbarcado_inst_Processador">SistemaEmbarcado_inst_Processador</a>
+      </td>
+      <td class="from">data_master&#160;&#160;</td>
+      <td class="main" rowspan="14">SistemaEmbarcado_inst_MedidorDesempenho</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;Escrita</td>
+     </tr>
+     <tr>
+      <td class="from">data_master&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;Leitura</td>
+     </tr>
+     <tr>
+      <td class="from">debug_reset_request&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_SistemaEmbarcado_inst_clock">SistemaEmbarcado_inst_clock</a>
+      </td>
+      <td class="from">clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clock</td>
+     </tr>
+     <tr>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_SistemaEmbarcado_inst_medidordesempenho_conduit_bfm">SistemaEmbarcado_inst_medidordesempenho_conduit_bfm</a>
+      </td>
+      <td class="from">conduit&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;conduit</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">deviceFamily</td>
+        <td class="parametervalue">UNKNOWN</td>
        </tr>
        <tr>
         <td class="parametername">generateLegacySim</td>
@@ -788,7 +896,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        <a href="#module_SistemaEmbarcado_inst_clock">SistemaEmbarcado_inst_clock</a>
       </td>
       <td class="from">clk&#160;&#160;</td>
-      <td class="main" rowspan="27">SistemaEmbarcado_inst_Processador</td>
+      <td class="main" rowspan="34">SistemaEmbarcado_inst_Processador</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;clk</td>
@@ -798,6 +906,42 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
      </tr>
      <tr>
       <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">data_master&#160;&#160;</td>
+      <td class="neighbor" rowspan="6">
+       <a href="#module_SistemaEmbarcado_inst_MedidorDesempenho">SistemaEmbarcado_inst_MedidorDesempenho</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;Escrita</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">data_master&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;Leitura</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">debug_reset_request&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
      </tr>
      <tr>
       <td></td>
@@ -1620,7 +1764,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">dataSlaveMapParam</td>
-        <td class="parametervalue">&lt;address-map&gt;&lt;slave name='MemoriaDados.s1' start='0x0' end='0x10000' type='altera_avalon_onchip_memory2.s1' /&gt;&lt;slave name='Processador.debug_mem_slave' start='0x10800' end='0x11000' type='altera_nios2_gen2.debug_mem_slave' /&gt;&lt;slave name='jtag_uart.avalon_jtag_slave' start='0x11000' end='0x11008' type='altera_avalon_jtag_uart.avalon_jtag_slave' /&gt;&lt;slave name='MemoriaPrograma.s1' start='0x40000' end='0x5C3C0' type='altera_avalon_onchip_memory2.s1' /&gt;&lt;/address-map&gt;</td>
+        <td class="parametervalue">&lt;address-map&gt;&lt;slave name='MemoriaDados.s1' start='0x0' end='0x10000' type='altera_avalon_onchip_memory2.s1' /&gt;&lt;slave name='Processador.debug_mem_slave' start='0x10800' end='0x11000' type='altera_nios2_gen2.debug_mem_slave' /&gt;&lt;slave name='jtag_uart.avalon_jtag_slave' start='0x11000' end='0x11008' type='altera_avalon_jtag_uart.avalon_jtag_slave' /&gt;&lt;slave name='MedidorDesempenho.Escrita' start='0x11008' end='0x1100C' type='MedidorDesempenho.Escrita' /&gt;&lt;slave name='MedidorDesempenho.Leitura' start='0x1100C' end='0x11010' type='MedidorDesempenho.Leitura' /&gt;&lt;slave name='MemoriaPrograma.s1' start='0x40000' end='0x5C3C0' type='altera_avalon_onchip_memory2.s1' /&gt;&lt;/address-map&gt;</td>
        </tr>
        <tr>
         <td class="parametername">tightlyCoupledDataMaster0MapParam</td>
@@ -1856,7 +2000,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        <a href="#module_SistemaEmbarcado_inst_clk_bfm">SistemaEmbarcado_inst_clk_bfm</a>
       </td>
       <td class="from">clk&#160;&#160;</td>
-      <td class="main" rowspan="24">SistemaEmbarcado_inst_clock</td>
+      <td class="main" rowspan="29">SistemaEmbarcado_inst_clock</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;clk_in</td>
@@ -1973,6 +2117,32 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td></td>
       <td class="to">&#160;&#160;reset1</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">clk&#160;&#160;</td>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_SistemaEmbarcado_inst_MedidorDesempenho">SistemaEmbarcado_inst_MedidorDesempenho</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clock</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;reset</td>
      </tr>
     </table>
    </div>
@@ -2291,6 +2461,96 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </tr>
    </table>
   </div>
+  <a name="module_SistemaEmbarcado_inst_medidordesempenho_conduit_bfm"> </a>
+  <div>
+   <hr/>
+   <h2>SistemaEmbarcado_inst_medidordesempenho_conduit_bfm</h2>altera_conduit_bfm v18.1
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_SistemaEmbarcado_inst_clk_bfm">SistemaEmbarcado_inst_clk_bfm</a>
+      </td>
+      <td class="from">clk&#160;&#160;</td>
+      <td class="main" rowspan="7">SistemaEmbarcado_inst_medidordesempenho_conduit_bfm</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_SistemaEmbarcado_inst_reset_bfm">SistemaEmbarcado_inst_reset_bfm</a>
+      </td>
+      <td class="from">reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">conduit&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_SistemaEmbarcado_inst_MedidorDesempenho">SistemaEmbarcado_inst_MedidorDesempenho</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;conduit</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">CLOCKED_SIGNAL</td>
+        <td class="parametervalue">true</td>
+       </tr>
+       <tr>
+        <td class="parametername">ENABLE_RESET</td>
+        <td class="parametervalue">true</td>
+       </tr>
+       <tr>
+        <td class="parametername">SIGNAL_ROLES</td>
+        <td class="parametervalue">readdata</td>
+       </tr>
+       <tr>
+        <td class="parametername">SIGNAL_WIDTHS</td>
+        <td class="parametervalue">32</td>
+       </tr>
+       <tr>
+        <td class="parametername">SIGNAL_DIRECTIONS</td>
+        <td class="parametervalue">input</td>
+       </tr>
+       <tr>
+        <td class="parametername">deviceFamily</td>
+        <td class="parametervalue">UNKNOWN</td>
+       </tr>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
   <a name="module_SistemaEmbarcado_inst_reset_bfm"> </a>
   <div>
    <hr/>
@@ -2303,7 +2563,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        <a href="#module_SistemaEmbarcado_inst_clk_bfm">SistemaEmbarcado_inst_clk_bfm</a>
       </td>
       <td class="from">clk&#160;&#160;</td>
-      <td class="main" rowspan="4">SistemaEmbarcado_inst_reset_bfm</td>
+      <td class="main" rowspan="7">SistemaEmbarcado_inst_reset_bfm</td>
      </tr>
      <tr>
       <td class="to">&#160;&#160;clk</td>
@@ -2320,6 +2580,22 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <td></td>
       <td></td>
       <td class="to">&#160;&#160;clk_in_reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">reset&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_SistemaEmbarcado_inst_medidordesempenho_conduit_bfm">SistemaEmbarcado_inst_medidordesempenho_conduit_bfm</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;reset</td>
      </tr>
     </table>
    </div>
@@ -2360,7 +2636,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
   <table class="blueBar">
    <tr>
     <td class="l">generation took 0,00 seconds</td>
-    <td class="r">rendering took 0,02 seconds</td>
+    <td class="r">rendering took 0,11 seconds</td>
    </tr>
   </table>
  </body>

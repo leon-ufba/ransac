@@ -1,0 +1,18 @@
+09:42:25 **** Incremental Build of configuration Nios II for project SoftwareRansac ****
+make all 
+Info: Building ../SoftwareRansac_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../SoftwareRansac_bsp/
+[BSP build complete]
+Info: Compiling main.c to obj/default/main.o
+nios2-elf-gcc -xc -MP -MMD -c -I../SoftwareRansac_bsp//newlib/nios2-elf/include -I../SoftwareRansac_bsp//HAL/inc -I../SoftwareRansac_bsp/ -I../SoftwareRansac_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global -fno-math-errno -mcustom-fabss=224 -mcustom-fadds=253 -mcustom-fcmpeqs=227 -mcustom-fcmpges=228 -mcustom-fcmpgts=229 -mcustom-fcmples=230 -mcustom-fcmplts=231 -mcustom-fcmpnes=226 -mcustom-fdivs=255 -mcustom-fixsi=249 -mcustom-floatis=250 -mcustom-fmuls=252 -mcustom-fnegs=225 -mcustom-fsubs=254  -o obj/default/main.o main.c
+Info: Linking SoftwareRansac.elf
+nios2-elf-g++  -T'../SoftwareRansac_bsp//linker.x' -msys-crt0='../SoftwareRansac_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../SoftwareRansac_bsp/ -L../SoftwareRansac_bsp//newlib/nios2-elf/lib   -Wl,-Map=SoftwareRansac.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global -fno-math-errno -mcustom-fabss=224 -mcustom-fadds=253 -mcustom-fcmpeqs=227 -mcustom-fcmpges=228 -mcustom-fcmpgts=229 -mcustom-fcmples=230 -mcustom-fcmplts=231 -mcustom-fcmpnes=226 -mcustom-fdivs=255 -mcustom-fixsi=249 -mcustom-floatis=250 -mcustom-fmuls=252 -mcustom-fnegs=225 -mcustom-fsubs=254  -o SoftwareRansac.elf obj/default/main.o obj/default/ransac.o -lm -msys-lib=m
+nios2-elf-insert SoftwareRansac.elf --thread_model hal --cpu_name Processador --qsys true --simulation_enabled false --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name SistemaEmbarcado --quartus_project_dir "C:/Users/Eduardo/Documents/UFBA/2023.1/ENGG57/ransac/LAB_IV_A/Quartus/RANSAC_NIOS" --jdi ../..//output_files/RansacNios.jdi --sopcinfo C:/Users/Eduardo/Documents/UFBA/2023.1/ENGG57/ransac/LAB_IV_A/Quartus/RANSAC_NIOS/software/SoftwareRansac_bsp/../../SistemaEmbarcado.sopcinfo
+Info: (SoftwareRansac.elf) 92 KBytes program size (code + initialized data).
+Info:                      11 KBytes free for stack + heap.
+Info: Creating SoftwareRansac.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source SoftwareRansac.elf >SoftwareRansac.objdump
+[SoftwareRansac build complete]
+
+09:42:30 Build Finished (took 5s.254ms)
+

@@ -14,25 +14,28 @@
 
 // PROGRAM		"Quartus Prime"
 // VERSION		"Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition"
-// CREATED		"Sat Jul 08 17:22:05 2023"
+// CREATED		"Mon Jul 10 21:18:26 2023"
 
 module RansacNios(
 	CLOCK_50,
-	KEY
+	KEY,
+	medidordesempenho_conduit_readdata
 );
 
 
 input wire	CLOCK_50;
 input wire	[0:0] KEY;
+output wire	[31:0] medidordesempenho_conduit_readdata;
 
 
 
 
 
 
-SistemaEmbarcado	b2v_inst(
+SistemaEmbarcado	b2v_inst1(
 	.clk_clk(CLOCK_50),
-	.reset_reset_n(KEY));
+	.reset_reset_n(KEY),
+	.medidordesempenho_conduit_readdata(medidordesempenho_conduit_readdata));
 
 
 endmodule

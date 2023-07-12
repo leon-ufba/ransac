@@ -112,10 +112,6 @@ BSP_TYPE := hal
 # CDX present. 
 # setting CDX is false
 
-# Compile Newlib 
-# setting COMPILE_NEWLIB is 1
-COMPILE_NEWLIB = 1
-
 # CPU Name 
 # setting CPU_NAME is Processador
 CPU_NAME = Processador
@@ -348,14 +344,6 @@ ELF_PATCH_FLAG  += --stdout_dev jtag_uart
 
 
 #------------------------------------------------------------------------------
-#                 CUSTOM NEWLIB LIBRARY & INCLUDE PATHS
-#------------------------------------------------------------------------------
-
-NEWLIB_DIR = $(BSP_ROOT_DIR)/newlib
-ALT_INCLUDE_DIRS += $(NEWLIB_DIR)/nios2-elf/include
-ALT_LIBRARY_DIRS += $(NEWLIB_DIR)/nios2-elf/lib
-
-#------------------------------------------------------------------------------
 #                 SOFTWARE COMPONENT & DRIVER INCLUDE PATHS
 #------------------------------------------------------------------------------
 
@@ -366,26 +354,6 @@ ALT_INCLUDE_DIRS += $(ALT_LIBRARY_ROOT_DIR)/HAL/inc
 #------------------------------------------------------------------------------
 
 ALT_CPPFLAGS += -DALT_SINGLE_THREADED
-
-#------------------------------------------------------------------------------
-#        SOFTWARE COMPONENT & DRIVER PRODUCED ALT_CFLAGS ADDITIONS
-#------------------------------------------------------------------------------
-
-ALT_CFLAGS += -fno-math-errno
-ALT_CFLAGS += -mcustom-fabss=224
-ALT_CFLAGS += -mcustom-fadds=253
-ALT_CFLAGS += -mcustom-fcmpeqs=227
-ALT_CFLAGS += -mcustom-fcmpges=228
-ALT_CFLAGS += -mcustom-fcmpgts=229
-ALT_CFLAGS += -mcustom-fcmples=230
-ALT_CFLAGS += -mcustom-fcmplts=231
-ALT_CFLAGS += -mcustom-fcmpnes=226
-ALT_CFLAGS += -mcustom-fdivs=255
-ALT_CFLAGS += -mcustom-fixsi=249
-ALT_CFLAGS += -mcustom-floatis=250
-ALT_CFLAGS += -mcustom-fmuls=252
-ALT_CFLAGS += -mcustom-fnegs=225
-ALT_CFLAGS += -mcustom-fsubs=254
 
 #END MANAGED
 

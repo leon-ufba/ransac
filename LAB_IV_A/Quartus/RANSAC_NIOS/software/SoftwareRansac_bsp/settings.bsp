@@ -2,10 +2,10 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Jul 8, 2023 3:54:45 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1688842485815</BspGeneratedUnixTimeStamp>
-        <BspGeneratedLocation>C:\LAB_IV_A\Quartus\RANSAC_NIOS\software\SoftwareRansac_bsp</BspGeneratedLocation>
-        <BspSettingsFile>C:\LAB_IV_A\Quartus\RANSAC_NIOS\software\SoftwareRansac_bsp\settings.bsp</BspSettingsFile>
+        <BspGeneratedTimeStamp>12/07/2023 14:13:59</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1689182039819</BspGeneratedUnixTimeStamp>
+        <BspGeneratedLocation>C:\Users\Eduardo\Documents\UFBA\2023.1\ENGG57\ransac\LAB_IV_A\Quartus\RANSAC_NIOS\software\SoftwareRansac_bsp</BspGeneratedLocation>
+        <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\SistemaEmbarcado.sopcinfo</SopcDesignFile>
         <JdiFile>default</JdiFile>
         <Cpu>Processador</Cpu>
@@ -386,7 +386,7 @@
                 <SettingName>hal.make.bsp_cflags_optimization</SettingName>
                 <Identifier>BSP_CFLAGS_OPTIMIZATION</Identifier>
                 <Type>UnquotedString</Type>
-                <Value>-O2</Value>
+                <Value>-O0</Value>
                 <DefaultValue>-O0</DefaultValue>
                 <DestinationFile>makefile_variable</DestinationFile>
                 <Description>C/C++ compiler optimization level. "-O0" = no optimization,"-O2" = "normal" optimization, etc. "-O0" is recommended for code that you want to debug since compiler optimization can remove variables and produce non-sequential execution of code while debugging. This setting defines the value of BSP_CFLAGS_OPTIMIZATION in Makefile.</Description>
@@ -909,6 +909,18 @@
                 <addressRange>0x00011000 - 0x00011007</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes>printable</attributes>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>MedidorDesempenho_Escrita</slaveDescriptor>
+                <addressRange>0x00011008 - 0x0001100B</addressRange>
+                <addressSpan>4</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>MedidorDesempenho_Leitura</slaveDescriptor>
+                <addressRange>0x0001100C - 0x0001100F</addressRange>
+                <addressSpan>4</addressSpan>
+                <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>MemoriaPrograma</slaveDescriptor>

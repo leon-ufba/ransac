@@ -6,12 +6,14 @@
 module SistemaEmbarcado_tb (
 	);
 
-	wire    sistemaembarcado_inst_clk_bfm_clk_clk;       // SistemaEmbarcado_inst_clk_bfm:clk -> [SistemaEmbarcado_inst:clk_clk, SistemaEmbarcado_inst_reset_bfm:clk]
-	wire    sistemaembarcado_inst_reset_bfm_reset_reset; // SistemaEmbarcado_inst_reset_bfm:reset -> SistemaEmbarcado_inst:reset_reset_n
+	wire         sistemaembarcado_inst_clk_bfm_clk_clk;                    // SistemaEmbarcado_inst_clk_bfm:clk -> [SistemaEmbarcado_inst:clk_clk, SistemaEmbarcado_inst_medidordesempenho_conduit_bfm:clk, SistemaEmbarcado_inst_reset_bfm:clk]
+	wire  [31:0] sistemaembarcado_inst_medidordesempenho_conduit_readdata; // SistemaEmbarcado_inst:medidordesempenho_conduit_readdata -> SistemaEmbarcado_inst_medidordesempenho_conduit_bfm:sig_readdata
+	wire         sistemaembarcado_inst_reset_bfm_reset_reset;              // SistemaEmbarcado_inst_reset_bfm:reset -> [SistemaEmbarcado_inst:reset_reset_n, SistemaEmbarcado_inst_medidordesempenho_conduit_bfm:reset]
 
 	SistemaEmbarcado sistemaembarcado_inst (
-		.clk_clk       (sistemaembarcado_inst_clk_bfm_clk_clk),       //   clk.clk
-		.reset_reset_n (sistemaembarcado_inst_reset_bfm_reset_reset)  // reset.reset_n
+		.clk_clk                            (sistemaembarcado_inst_clk_bfm_clk_clk),                    //                       clk.clk
+		.medidordesempenho_conduit_readdata (sistemaembarcado_inst_medidordesempenho_conduit_readdata), // medidordesempenho_conduit.readdata
+		.reset_reset_n                      (sistemaembarcado_inst_reset_bfm_reset_reset)               //                     reset.reset_n
 	);
 
 	altera_avalon_clock_source #(
@@ -19,6 +21,12 @@ module SistemaEmbarcado_tb (
 		.CLOCK_UNIT (1)
 	) sistemaembarcado_inst_clk_bfm (
 		.clk (sistemaembarcado_inst_clk_bfm_clk_clk)  // clk.clk
+	);
+
+	altera_conduit_bfm sistemaembarcado_inst_medidordesempenho_conduit_bfm (
+		.clk          (sistemaembarcado_inst_clk_bfm_clk_clk),                    //     clk.clk
+		.reset        (~sistemaembarcado_inst_reset_bfm_reset_reset),             //   reset.reset
+		.sig_readdata (sistemaembarcado_inst_medidordesempenho_conduit_readdata)  // conduit.readdata
 	);
 
 	altera_avalon_reset_source #(

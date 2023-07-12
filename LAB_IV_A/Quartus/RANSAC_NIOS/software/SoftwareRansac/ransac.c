@@ -12,21 +12,33 @@
 #define N 10                // - Number of iterations required
 #define MIN_DIST_POINTS 10  // - The minimum points distance required to select the sample
 
+// enderecos do medidor de desempenho
+#define MEDIDOR_LEITURA (int *) 0x1100c
+#define MEDIDOR_ESCRITA (int *) 0x11008
+
 
 Point calculateIntersection(Line* k, Line* l) {
-    Point intersection;
+	*MEDIDOR_ESCRITA = 0; // para resetar a contagem
+	*MEDIDOR_ESCRITA = 1; // para iniciar a contagem
+	Point intersection;
     intersection.x = (l->b - k->b) / (k->a - l->a);
     intersection.y = (k->a * intersection.x + k->b);
+    *MEDIDOR_ESCRITA = 2; // para pausar a contagem
     return intersection;
 }
 
 float getAngleFromModel(float a) {
-    float radian = atan(a);
+	*MEDIDOR_ESCRITA = 0; // para resetar a contagem
+	*MEDIDOR_ESCRITA = 1; // para iniciar a contagem
+	float radian = atan(a);
+	*MEDIDOR_ESCRITA = 2; // para pausar a contagem
     return radian;
 }
 
 Line leastSquare(Point* data, int size) {
-    float sx = 0;
+	*MEDIDOR_ESCRITA = 0; // para resetar a contagem
+	*MEDIDOR_ESCRITA = 1; // para iniciar a contagem
+	float sx = 0;
     float sy = 0;
     float sxy = 0;
     float sx2 = 0;
@@ -49,11 +61,14 @@ Line leastSquare(Point* data, int size) {
     float a = (size * sxy - sx * sy) / den;
     float b = (sy / size) - a * (sx / size);
     Line line = {a, b};
+    *MEDIDOR_ESCRITA = 2; // para pausar a contagem
     return line;
 }
 
 float coefficientOfDetermination(Point* data, Line model, float avg_y, int data_size) {
-    float ss_res = 0;
+	*MEDIDOR_ESCRITA = 0; // para resetar a contagem
+	*MEDIDOR_ESCRITA = 1; // para iniciar a contagem
+	float ss_res = 0;
     float ss_tot = 0;
     for (int i = 0; i < data_size; i++) {
         float f = model.a * data[i].x + model.b;
@@ -63,11 +78,13 @@ float coefficientOfDetermination(Point* data, Line model, float avg_y, int data_
         ss_tot += y_y * y_y;
     }
     float r = (ss_res / ss_tot);
+    *MEDIDOR_ESCRITA = 2; // para pausar a contagem
     return r;
 }
 
 void inliersOutliersMemory(int* data, Line model, Point* inliers, Point* outliers, int dataSize, int* inlierSize, int* outlierSize) {
-
+	*MEDIDOR_ESCRITA = 0; // para resetar a contagem
+	*MEDIDOR_ESCRITA = 1; // para iniciar a contagem
     float square2 = E * E * (model.a * model.a + 1.0);
     for (int k = 0; k < dataSize; k++) {
     	int tempX = data[k]&0xFF;
@@ -83,10 +100,13 @@ void inliersOutliersMemory(int* data, Line model, Point* inliers, Point* outlier
             (*outlierSize)++;
         }
     }
+    *MEDIDOR_ESCRITA = 2; // para pausar a contagem
+
 }
 
 void inliersOutliers(Point* data, Line model, Point* inliers, Point* outliers, int dataSize, int* inlierSize, int* outlierSize) {
-
+	*MEDIDOR_ESCRITA = 0; // para resetar a contagem
+	*MEDIDOR_ESCRITA = 1; // para iniciar a contagem
     float square2 = E * E * (model.a * model.a + 1.0);
 
     for (int k = 0; k < dataSize; k++) {
@@ -101,10 +121,13 @@ void inliersOutliers(Point* data, Line model, Point* inliers, Point* outliers, i
             (*outlierSize)++;
         }
     }
+    *MEDIDOR_ESCRITA = 2; // para pausar a contagem
+
 }
 
 void checkModel(Point* data, Point* temp, RansacResult* rs, int data_size, int temp_size) {
-
+	*MEDIDOR_ESCRITA = 0; // para resetar a contagem
+	*MEDIDOR_ESCRITA = 1; // para iniciar a contagem
     Point inliers[MAX_POINTS];
     Point outliers[MAX_POINTS];
     int inlinersSize = 0;
@@ -127,11 +150,16 @@ void checkModel(Point* data, Point* temp, RansacResult* rs, int data_size, int t
         rs->bestQty = inlinersSize;
         }
     }
+    *MEDIDOR_ESCRITA = 2; // para pausar a contagem
+
 }
 
 float squareDistanceBetweenPoints (Point* a, Point* b){
-    int dx = a->x - b->x;
+	*MEDIDOR_ESCRITA = 0; // para resetar a contagem
+	*MEDIDOR_ESCRITA = 1; // para iniciar a contagem
+	int dx = a->x - b->x;
     int dy = a->y - b->y;
+    *MEDIDOR_ESCRITA = 2; // para pausar a contagem
     return (dx * dx) + (dy * dy);
 }
 
@@ -166,13 +194,13 @@ RansacResult RANSAC(int* data, Point* botPos, Point* outliers, int data_size) {
     }
 
     int temp_size = MIN_POINTS;
-    Point temp[temp_size]; // alocação tamanho P
+    Point temp[temp_size]; // alocacao tamanho P
 
-    //Posição inicial do robô
+    //Posicao inicial do robo
     temp[0] = outliers[0];
     //Execute for N iterations
     while(loopCounter < N) {
-		//Sorteia 2 coordenadas que tenham uma distância minima entre si
+		//Sorteia 2 coordenadas que tenham uma distancia minima entre si
 		if(temp_dist_points < MIN_DIST_POINTS) {
 		for (int j = 1; j < temp_size; j++) {
 			temp_index = rand() % outlierSize;

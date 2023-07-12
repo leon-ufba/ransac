@@ -3,7 +3,6 @@
 #include <math.h>
 #include "ransac.h"
 #include "coords.h"
-#include "system.h"
 
 #define END_BASE_MEMO (int *) 0x0000
 #define END_BASE_CONTROLE (int *) 0x0004
@@ -31,7 +30,7 @@ int main() {
 
     if(data_size > MAX_POINTS) data_size = MAX_POINTS;
 
-    // ------------ Calcula primeiro modelo de linha ------------//
+        // ------------ Calcula primeiro modelo de linha ------------//
     //Posicao inical do robo
     Point start;
     start.x = 0;
@@ -42,6 +41,7 @@ int main() {
 	reference.b = 25;
 
     model = RANSAC(data, &start, outliers, data_size);
+
 
     // ------------ Variaveis para resultado final -------------//
     Point intersection = { 0.0, 0.0 };

@@ -4,8 +4,9 @@
 
 `timescale 1 ps / 1 ps
 module SistemaEmbarcado (
-		input  wire  clk_clk,       //   clk.clk
-		input  wire  reset_reset_n  // reset.reset_n
+		input  wire        clk_clk,                            //                       clk.clk
+		output wire [31:0] medidordesempenho_conduit_readdata, // medidordesempenho_conduit.readdata
+		input  wire        reset_reset_n                       //                     reset.reset_n
 	);
 
 	wire         processador_custom_instruction_master_readra;                                      // Processador:D_ci_readra -> Processador_custom_instruction_master_translator:ci_slave_readra
@@ -110,6 +111,10 @@ module SistemaEmbarcado (
 	wire         processador_instruction_master_waitrequest;                                        // mm_interconnect_0:Processador_instruction_master_waitrequest -> Processador:i_waitrequest
 	wire  [18:0] processador_instruction_master_address;                                            // Processador:i_address -> mm_interconnect_0:Processador_instruction_master_address
 	wire         processador_instruction_master_read;                                               // Processador:i_read -> mm_interconnect_0:Processador_instruction_master_read
+	wire         mm_interconnect_0_medidordesempenho_escrita_write;                                 // mm_interconnect_0:MedidorDesempenho_Escrita_write -> MedidorDesempenho:write
+	wire  [31:0] mm_interconnect_0_medidordesempenho_escrita_writedata;                             // mm_interconnect_0:MedidorDesempenho_Escrita_writedata -> MedidorDesempenho:writedata
+	wire  [31:0] mm_interconnect_0_medidordesempenho_leitura_readdata;                              // MedidorDesempenho:readdata -> mm_interconnect_0:MedidorDesempenho_Leitura_readdata
+	wire         mm_interconnect_0_medidordesempenho_leitura_read;                                  // mm_interconnect_0:MedidorDesempenho_Leitura_read -> MedidorDesempenho:read
 	wire         mm_interconnect_0_jtag_uart_avalon_jtag_slave_chipselect;                          // mm_interconnect_0:jtag_uart_avalon_jtag_slave_chipselect -> jtag_uart:av_chipselect
 	wire  [31:0] mm_interconnect_0_jtag_uart_avalon_jtag_slave_readdata;                            // jtag_uart:av_readdata -> mm_interconnect_0:jtag_uart_avalon_jtag_slave_readdata
 	wire         mm_interconnect_0_jtag_uart_avalon_jtag_slave_waitrequest;                         // jtag_uart:av_waitrequest -> mm_interconnect_0:jtag_uart_avalon_jtag_slave_waitrequest
@@ -141,9 +146,19 @@ module SistemaEmbarcado (
 	wire         mm_interconnect_0_memoriadados_s1_clken;                                           // mm_interconnect_0:MemoriaDados_s1_clken -> MemoriaDados:clken
 	wire         irq_mapper_receiver0_irq;                                                          // jtag_uart:av_irq -> irq_mapper:receiver0_irq
 	wire  [31:0] processador_irq_irq;                                                               // irq_mapper:sender_irq -> Processador:irq
-	wire         rst_controller_reset_out_reset;                                                    // rst_controller:reset_out -> [MemoriaDados:reset, MemoriaPrograma:reset, Processador:reset_n, irq_mapper:reset, jtag_uart:rst_n, mm_interconnect_0:Processador_reset_reset_bridge_in_reset_reset, rst_translator:in_reset]
+	wire         rst_controller_reset_out_reset;                                                    // rst_controller:reset_out -> [MedidorDesempenho:reset_n, MemoriaDados:reset, MemoriaPrograma:reset, Processador:reset_n, irq_mapper:reset, jtag_uart:rst_n, mm_interconnect_0:Processador_reset_reset_bridge_in_reset_reset, rst_translator:in_reset]
 	wire         rst_controller_reset_out_reset_req;                                                // rst_controller:reset_req -> [MemoriaDados:reset_req, MemoriaPrograma:reset_req, Processador:reset_req, rst_translator:reset_req_in]
 	wire         processador_debug_reset_request_reset;                                             // Processador:debug_reset_request -> rst_controller:reset_in1
+
+	Clock_Counter_Interface medidordesempenho (
+		.clk       (clk_clk),                                               //   clock.clk
+		.reset_n   (~rst_controller_reset_out_reset),                       //   reset.reset_n
+		.read      (mm_interconnect_0_medidordesempenho_leitura_read),      // Leitura.read
+		.readdata  (mm_interconnect_0_medidordesempenho_leitura_readdata),  //        .readdata
+		.write     (mm_interconnect_0_medidordesempenho_escrita_write),     // Escrita.write
+		.writedata (mm_interconnect_0_medidordesempenho_escrita_writedata), //        .writedata
+		.clk_count (medidordesempenho_conduit_readdata)                     // conduit.readdata
+	);
 
 	SistemaEmbarcado_MemoriaDados memoriadados (
 		.clk        (clk_clk),                                      //   clk1.clk
@@ -489,6 +504,10 @@ module SistemaEmbarcado (
 		.jtag_uart_avalon_jtag_slave_writedata         (mm_interconnect_0_jtag_uart_avalon_jtag_slave_writedata),   //                                        .writedata
 		.jtag_uart_avalon_jtag_slave_waitrequest       (mm_interconnect_0_jtag_uart_avalon_jtag_slave_waitrequest), //                                        .waitrequest
 		.jtag_uart_avalon_jtag_slave_chipselect        (mm_interconnect_0_jtag_uart_avalon_jtag_slave_chipselect),  //                                        .chipselect
+		.MedidorDesempenho_Escrita_write               (mm_interconnect_0_medidordesempenho_escrita_write),         //               MedidorDesempenho_Escrita.write
+		.MedidorDesempenho_Escrita_writedata           (mm_interconnect_0_medidordesempenho_escrita_writedata),     //                                        .writedata
+		.MedidorDesempenho_Leitura_read                (mm_interconnect_0_medidordesempenho_leitura_read),          //               MedidorDesempenho_Leitura.read
+		.MedidorDesempenho_Leitura_readdata            (mm_interconnect_0_medidordesempenho_leitura_readdata),      //                                        .readdata
 		.MemoriaDados_s1_address                       (mm_interconnect_0_memoriadados_s1_address),                 //                         MemoriaDados_s1.address
 		.MemoriaDados_s1_write                         (mm_interconnect_0_memoriadados_s1_write),                   //                                        .write
 		.MemoriaDados_s1_readdata                      (mm_interconnect_0_memoriadados_s1_readdata),                //                                        .readdata

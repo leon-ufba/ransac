@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 18.1 625 win32 2023.07.08.14:16:17
+# ACDS 18.1 625 win32 2023.07.10.20:56:15
 
 # ----------------------------------------
 # vcsmx - auto-generated simulation script
@@ -107,7 +107,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 18.1 625 win32 2023.07.08.14:16:17
+# ACDS 18.1 625 win32 2023.07.10.20:56:15
 # ----------------------------------------
 # initialize variables
 TOP_LEVEL_NAME="SistemaEmbarcado_tb"
@@ -153,18 +153,18 @@ mkdir -p ./libraries/avalon_st_adapter/
 mkdir -p ./libraries/rsp_mux_001/
 mkdir -p ./libraries/rsp_mux/
 mkdir -p ./libraries/rsp_demux/
-mkdir -p ./libraries/cmd_mux_001/
+mkdir -p ./libraries/cmd_mux_003/
 mkdir -p ./libraries/cmd_mux/
 mkdir -p ./libraries/cmd_demux_001/
 mkdir -p ./libraries/cmd_demux/
-mkdir -p ./libraries/router_003/
+mkdir -p ./libraries/router_005/
 mkdir -p ./libraries/router_002/
 mkdir -p ./libraries/router_001/
 mkdir -p ./libraries/router/
-mkdir -p ./libraries/jtag_uart_avalon_jtag_slave_agent_rsp_fifo/
-mkdir -p ./libraries/jtag_uart_avalon_jtag_slave_agent/
+mkdir -p ./libraries/MedidorDesempenho_Escrita_agent_rsp_fifo/
+mkdir -p ./libraries/MedidorDesempenho_Escrita_agent/
 mkdir -p ./libraries/Processador_data_master_agent/
-mkdir -p ./libraries/jtag_uart_avalon_jtag_slave_translator/
+mkdir -p ./libraries/MedidorDesempenho_Escrita_translator/
 mkdir -p ./libraries/Processador_data_master_translator/
 mkdir -p ./libraries/fpci_multi/
 mkdir -p ./libraries/fpci_combi/
@@ -181,7 +181,9 @@ mkdir -p ./libraries/jtag_uart/
 mkdir -p ./libraries/Processador/
 mkdir -p ./libraries/MemoriaPrograma/
 mkdir -p ./libraries/MemoriaDados/
+mkdir -p ./libraries/MedidorDesempenho/
 mkdir -p ./libraries/SistemaEmbarcado_inst_reset_bfm/
+mkdir -p ./libraries/SistemaEmbarcado_inst_medidordesempenho_conduit_bfm/
 mkdir -p ./libraries/SistemaEmbarcado_inst_clk_bfm/
 mkdir -p ./libraries/SistemaEmbarcado_inst/
 mkdir -p ./libraries/altera_ver/
@@ -254,21 +256,21 @@ if [ $SKIP_COM -eq 0 ]; then
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/SistemaEmbarcado_mm_interconnect_0_rsp_mux.sv"                            -work rsp_mux                                                     
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/altera_merlin_arbitrator.sv"                                              -work rsp_mux                                                     
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/SistemaEmbarcado_mm_interconnect_0_rsp_demux.sv"                          -work rsp_demux                                                   
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/SistemaEmbarcado_mm_interconnect_0_cmd_mux_001.sv"                        -work cmd_mux_001                                                 
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/altera_merlin_arbitrator.sv"                                              -work cmd_mux_001                                                 
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/SistemaEmbarcado_mm_interconnect_0_cmd_mux_003.sv"                        -work cmd_mux_003                                                 
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/altera_merlin_arbitrator.sv"                                              -work cmd_mux_003                                                 
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/SistemaEmbarcado_mm_interconnect_0_cmd_mux.sv"                            -work cmd_mux                                                     
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/altera_merlin_arbitrator.sv"                                              -work cmd_mux                                                     
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/SistemaEmbarcado_mm_interconnect_0_cmd_demux_001.sv"                      -work cmd_demux_001                                               
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/SistemaEmbarcado_mm_interconnect_0_cmd_demux.sv"                          -work cmd_demux                                                   
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/SistemaEmbarcado_mm_interconnect_0_router_003.sv"                         -work router_003                                                  
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/SistemaEmbarcado_mm_interconnect_0_router_005.sv"                         -work router_005                                                  
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/SistemaEmbarcado_mm_interconnect_0_router_002.sv"                         -work router_002                                                  
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/SistemaEmbarcado_mm_interconnect_0_router_001.sv"                         -work router_001                                                  
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/SistemaEmbarcado_mm_interconnect_0_router.sv"                             -work router                                                      
-  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/altera_avalon_sc_fifo.v"                                                  -work jtag_uart_avalon_jtag_slave_agent_rsp_fifo                  
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/altera_merlin_slave_agent.sv"                                             -work jtag_uart_avalon_jtag_slave_agent                           
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/altera_merlin_burst_uncompressor.sv"                                      -work jtag_uart_avalon_jtag_slave_agent                           
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/altera_avalon_sc_fifo.v"                                                  -work MedidorDesempenho_Escrita_agent_rsp_fifo                    
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/altera_merlin_slave_agent.sv"                                             -work MedidorDesempenho_Escrita_agent                             
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/altera_merlin_burst_uncompressor.sv"                                      -work MedidorDesempenho_Escrita_agent                             
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/altera_merlin_master_agent.sv"                                            -work Processador_data_master_agent                               
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/altera_merlin_slave_translator.sv"                                        -work jtag_uart_avalon_jtag_slave_translator                      
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/altera_merlin_slave_translator.sv"                                        -work MedidorDesempenho_Escrita_translator                        
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/altera_merlin_master_translator.sv"                                       -work Processador_data_master_translator                          
   vhdlan -xlrm $USER_DEFINED_VHDL_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS             "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/fpoint2_multi.vhd"                                                        -work fpci_multi                                                  
   vhdlan -xlrm $USER_DEFINED_VHDL_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS             "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/fpoint2_multi_datapath.vhd"                                               -work fpci_multi                                                  
@@ -304,7 +306,10 @@ if [ $SKIP_COM -eq 0 ]; then
   vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/SistemaEmbarcado_Processador.v"                                           -work Processador                                                 
   vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/SistemaEmbarcado_MemoriaPrograma.v"                                       -work MemoriaPrograma                                             
   vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/SistemaEmbarcado_MemoriaDados.v"                                          -work MemoriaDados                                                
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/Clock_Counter_Interface.v"                                                -work MedidorDesempenho                                           
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/Clock_Counter.v"                                                          -work MedidorDesempenho                                           
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/altera_avalon_reset_source.sv"                                            -work SistemaEmbarcado_inst_reset_bfm                             
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/altera_conduit_bfm.sv"                                                    -work SistemaEmbarcado_inst_medidordesempenho_conduit_bfm         
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/altera_avalon_clock_source.sv"                                            -work SistemaEmbarcado_inst_clk_bfm                               
   vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/submodules/SistemaEmbarcado.v"                                                       -work SistemaEmbarcado_inst                                       
   vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/SistemaEmbarcado_tb/simulation/SistemaEmbarcado_tb.v"                                                                                                                                 
