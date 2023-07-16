@@ -5,11 +5,11 @@
  version="1.0"
  fabric="QSYS">
  <!-- Format version 18.1 625 (Future versions may contain additional information.) -->
- <!-- 2023.07.08.14:16:08 -->
+ <!-- 2023.07.15.23:37:21 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1688836568</value>
+  <value>1689475041</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -1028,7 +1028,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.SIZE_VALUE</name>
-   <value>115648</value>
+   <value>204800</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.WRITABLE</name>
@@ -1160,7 +1160,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="memorySize">
    <type>long</type>
-   <value>115648</value>
+   <value>204800</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -1299,7 +1299,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="derived_set_addr_width">
    <type>int</type>
-   <value>15</value>
+   <value>16</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -1307,7 +1307,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="derived_set_addr_width2">
    <type>int</type>
-   <value>15</value>
+   <value>16</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -1444,7 +1444,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="addressSpan">
     <type>java.math.BigInteger</type>
-    <value>115648</value>
+    <value>204800</value>
     <derived>true</derived>
     <enabled>true</enabled>
     <visible>false</visible>
@@ -1532,7 +1532,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="explicitAddressSpan">
     <type>java.math.BigInteger</type>
-    <value>115648</value>
+    <value>204800</value>
     <derived>false</derived>
     <enabled>true</enabled>
     <visible>true</visible>
@@ -1743,7 +1743,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>address</name>
     <direction>Input</direction>
-    <width>15</width>
+    <width>16</width>
     <role>address</role>
    </port>
    <port>
@@ -3430,7 +3430,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="instSlaveMapParam">
    <type>java.lang.String</type>
-   <value><![CDATA[<address-map><slave name='Processador.debug_mem_slave' start='0x10800' end='0x11000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='MemoriaPrograma.s1' start='0x40000' end='0x5C3C0' type='altera_avalon_onchip_memory2.s1' /></address-map>]]></value>
+   <value><![CDATA[<address-map><slave name='Processador.debug_mem_slave' start='0x10800' end='0x11000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='MemoriaPrograma.s1' start='0x40000' end='0x72000' type='altera_avalon_onchip_memory2.s1' /></address-map>]]></value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -3450,7 +3450,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="dataSlaveMapParam">
    <type>java.lang.String</type>
-   <value><![CDATA[<address-map><slave name='MemoriaDados.s1' start='0x0' end='0x10000' type='altera_avalon_onchip_memory2.s1' /><slave name='Processador.debug_mem_slave' start='0x10800' end='0x11000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='jtag_uart.avalon_jtag_slave' start='0x11000' end='0x11008' type='altera_avalon_jtag_uart.avalon_jtag_slave' /><slave name='MemoriaPrograma.s1' start='0x40000' end='0x5C3C0' type='altera_avalon_onchip_memory2.s1' /></address-map>]]></value>
+   <value><![CDATA[<address-map><slave name='MemoriaDados.s1' start='0x0' end='0x10000' type='altera_avalon_onchip_memory2.s1' /><slave name='Processador.debug_mem_slave' start='0x10800' end='0x11000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='jtag_uart.avalon_jtag_slave' start='0x11030' end='0x11038' type='altera_avalon_jtag_uart.avalon_jtag_slave' /><slave name='MemoriaPrograma.s1' start='0x40000' end='0x72000' type='altera_avalon_onchip_memory2.s1' /></address-map>]]></value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -3589,7 +3589,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="customInstSlavesSystemInfo">
    <type>java.lang.String</type>
-   <value><![CDATA[<info><slave name="nios_custom_instr_floating_point_2_0" baseAddress="224" addressSpan="16" clockCycleType="COMBINATORIAL" /><slave name="nios_custom_instr_floating_point_2_0_1" baseAddress="248" addressSpan="8" clockCycleType="VARIABLE" /></info>]]></value>
+   <value><![CDATA[<info/>]]></value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -4121,7 +4121,7 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>jtag_uart</moduleName>
     <slaveName>avalon_jtag_slave</slaveName>
     <name>jtag_uart.avalon_jtag_slave</name>
-    <baseAddress>69632</baseAddress>
+    <baseAddress>69680</baseAddress>
     <span>8</span>
    </memoryBlock>
    <memoryBlock>
@@ -4138,7 +4138,7 @@ parameters are a RESULT of the module parameters. -->
     <slaveName>s1</slaveName>
     <name>MemoriaPrograma.s1</name>
     <baseAddress>262144</baseAddress>
-    <span>115648</span>
+    <span>204800</span>
    </memoryBlock>
    <memoryBlock>
     <isBridge>false</isBridge>
@@ -4449,7 +4449,7 @@ parameters are a RESULT of the module parameters. -->
     <slaveName>s1</slaveName>
     <name>MemoriaPrograma.s1</name>
     <baseAddress>262144</baseAddress>
-    <span>115648</span>
+    <span>204800</span>
    </memoryBlock>
   </interface>
   <interface name="irq" kind="interrupt_receiver" version="18.1">
@@ -5021,7 +5021,7 @@ parameters are a RESULT of the module parameters. -->
    </parameter>
    <parameter name="sharedCombinationalAndMulticycle">
     <type>boolean</type>
-    <value>true</value>
+    <value>false</value>
     <derived>false</derived>
     <enabled>true</enabled>
     <visible>false</visible>
@@ -5046,129 +5046,11 @@ parameters are a RESULT of the module parameters. -->
    <type>nios_custom_instruction</type>
    <isStart>true</isStart>
    <port>
-    <name>E_ci_multi_done</name>
-    <direction>Input</direction>
-    <width>1</width>
-    <role>done</role>
-   </port>
-   <port>
-    <name>E_ci_multi_clk_en</name>
-    <direction>Output</direction>
-    <width>1</width>
-    <role>clk_en</role>
-   </port>
-   <port>
-    <name>E_ci_multi_start</name>
-    <direction>Output</direction>
-    <width>1</width>
-    <role>start</role>
-   </port>
-   <port>
-    <name>E_ci_result</name>
-    <direction>Input</direction>
-    <width>32</width>
-    <role>result</role>
-   </port>
-   <port>
-    <name>D_ci_a</name>
-    <direction>Output</direction>
-    <width>5</width>
-    <role>a</role>
-   </port>
-   <port>
-    <name>D_ci_b</name>
-    <direction>Output</direction>
-    <width>5</width>
-    <role>b</role>
-   </port>
-   <port>
-    <name>D_ci_c</name>
-    <direction>Output</direction>
-    <width>5</width>
-    <role>c</role>
-   </port>
-   <port>
-    <name>D_ci_n</name>
-    <direction>Output</direction>
-    <width>8</width>
-    <role>n</role>
-   </port>
-   <port>
-    <name>D_ci_readra</name>
+    <name>dummy_ci_port</name>
     <direction>Output</direction>
     <width>1</width>
     <role>readra</role>
    </port>
-   <port>
-    <name>D_ci_readrb</name>
-    <direction>Output</direction>
-    <width>1</width>
-    <role>readrb</role>
-   </port>
-   <port>
-    <name>D_ci_writerc</name>
-    <direction>Output</direction>
-    <width>1</width>
-    <role>writerc</role>
-   </port>
-   <port>
-    <name>E_ci_dataa</name>
-    <direction>Output</direction>
-    <width>32</width>
-    <role>dataa</role>
-   </port>
-   <port>
-    <name>E_ci_datab</name>
-    <direction>Output</direction>
-    <width>32</width>
-    <role>datab</role>
-   </port>
-   <port>
-    <name>E_ci_multi_clock</name>
-    <direction>Output</direction>
-    <width>1</width>
-    <role>clk</role>
-   </port>
-   <port>
-    <name>E_ci_multi_reset</name>
-    <direction>Output</direction>
-    <width>1</width>
-    <role>reset</role>
-   </port>
-   <port>
-    <name>E_ci_multi_reset_req</name>
-    <direction>Output</direction>
-    <width>1</width>
-    <role>reset_req</role>
-   </port>
-   <port>
-    <name>W_ci_estatus</name>
-    <direction>Output</direction>
-    <width>1</width>
-    <role>estatus</role>
-   </port>
-   <port>
-    <name>W_ci_ipending</name>
-    <direction>Output</direction>
-    <width>32</width>
-    <role>ipending</role>
-   </port>
-   <customInstruction>
-    <isBridge>false</isBridge>
-    <moduleName>nios_custom_instr_floating_point_2_0</moduleName>
-    <slaveName>s1</slaveName>
-    <name>nios_custom_instr_floating_point_2_0.s1</name>
-    <opcodeNumber>224</opcodeNumber>
-    <opcodeMnemonic>nios_custom_instr_floating_point_2_0</opcodeMnemonic>
-   </customInstruction>
-   <customInstruction>
-    <isBridge>false</isBridge>
-    <moduleName>nios_custom_instr_floating_point_2_0</moduleName>
-    <slaveName>s2</slaveName>
-    <name>nios_custom_instr_floating_point_2_0.s2</name>
-    <opcodeNumber>248</opcodeNumber>
-    <opcodeMnemonic>nios_custom_instr_floating_point_2_0_1</opcodeMnemonic>
-   </customInstruction>
   </interface>
  </module>
  <module name="clock" kind="clock_source" version="18.1" path="clock">
@@ -6240,439 +6122,6 @@ parameters are a RESULT of the module parameters. -->
    </port>
   </interface>
  </module>
- <module
-   name="nios_custom_instr_floating_point_2_0"
-   kind="altera_nios_custom_instr_floating_point_2"
-   version="18.1"
-   path="nios_custom_instr_floating_point_2_0">
-  <!-- Describes a single module. Module parameters are
-the requested settings for a module instance. -->
-  <parameter name="arithmetic_present">
-   <type>boolean</type>
-   <value>true</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="root_present">
-   <type>boolean</type>
-   <value>false</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="conversion_present">
-   <type>boolean</type>
-   <value>true</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="comparison_present">
-   <type>boolean</type>
-   <value>true</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="deviceFamily">
-   <type>java.lang.String</type>
-   <value>CYCLONEIVE</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>false</visible>
-   <valid>true</valid>
-   <sysinfo_type>DEVICE_FAMILY</sysinfo_type>
-  </parameter>
-  <parameter name="AUTO_DEVICE">
-   <type>java.lang.String</type>
-   <value>EP4CE115F29C7</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>false</visible>
-   <valid>true</valid>
-   <sysinfo_type>DEVICE</sysinfo_type>
-  </parameter>
-  <parameter name="AUTO_DEVICE_SPEEDGRADE">
-   <type>java.lang.String</type>
-   <value>7</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>false</visible>
-   <valid>true</valid>
-   <sysinfo_type>DEVICE_SPEEDGRADE</sysinfo_type>
-  </parameter>
-  <parameter name="generateLegacySim">
-   <type>boolean</type>
-   <value>false</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <interface name="s1" kind="nios_custom_instruction_slave" version="18.1">
-   <!-- The connection points exposed by a module instance for the
-particular module parameters. Connection points and their
-parameters are a RESULT of the module parameters. -->
-   <assignment>
-    <name>embeddedsw.customInstruction.s1.0</name>
-    <value>true</value>
-   </assignment>
-   <assignment>
-    <name>embeddedsw.customInstruction.s1.1</name>
-    <value>true</value>
-   </assignment>
-   <assignment>
-    <name>embeddedsw.customInstruction.s1.2</name>
-    <value>true</value>
-   </assignment>
-   <assignment>
-    <name>embeddedsw.customInstruction.s1.3</name>
-    <value>true</value>
-   </assignment>
-   <assignment>
-    <name>embeddedsw.customInstruction.s1.4</name>
-    <value>true</value>
-   </assignment>
-   <assignment>
-    <name>embeddedsw.customInstruction.s1.5</name>
-    <value>true</value>
-   </assignment>
-   <assignment>
-    <name>embeddedsw.customInstruction.s1.6</name>
-    <value>true</value>
-   </assignment>
-   <assignment>
-    <name>embeddedsw.customInstruction.s1.7</name>
-    <value>true</value>
-   </assignment>
-   <assignment>
-    <name>embeddedsw.customInstruction.s1.8</name>
-    <value>true</value>
-   </assignment>
-   <assignment>
-    <name>embeddedsw.customInstruction.s1.9</name>
-    <value>true</value>
-   </assignment>
-   <assignment>
-    <name>embeddedsw.test.customInstruction.s1.2</name>
-    <value>true</value>
-   </assignment>
-   <assignment>
-    <name>embeddedsw.test.customInstruction.s1.3</name>
-    <value>true</value>
-   </assignment>
-   <assignment>
-    <name>embeddedsw.test.customInstruction.s1.4</name>
-    <value>true</value>
-   </assignment>
-   <assignment>
-    <name>embeddedsw.test.customInstruction.s1.5</name>
-    <value>true</value>
-   </assignment>
-   <assignment>
-    <name>embeddedsw.test.customInstruction.s1.6</name>
-    <value>true</value>
-   </assignment>
-   <assignment>
-    <name>embeddedsw.test.customInstruction.s1.7</name>
-    <value>true</value>
-   </assignment>
-   <assignment>
-    <name>embeddedsw.test.customInstruction.s1.8</name>
-    <value>true</value>
-   </assignment>
-   <assignment>
-    <name>embeddedsw.test.customInstruction.s1.9</name>
-    <value>true</value>
-   </assignment>
-   <parameter name="CIName">
-    <type>java.lang.String</type>
-    <value></value>
-    <derived>true</derived>
-    <enabled>true</enabled>
-    <visible>false</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="NPort">
-    <type>int</type>
-    <value>4</value>
-    <derived>true</derived>
-    <enabled>true</enabled>
-    <visible>false</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="clockCycle">
-    <type>int</type>
-    <value>0</value>
-    <derived>false</derived>
-    <enabled>false</enabled>
-    <visible>true</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="clockCycleType">
-    <type>com.altera.sopcmodel.custominstruction.CustomInstruction$ClockCycleType</type>
-    <value>COMBINATORIAL</value>
-    <derived>true</derived>
-    <enabled>true</enabled>
-    <visible>true</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="opcodeExtension">
-    <type>int</type>
-    <value>0</value>
-    <derived>true</derived>
-    <enabled>true</enabled>
-    <visible>false</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="opcodeExtensionLocked">
-    <type>boolean</type>
-    <value>true</value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>false</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="opcodeExtensionLockedValue">
-    <type>int</type>
-    <value>224</value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>false</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="operands">
-    <type>int</type>
-    <value>2</value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>true</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="deviceFamily">
-    <type>java.lang.String</type>
-    <value>UNKNOWN</value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>true</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="generateLegacySim">
-    <type>boolean</type>
-    <value>false</value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>true</visible>
-    <valid>true</valid>
-   </parameter>
-   <type>nios_custom_instruction</type>
-   <isStart>false</isStart>
-   <port>
-    <name>s1_dataa</name>
-    <direction>Input</direction>
-    <width>32</width>
-    <role>dataa</role>
-   </port>
-   <port>
-    <name>s1_datab</name>
-    <direction>Input</direction>
-    <width>32</width>
-    <role>datab</role>
-   </port>
-   <port>
-    <name>s1_n</name>
-    <direction>Input</direction>
-    <width>4</width>
-    <role>n</role>
-   </port>
-   <port>
-    <name>s1_result</name>
-    <direction>Output</direction>
-    <width>32</width>
-    <role>result</role>
-   </port>
-  </interface>
-  <interface name="s2" kind="nios_custom_instruction_slave" version="18.1">
-   <!-- The connection points exposed by a module instance for the
-particular module parameters. Connection points and their
-parameters are a RESULT of the module parameters. -->
-   <assignment>
-    <name>embeddedsw.customInstruction.s2.0</name>
-    <value>true</value>
-   </assignment>
-   <assignment>
-    <name>embeddedsw.customInstruction.s2.1</name>
-    <value>true</value>
-   </assignment>
-   <assignment>
-    <name>embeddedsw.customInstruction.s2.2</name>
-    <value>true</value>
-   </assignment>
-   <assignment>
-    <name>embeddedsw.customInstruction.s2.4</name>
-    <value>true</value>
-   </assignment>
-   <assignment>
-    <name>embeddedsw.customInstruction.s2.5</name>
-    <value>true</value>
-   </assignment>
-   <assignment>
-    <name>embeddedsw.customInstruction.s2.6</name>
-    <value>true</value>
-   </assignment>
-   <assignment>
-    <name>embeddedsw.customInstruction.s2.7</name>
-    <value>true</value>
-   </assignment>
-   <parameter name="CIName">
-    <type>java.lang.String</type>
-    <value></value>
-    <derived>true</derived>
-    <enabled>true</enabled>
-    <visible>false</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="NPort">
-    <type>int</type>
-    <value>3</value>
-    <derived>true</derived>
-    <enabled>true</enabled>
-    <visible>false</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="clockCycle">
-    <type>int</type>
-    <value>1</value>
-    <derived>false</derived>
-    <enabled>false</enabled>
-    <visible>true</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="clockCycleType">
-    <type>com.altera.sopcmodel.custominstruction.CustomInstruction$ClockCycleType</type>
-    <value>VARIABLE</value>
-    <derived>true</derived>
-    <enabled>true</enabled>
-    <visible>true</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="opcodeExtension">
-    <type>int</type>
-    <value>0</value>
-    <derived>true</derived>
-    <enabled>true</enabled>
-    <visible>false</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="opcodeExtensionLocked">
-    <type>boolean</type>
-    <value>true</value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>false</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="opcodeExtensionLockedValue">
-    <type>int</type>
-    <value>248</value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>false</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="operands">
-    <type>int</type>
-    <value>2</value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>true</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="deviceFamily">
-    <type>java.lang.String</type>
-    <value>UNKNOWN</value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>true</visible>
-    <valid>true</valid>
-   </parameter>
-   <parameter name="generateLegacySim">
-    <type>boolean</type>
-    <value>false</value>
-    <derived>false</derived>
-    <enabled>true</enabled>
-    <visible>true</visible>
-    <valid>true</valid>
-   </parameter>
-   <type>nios_custom_instruction</type>
-   <isStart>false</isStart>
-   <port>
-    <name>s2_clk</name>
-    <direction>Input</direction>
-    <width>1</width>
-    <role>clk</role>
-   </port>
-   <port>
-    <name>s2_clk_en</name>
-    <direction>Input</direction>
-    <width>1</width>
-    <role>clk_en</role>
-   </port>
-   <port>
-    <name>s2_dataa</name>
-    <direction>Input</direction>
-    <width>32</width>
-    <role>dataa</role>
-   </port>
-   <port>
-    <name>s2_datab</name>
-    <direction>Input</direction>
-    <width>32</width>
-    <role>datab</role>
-   </port>
-   <port>
-    <name>s2_n</name>
-    <direction>Input</direction>
-    <width>3</width>
-    <role>n</role>
-   </port>
-   <port>
-    <name>s2_reset</name>
-    <direction>Input</direction>
-    <width>1</width>
-    <role>reset</role>
-   </port>
-   <port>
-    <name>s2_reset_req</name>
-    <direction>Input</direction>
-    <width>1</width>
-    <role>reset_req</role>
-   </port>
-   <port>
-    <name>s2_start</name>
-    <direction>Input</direction>
-    <width>1</width>
-    <role>start</role>
-   </port>
-   <port>
-    <name>s2_done</name>
-    <direction>Output</direction>
-    <width>1</width>
-    <role>done</role>
-   </port>
-   <port>
-    <name>s2_result</name>
-    <direction>Output</direction>
-    <width>32</width>
-    <role>result</role>
-   </port>
-  </interface>
- </module>
  <connection
    name="Processador.data_master/jtag_uart.avalon_jtag_slave"
    kind="avalon"
@@ -6689,7 +6138,7 @@ parameters are a RESULT of the module parameters. -->
   </parameter>
   <parameter name="baseAddress">
    <type>java.math.BigInteger</type>
-   <value>0x00011000</value>
+   <value>0x00011030</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -7123,140 +6572,6 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>irq</endConnectionPoint>
  </connection>
  <connection
-   name="Processador.custom_instruction_master/nios_custom_instr_floating_point_2_0.s1"
-   kind="nios_custom_instruction"
-   version="18.1"
-   start="Processador.custom_instruction_master"
-   end="nios_custom_instr_floating_point_2_0.s1">
-  <parameter name="CIName">
-   <type>java.lang.String</type>
-   <value>nios_custom_instr_floating_point_2_0</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="CINameUpgrade">
-   <type>java.lang.String</type>
-   <value></value>
-   <derived>true</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="arbitrationPriority">
-   <type>int</type>
-   <value>1</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>false</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="baseAddress">
-   <type>long</type>
-   <value>224</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="opcodeExtensionUpgrade">
-   <type>int</type>
-   <value>-1</value>
-   <derived>true</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="deviceFamily">
-   <type>java.lang.String</type>
-   <value>UNKNOWN</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="generateLegacySim">
-   <type>boolean</type>
-   <value>false</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <startModule>Processador</startModule>
-  <startConnectionPoint>custom_instruction_master</startConnectionPoint>
-  <endModule>nios_custom_instr_floating_point_2_0</endModule>
-  <endConnectionPoint>s1</endConnectionPoint>
- </connection>
- <connection
-   name="Processador.custom_instruction_master/nios_custom_instr_floating_point_2_0.s2"
-   kind="nios_custom_instruction"
-   version="18.1"
-   start="Processador.custom_instruction_master"
-   end="nios_custom_instr_floating_point_2_0.s2">
-  <parameter name="CIName">
-   <type>java.lang.String</type>
-   <value>nios_custom_instr_floating_point_2_0_1</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="CINameUpgrade">
-   <type>java.lang.String</type>
-   <value></value>
-   <derived>true</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="arbitrationPriority">
-   <type>int</type>
-   <value>1</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>false</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="baseAddress">
-   <type>long</type>
-   <value>248</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="opcodeExtensionUpgrade">
-   <type>int</type>
-   <value>-1</value>
-   <derived>true</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="deviceFamily">
-   <type>java.lang.String</type>
-   <value>UNKNOWN</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="generateLegacySim">
-   <type>boolean</type>
-   <value>false</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <startModule>Processador</startModule>
-  <startConnectionPoint>custom_instruction_master</startConnectionPoint>
-  <endModule>nios_custom_instr_floating_point_2_0</endModule>
-  <endConnectionPoint>s2</endConnectionPoint>
- </connection>
- <connection
    name="clock.clk_reset/Processador.reset"
    kind="reset"
    version="18.1"
@@ -7601,22 +6916,6 @@ parameters are a RESULT of the module parameters. -->
   <version>18.1</version>
  </plugin>
  <plugin>
-  <instanceCount>1</instanceCount>
-  <name>altera_nios_custom_instr_floating_point_2</name>
-  <type>com.altera.entityinterfaces.IElementClass</type>
-  <subtype>com.altera.entityinterfaces.IModule</subtype>
-  <displayName>Floating Point Hardware 2</displayName>
-  <version>18.1</version>
- </plugin>
- <plugin>
-  <instanceCount>2</instanceCount>
-  <name>nios_custom_instruction_slave</name>
-  <type>com.altera.entityinterfaces.IElementClass</type>
-  <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
-  <displayName>Custom Instruction Slave</displayName>
-  <version>18.1</version>
- </plugin>
- <plugin>
   <instanceCount>6</instanceCount>
   <name>avalon</name>
   <type>com.altera.entityinterfaces.IElementClass</type>
@@ -7638,14 +6937,6 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IConnection</subtype>
   <displayName>Interrupt Connection</displayName>
-  <version>18.1</version>
- </plugin>
- <plugin>
-  <instanceCount>2</instanceCount>
-  <name>nios_custom_instruction</name>
-  <type>com.altera.entityinterfaces.IElementClass</type>
-  <subtype>com.altera.entityinterfaces.IConnection</subtype>
-  <displayName>Nios II Custom Instruction Connection</displayName>
   <version>18.1</version>
  </plugin>
  <plugin>

@@ -35,7 +35,7 @@ module SistemaEmbarcado_mm_interconnect_0 (
 		output wire [3:0]  MemoriaDados_s1_byteenable,                    //                                        .byteenable
 		output wire        MemoriaDados_s1_chipselect,                    //                                        .chipselect
 		output wire        MemoriaDados_s1_clken,                         //                                        .clken
-		output wire [14:0] MemoriaPrograma_s1_address,                    //                      MemoriaPrograma_s1.address
+		output wire [15:0] MemoriaPrograma_s1_address,                    //                      MemoriaPrograma_s1.address
 		output wire        MemoriaPrograma_s1_write,                      //                                        .write
 		input  wire [31:0] MemoriaPrograma_s1_readdata,                   //                                        .readdata
 		output wire [31:0] MemoriaPrograma_s1_writedata,                  //                                        .writedata
@@ -610,7 +610,7 @@ module SistemaEmbarcado_mm_interconnect_0 (
 	);
 
 	altera_merlin_slave_translator #(
-		.AV_ADDRESS_W                   (15),
+		.AV_ADDRESS_W                   (16),
 		.AV_DATA_W                      (32),
 		.UAV_DATA_W                     (32),
 		.AV_BURSTCOUNT_W                (1),

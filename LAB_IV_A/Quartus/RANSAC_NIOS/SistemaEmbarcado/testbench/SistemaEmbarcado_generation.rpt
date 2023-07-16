@@ -3,18 +3,22 @@ Info: C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/SistemaEmbarcad
 Info: qsys-generate C:\LAB_IV_A\Quartus\RANSAC_NIOS\SistemaEmbarcado.qsys --testbench=STANDARD --output-directory=C:\LAB_IV_A\Quartus\RANSAC_NIOS --family="Cyclone IV E" --part=EP4CE115F29C7
 Progress: Loading RANSAC_NIOS/SistemaEmbarcado.qsys
 Progress: Reading input file
+Progress: Adding Controle [altera_avalon_pio 18.1]
+Progress: Parameterizing module Controle
+Progress: Adding EntradaDados [altera_avalon_pio 18.1]
+Progress: Parameterizing module EntradaDados
 Progress: Adding MemoriaDados [altera_avalon_onchip_memory2 18.1]
 Progress: Parameterizing module MemoriaDados
 Progress: Adding MemoriaPrograma [altera_avalon_onchip_memory2 18.1]
 Progress: Parameterizing module MemoriaPrograma
 Progress: Adding Processador [altera_nios2_gen2 18.1]
 Progress: Parameterizing module Processador
+Progress: Adding SaidaDados [altera_avalon_pio 18.1]
+Progress: Parameterizing module SaidaDados
 Progress: Adding clock [clock_source 18.1]
 Progress: Parameterizing module clock
 Progress: Adding jtag_uart [altera_avalon_jtag_uart 18.1]
 Progress: Parameterizing module jtag_uart
-Progress: Adding nios_custom_instr_floating_point_2_0 [altera_nios_custom_instr_floating_point_2 18.1]
-Progress: Parameterizing module nios_custom_instr_floating_point_2_0
 Progress: Building connections
 Progress: Parameterizing connections
 Progress: Validating
@@ -34,11 +38,11 @@ Info: C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/ip_component_categories.ip
 Info: C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/ip/**/* matched 0 files in 0,00 seconds
 Info: Reading index C:\LAB_IV_A\Quartus\RANSAC_NIOS\SistemaEmbarcado\testbench\SistemaEmbarcado.ipx
 Progress: Loading RANSAC_NIOS/SistemaEmbarcado.qsys
-Info: C:/LAB_IV_A/Quartus/RANSAC_NIOS/* matched 18 files in 0,00 seconds
+Info: C:/LAB_IV_A/Quartus/RANSAC_NIOS/* matched 19 files in 0,00 seconds
 Info: C:/LAB_IV_A/Quartus/RANSAC_NIOS/ip/**/* matched 0 files in 0,00 seconds
-Info: C:/LAB_IV_A/Quartus/RANSAC_NIOS/*/* matched 324 files in 0,00 seconds
-Info: C:\LAB_IV_A\Quartus\RANSAC_NIOS\SistemaEmbarcado\testbench\SistemaEmbarcado.ipx described 0 plugins, 3 paths, in 0,00 seconds
-Info: C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/* matched 4 files in 0,00 seconds
+Info: C:/LAB_IV_A/Quartus/RANSAC_NIOS/*/* matched 330 files in 0,02 seconds
+Info: C:\LAB_IV_A\Quartus\RANSAC_NIOS\SistemaEmbarcado\testbench\SistemaEmbarcado.ipx described 0 plugins, 3 paths, in 0,02 seconds
+Info: C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/* matched 4 files in 0,02 seconds
 Info: C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/*/* matched 0 files in 0,00 seconds
 Info: C:/Users/Caroline/.altera.quartus/ip/18.1/**/* matched 0 files in 0,00 seconds
 Info: C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/$$QUARTUS_IP_PROJECTDIR/* matched 0 files in 0,00 seconds
@@ -52,11 +56,11 @@ Info: Reading index C:\intelfpga_lite\18.1\quartus\sopc_builder\builtin.ipx
 Info: C:\intelfpga_lite\18.1\quartus\sopc_builder\builtin.ipx described 83 plugins, 0 paths, in 0,00 seconds
 Info: C:/intelfpga_lite/18.1/quartus/sopc_builder/**/* matched 8 files in 0,00 seconds
 Info: Reading index C:\intelfpga_lite\18.1\quartus\common\librarian\factories\index.ipx
-Info: C:\intelfpga_lite\18.1\quartus\common\librarian\factories\index.ipx described 151 plugins, 0 paths, in 0,00 seconds
-Info: C:/intelfpga_lite/18.1/quartus/common/librarian/factories/**/* matched 4 files in 0,00 seconds
+Info: C:\intelfpga_lite\18.1\quartus\common\librarian\factories\index.ipx described 151 plugins, 0 paths, in 0,02 seconds
+Info: C:/intelfpga_lite/18.1/quartus/common/librarian/factories/**/* matched 4 files in 0,02 seconds
 Info: C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/$IP_IPX_PATH matched 1 files in 0,00 seconds
-Info: C:\intelfpga_lite\18.1\quartus\sopc_builder\bin\root_components.ipx described 0 plugins, 13 paths, in 0,08 seconds
-Info: C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/root_components.ipx matched 1 files in 0,08 seconds
+Info: C:\intelfpga_lite\18.1\quartus\sopc_builder\bin\root_components.ipx described 0 plugins, 13 paths, in 0,11 seconds
+Info: C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/root_components.ipx matched 1 files in 0,11 seconds
 Progress: 
 Progress: 
 Progress: 
@@ -152,30 +156,23 @@ Info: SistemaEmbarcado_tb.SistemaEmbarcado_inst_reset_bfm:            $Revision:
 Info: SistemaEmbarcado_tb.SistemaEmbarcado_inst_reset_bfm:            $Date: 2018/07/18 $
 Info: SistemaEmbarcado_tb.SistemaEmbarcado_inst_reset_bfm: Reset is negatively asserted.
 Info: SistemaEmbarcado_tb: Generating SistemaEmbarcado_tb "SistemaEmbarcado_tb" for SIM_VERILOG
-Warning: SistemaEmbarcado_inst: "No matching role found for Processador_custom_instruction_master_multi_xconnect:ci_slave:ci_slave_ipending (ipending)"
-Warning: SistemaEmbarcado_inst: "No matching role found for Processador_custom_instruction_master_multi_xconnect:ci_slave:ci_slave_estatus (estatus)"
 Info: SistemaEmbarcado_inst: "SistemaEmbarcado_tb" instantiated SistemaEmbarcado "SistemaEmbarcado_inst"
 Info: SistemaEmbarcado_inst_clk_bfm: "SistemaEmbarcado_tb" instantiated altera_avalon_clock_source "SistemaEmbarcado_inst_clk_bfm"
 Info: SistemaEmbarcado_inst_reset_bfm: "SistemaEmbarcado_tb" instantiated altera_avalon_reset_source "SistemaEmbarcado_inst_reset_bfm"
 Info: Reusing file C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/verbosity_pkg.sv
 Info: MemoriaDados: Starting RTL generation for module 'SistemaEmbarcado_MemoriaDados'
-Info: MemoriaDados:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=SistemaEmbarcado_MemoriaDados --dir=C:/Users/Caroline/AppData/Local/Temp/alt9546_5256347135749869001.dir/0062_MemoriaDados_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/Caroline/AppData/Local/Temp/alt9546_5256347135749869001.dir/0062_MemoriaDados_gen//SistemaEmbarcado_MemoriaDados_component_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/Caroline/AppData/Local/Temp/alt9546_5256347135749869001.dir/0062_MemoriaDados_gen/  ]
+Info: MemoriaDados:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=SistemaEmbarcado_MemoriaDados --dir=C:/Users/Caroline/AppData/Local/Temp/alt9554_5306946657189972064.dir/0027_MemoriaDados_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/Caroline/AppData/Local/Temp/alt9554_5306946657189972064.dir/0027_MemoriaDados_gen//SistemaEmbarcado_MemoriaDados_component_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/Caroline/AppData/Local/Temp/alt9554_5306946657189972064.dir/0027_MemoriaDados_gen/  ]
 Info: MemoriaDados: Done RTL generation for module 'SistemaEmbarcado_MemoriaDados'
 Info: MemoriaDados: "SistemaEmbarcado_inst" instantiated altera_avalon_onchip_memory2 "MemoriaDados"
 Info: MemoriaPrograma: Starting RTL generation for module 'SistemaEmbarcado_MemoriaPrograma'
-Info: MemoriaPrograma:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=SistemaEmbarcado_MemoriaPrograma --dir=C:/Users/Caroline/AppData/Local/Temp/alt9546_5256347135749869001.dir/0063_MemoriaPrograma_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/Caroline/AppData/Local/Temp/alt9546_5256347135749869001.dir/0063_MemoriaPrograma_gen//SistemaEmbarcado_MemoriaPrograma_component_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/Caroline/AppData/Local/Temp/alt9546_5256347135749869001.dir/0063_MemoriaPrograma_gen/  ]
+Info: MemoriaPrograma:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=SistemaEmbarcado_MemoriaPrograma --dir=C:/Users/Caroline/AppData/Local/Temp/alt9554_5306946657189972064.dir/0028_MemoriaPrograma_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/Caroline/AppData/Local/Temp/alt9554_5306946657189972064.dir/0028_MemoriaPrograma_gen//SistemaEmbarcado_MemoriaPrograma_component_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/Caroline/AppData/Local/Temp/alt9554_5306946657189972064.dir/0028_MemoriaPrograma_gen/  ]
 Info: MemoriaPrograma: Done RTL generation for module 'SistemaEmbarcado_MemoriaPrograma'
 Info: MemoriaPrograma: "SistemaEmbarcado_inst" instantiated altera_avalon_onchip_memory2 "MemoriaPrograma"
 Info: Processador: "SistemaEmbarcado_inst" instantiated altera_nios2_gen2 "Processador"
 Info: jtag_uart: Starting RTL generation for module 'SistemaEmbarcado_jtag_uart'
-Info: jtag_uart:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=SistemaEmbarcado_jtag_uart --dir=C:/Users/Caroline/AppData/Local/Temp/alt9546_5256347135749869001.dir/0064_jtag_uart_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/Caroline/AppData/Local/Temp/alt9546_5256347135749869001.dir/0064_jtag_uart_gen//SistemaEmbarcado_jtag_uart_component_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/Caroline/AppData/Local/Temp/alt9546_5256347135749869001.dir/0064_jtag_uart_gen/  ]
+Info: jtag_uart:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=SistemaEmbarcado_jtag_uart --dir=C:/Users/Caroline/AppData/Local/Temp/alt9554_5306946657189972064.dir/0029_jtag_uart_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/Caroline/AppData/Local/Temp/alt9554_5306946657189972064.dir/0029_jtag_uart_gen//SistemaEmbarcado_jtag_uart_component_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/Caroline/AppData/Local/Temp/alt9554_5306946657189972064.dir/0029_jtag_uart_gen/  ]
 Info: jtag_uart: Done RTL generation for module 'SistemaEmbarcado_jtag_uart'
 Info: jtag_uart: "SistemaEmbarcado_inst" instantiated altera_avalon_jtag_uart "jtag_uart"
-Info: nios_custom_instr_floating_point_2_0: "SistemaEmbarcado_inst" instantiated altera_nios_custom_instr_floating_point_2 "nios_custom_instr_floating_point_2_0"
-Info: Processador_custom_instruction_master_translator: "SistemaEmbarcado_inst" instantiated altera_customins_master_translator "Processador_custom_instruction_master_translator"
-Info: Processador_custom_instruction_master_comb_xconnect: "SistemaEmbarcado_inst" instantiated altera_customins_xconnect "Processador_custom_instruction_master_comb_xconnect"
-Info: Processador_custom_instruction_master_comb_slave_translator0: "SistemaEmbarcado_inst" instantiated altera_customins_slave_translator "Processador_custom_instruction_master_comb_slave_translator0"
-Info: Processador_custom_instruction_master_multi_xconnect: "SistemaEmbarcado_inst" instantiated altera_customins_xconnect "Processador_custom_instruction_master_multi_xconnect"
 Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_001: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_002: Inserting error_adapter: error_adapter_0
@@ -184,24 +181,22 @@ Info: mm_interconnect_0: "SistemaEmbarcado_inst" instantiated altera_mm_intercon
 Info: irq_mapper: "SistemaEmbarcado_inst" instantiated altera_irq_mapper "irq_mapper"
 Info: rst_controller: "SistemaEmbarcado_inst" instantiated altera_reset_controller "rst_controller"
 Info: cpu: Starting RTL generation for module 'SistemaEmbarcado_Processador_cpu'
-Info: cpu:   Generation command is [exec C:/intelFPGA_lite/18.1/quartus/bin64//eperlcmd.exe -I C:/intelFPGA_lite/18.1/quartus/bin64//perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/cpu_lib -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/nios_lib -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -- C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/generate_rtl.epl --name=SistemaEmbarcado_Processador_cpu --dir=C:/Users/Caroline/AppData/Local/Temp/alt9546_5256347135749869001.dir/0071_cpu_gen/ --quartus_bindir=C:/intelFPGA_lite/18.1/quartus/bin64/ --verilog --config=C:/Users/Caroline/AppData/Local/Temp/alt9546_5256347135749869001.dir/0071_cpu_gen//SistemaEmbarcado_Processador_cpu_processor_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/Caroline/AppData/Local/Temp/alt9546_5256347135749869001.dir/0071_cpu_gen/  ]
-Info: cpu: # 2023.07.08 14:16:15 (*) Starting Nios II generation
-Info: cpu: # 2023.07.08 14:16:15 (*)   Checking for plaintext license.
-Info: cpu: # 2023.07.08 14:16:15 (*)   Couldn't query license setup in Quartus directory C:/intelFPGA_lite/18.1/quartus/bin64/
-Info: cpu: # 2023.07.08 14:16:15 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
-Info: cpu: # 2023.07.08 14:16:15 (*)   LM_LICENSE_FILE environment variable is empty
-Info: cpu: # 2023.07.08 14:16:15 (*)   Plaintext license not found.
-Info: cpu: # 2023.07.08 14:16:15 (*)   No license required to generate encrypted Nios II/e.
-Info: cpu: # 2023.07.08 14:16:15 (*)   Elaborating CPU configuration settings
-Info: cpu: # 2023.07.08 14:16:15 (*)   Creating all objects for CPU
-Info: cpu: # 2023.07.08 14:16:16 (*)   Creating 'C:/Users/Caroline/AppData/Local/Temp/alt9546_5256347135749869001.dir/0071_cpu_gen//SistemaEmbarcado_Processador_cpu_nios2_waves.do'
-Info: cpu: # 2023.07.08 14:16:16 (*)   Generating RTL from CPU objects
-Info: cpu: # 2023.07.08 14:16:16 (*)   Creating plain-text RTL
-Info: cpu: # 2023.07.08 14:16:16 (*) Done Nios II generation
+Info: cpu:   Generation command is [exec C:/intelFPGA_lite/18.1/quartus/bin64//eperlcmd.exe -I C:/intelFPGA_lite/18.1/quartus/bin64//perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/cpu_lib -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/nios_lib -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -- C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/generate_rtl.epl --name=SistemaEmbarcado_Processador_cpu --dir=C:/Users/Caroline/AppData/Local/Temp/alt9554_5306946657189972064.dir/0032_cpu_gen/ --quartus_bindir=C:/intelFPGA_lite/18.1/quartus/bin64/ --verilog --config=C:/Users/Caroline/AppData/Local/Temp/alt9554_5306946657189972064.dir/0032_cpu_gen//SistemaEmbarcado_Processador_cpu_processor_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/Caroline/AppData/Local/Temp/alt9554_5306946657189972064.dir/0032_cpu_gen/  ]
+Info: cpu: # 2023.07.15 23:37:30 (*) Starting Nios II generation
+Info: cpu: # 2023.07.15 23:37:30 (*)   Checking for plaintext license.
+Info: cpu: # 2023.07.15 23:37:30 (*)   Couldn't query license setup in Quartus directory C:/intelFPGA_lite/18.1/quartus/bin64/
+Info: cpu: # 2023.07.15 23:37:30 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
+Info: cpu: # 2023.07.15 23:37:30 (*)   LM_LICENSE_FILE environment variable is empty
+Info: cpu: # 2023.07.15 23:37:30 (*)   Plaintext license not found.
+Info: cpu: # 2023.07.15 23:37:30 (*)   No license required to generate encrypted Nios II/e.
+Info: cpu: # 2023.07.15 23:37:30 (*)   Elaborating CPU configuration settings
+Info: cpu: # 2023.07.15 23:37:30 (*)   Creating all objects for CPU
+Info: cpu: # 2023.07.15 23:37:31 (*)   Creating 'C:/Users/Caroline/AppData/Local/Temp/alt9554_5306946657189972064.dir/0032_cpu_gen//SistemaEmbarcado_Processador_cpu_nios2_waves.do'
+Info: cpu: # 2023.07.15 23:37:31 (*)   Generating RTL from CPU objects
+Info: cpu: # 2023.07.15 23:37:31 (*)   Creating plain-text RTL
+Info: cpu: # 2023.07.15 23:37:31 (*) Done Nios II generation
 Info: cpu: Done RTL generation for module 'SistemaEmbarcado_Processador_cpu'
 Info: cpu: "Processador" instantiated altera_nios2_gen2_unit "cpu"
-Info: fpci_combi: "nios_custom_instr_floating_point_2_0" instantiated altera_nios_custom_instr_floating_point_2_combi "fpci_combi"
-Info: fpci_multi: "nios_custom_instr_floating_point_2_0" instantiated altera_nios_custom_instr_floating_point_2_multi "fpci_multi"
 Info: Processador_data_master_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "Processador_data_master_translator"
 Info: jtag_uart_avalon_jtag_slave_translator: "mm_interconnect_0" instantiated altera_merlin_slave_translator "jtag_uart_avalon_jtag_slave_translator"
 Info: Processador_data_master_agent: "mm_interconnect_0" instantiated altera_merlin_master_agent "Processador_data_master_agent"
@@ -223,13 +218,14 @@ Info: rsp_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "r
 Info: Reusing file C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/altera_merlin_arbitrator.sv
 Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
 Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
-Info: SistemaEmbarcado_tb: Done "SistemaEmbarcado_tb" with 37 modules, 76 files
+Info: SistemaEmbarcado_tb: Done "SistemaEmbarcado_tb" with 30 modules, 52 files
 Info: qsys-generate succeeded.
 Info: sim-script-gen --spd=C:\LAB_IV_A\Quartus\RANSAC_NIOS\SistemaEmbarcado_tb.spd --output-directory=C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/ --use-relative-paths=true
 Info: Doing: ip-make-simscript --spd=C:\LAB_IV_A\Quartus\RANSAC_NIOS\SistemaEmbarcado_tb.spd --output-directory=C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/ --use-relative-paths=true
 Info: Generating the following file(s) for MODELSIM simulator in C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/ directory:
 Info: 	mentor/msim_setup.tcl
-Info: Skipping VCS script generation since VHDL file $QUARTUS_INSTALL_DIR/eda/sim_lib/altera_syn_attributes.vhd is required for simulation
+Info: Generating the following file(s) for VCS simulator in C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/ directory:
+Info: 	synopsys/vcs/vcs_setup.sh
 Info: Generating the following file(s) for VCSMX simulator in C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/ directory:
 Info: 	synopsys/vcsmx/synopsys_sim.setup
 Info: 	synopsys/vcsmx/vcsmx_setup.sh
@@ -237,7 +233,7 @@ Info: Generating the following file(s) for NCSIM simulator in C:/LAB_IV_A/Quartu
 Info: 	cadence/cds.lib
 Info: 	cadence/hdl.var
 Info: 	cadence/ncsim_setup.sh
-Info: 	37 .cds.lib files in cadence/cds_libs/ directory
+Info: 	30 .cds.lib files in cadence/cds_libs/ directory
 Info: Generating the following file(s) for RIVIERA simulator in C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/ directory:
 Info: 	aldec/rivierapro_setup.tcl
 Info: For information on how to simulate your IP, see the explanatory comments in the simulator-specific subdirectories under C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/.

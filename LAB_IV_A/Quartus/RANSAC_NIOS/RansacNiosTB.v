@@ -3,8 +3,7 @@
 module RansacNiosTB;
 
 reg	CLOCK_50;
-reg	KEY;
-
+reg	[3:3] KEY;
 
 
 RansacNios DUV(

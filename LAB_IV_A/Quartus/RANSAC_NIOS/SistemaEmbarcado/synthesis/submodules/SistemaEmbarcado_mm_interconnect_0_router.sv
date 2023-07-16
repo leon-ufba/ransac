@@ -136,14 +136,14 @@ module SistemaEmbarcado_mm_interconnect_0_router
     // -------------------------------------------------------
     localparam PAD0 = log2ceil(64'h10000 - 64'h0); 
     localparam PAD1 = log2ceil(64'h11000 - 64'h10800); 
-    localparam PAD2 = log2ceil(64'h11008 - 64'h11000); 
-    localparam PAD3 = log2ceil(64'h60000 - 64'h40000); 
+    localparam PAD2 = log2ceil(64'h11038 - 64'h11030); 
+    localparam PAD3 = log2ceil(64'h80000 - 64'h40000); 
     // -------------------------------------------------------
     // Work out which address bits are significant based on the
     // address range of the slaves. If the required width is too
     // large or too small, we use the address field width instead.
     // -------------------------------------------------------
-    localparam ADDR_RANGE = 64'h60000;
+    localparam ADDR_RANGE = 64'h80000;
     localparam RANGE_ADDR_WIDTH = log2ceil(ADDR_RANGE);
     localparam OPTIMIZED_ADDR_H = (RANGE_ADDR_WIDTH > PKT_ADDR_W) ||
                                   (RANGE_ADDR_WIDTH == 0) ?
@@ -203,13 +203,13 @@ module SistemaEmbarcado_mm_interconnect_0_router
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 2;
     end
 
-    // ( 0x11000 .. 0x11008 )
-    if ( {address[RG:PAD2],{PAD2{1'b0}}} == 19'h11000   ) begin
+    // ( 0x11030 .. 0x11038 )
+    if ( {address[RG:PAD2],{PAD2{1'b0}}} == 19'h11030   ) begin
             src_channel = 4'b0001;
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 3;
     end
 
-    // ( 0x40000 .. 0x60000 )
+    // ( 0x40000 .. 0x80000 )
     if ( {address[RG:PAD3],{PAD3{1'b0}}} == 19'h40000   ) begin
             src_channel = 4'b0100;
             src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 1;

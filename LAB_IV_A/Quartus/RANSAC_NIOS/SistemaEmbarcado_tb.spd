@@ -98,82 +98,6 @@
    type="SYSTEM_VERILOG"
    library="Processador_data_master_translator" />
  <file
-   path="SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/fpoint2_multi.vhd"
-   type="VHDL"
-   library="fpci_multi" />
- <file
-   path="SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/fpoint2_multi_datapath.vhd"
-   type="VHDL"
-   library="fpci_multi" />
- <file
-   path="SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/fpoint2_multi_dspba_library_package.vhd"
-   type="VHDL"
-   library="fpci_multi" />
- <file
-   path="SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/fpoint2_multi_dspba_library.vhd"
-   type="VHDL"
-   library="fpci_multi" />
- <file
-   path="SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/FPAddSub/FPAddSub.vhd"
-   type="VHDL"
-   library="fpci_multi" />
- <file
-   path="SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/FPDiv/FPDiv.vhd"
-   type="VHDL"
-   library="fpci_multi" />
- <file
-   path="SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/FPMult/FPMult.vhd"
-   type="VHDL"
-   library="fpci_multi" />
- <file
-   path="SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/IntToFloat/IntToFloat.vhd"
-   type="VHDL"
-   library="fpci_multi" />
- <file
-   path="SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/FloatToInt/FloatToInt.vhd"
-   type="VHDL"
-   library="fpci_multi" />
- <file
-   path="SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/FPSqrt/FPSqrt_safe_path.vhd"
-   type="VHDL"
-   library="fpci_multi" />
- <file
-   path="SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/FPSqrt/FPSqrt.vhd"
-   type="VHDL"
-   library="fpci_multi" />
- <file
-   path="SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/FPSqrt/FPSqrt_memoryC0_uid59_sqrtTableGenerator_lutmem.hex"
-   type="HEX"
-   library="fpci_multi" />
- <file
-   path="SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/FPSqrt/FPSqrt_memoryC1_uid60_sqrtTableGenerator_lutmem.hex"
-   type="HEX"
-   library="fpci_multi" />
- <file
-   path="SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/FPSqrt/FPSqrt_memoryC2_uid61_sqrtTableGenerator_lutmem.hex"
-   type="HEX"
-   library="fpci_multi" />
- <file
-   path="SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/fpoint2_combi.vhd"
-   type="VHDL"
-   library="fpci_combi" />
- <file
-   path="SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/FPMinMaxFused/FPMinMaxFused.vhd"
-   type="VHDL"
-   library="fpci_combi" />
- <file
-   path="SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/FPCompareFused/FPCompareFused.vhd"
-   type="VHDL"
-   library="fpci_combi" />
- <file
-   path="SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/FPNeg_Abs/FPNeg.vhd"
-   type="VHDL"
-   library="fpci_combi" />
- <file
-   path="SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/FPNeg_Abs/FPAbs.vhd"
-   type="VHDL"
-   library="fpci_combi" />
- <file
    path="SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/SistemaEmbarcado_Processador_cpu.sdc"
    type="SDC"
    library="cpu" />
@@ -257,26 +181,6 @@
    path="SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/SistemaEmbarcado_mm_interconnect_0.v"
    type="VERILOG"
    library="mm_interconnect_0" />
- <file
-   path="SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/SistemaEmbarcado_Processador_custom_instruction_master_multi_xconnect.sv"
-   type="SYSTEM_VERILOG"
-   library="Processador_custom_instruction_master_multi_xconnect" />
- <file
-   path="SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/altera_customins_slave_translator.sv"
-   type="SYSTEM_VERILOG"
-   library="Processador_custom_instruction_master_comb_slave_translator0" />
- <file
-   path="SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/SistemaEmbarcado_Processador_custom_instruction_master_comb_xconnect.sv"
-   type="SYSTEM_VERILOG"
-   library="Processador_custom_instruction_master_comb_xconnect" />
- <file
-   path="SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/altera_customins_master_translator.v"
-   type="VERILOG"
-   library="Processador_custom_instruction_master_translator" />
- <file
-   path="SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/SistemaEmbarcado_nios_custom_instr_floating_point_2_0.v"
-   type="VERILOG"
-   library="nios_custom_instr_floating_point_2_0" />
  <file
    path="SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/SistemaEmbarcado_jtag_uart.v"
    type="VERILOG"
