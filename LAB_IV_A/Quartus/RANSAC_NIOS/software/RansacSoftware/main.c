@@ -19,13 +19,14 @@ int main() {
 	FILE *profilingCSV;
 	char next_line;
 	int step;
-	int data_size, x, y;
-	Point outliers[MAX_POINTS];
+	int data_size;
+	int x, y;
+	int outliers[MAX_POINTS];
 
 	entrada = fopen("/mnt/host/resultados/FPGAin.txt", "r");
-	saida = fopen("/mnt/host/resultados/FPGAout.txt", "w");
-	profiling = fopen("/mnt/host/resultados/Profiling.txt", "w");
-	profilingCSV = fopen("/mnt/host/resultados/Profiling.csv", "w");
+	saida = fopen("/mnt/host/resultados/FPGAout_O.txt", "w");
+	profiling = fopen("/mnt/host/resultados/Profiling_O.txt", "w");
+	profilingCSV = fopen("/mnt/host/resultados/Profiling_O.csv", "w");
 
 	if (entrada == NULL)
 	{
@@ -41,7 +42,7 @@ int main() {
 		fscanf(entrada, "%d", &data_size);
 		for (int i = 0; i < data_size; i++) {
 			fscanf(entrada, "%d %d", &x, &y);
-			data[i] = (x&0xFF)|(y<<8);
+			data[i] = PACKING_COORD(x,y);
 		}
 		fscanf(entrada, "%c", &next_line);
 
@@ -50,9 +51,8 @@ int main() {
 
 	// ------------ Variaveis para modelo de linha ------------//
 	//Posicao inical do robo
-	Point start;
-	start.x = 0;
-	start.y = 25;
+	int start;
+	start = PACKING_COORD(0,25);
 	RansacResult model;
 	Line reference;
 	reference.a = 0;
@@ -68,10 +68,10 @@ int main() {
 	inliersOutliers_counter = 0;
 	squareDistanceBetweenPoints_counter = 0;
 
-	model = RANSAC(data, &start, outliers, data_size);
+	model = RANSAC(data, start, outliers, data_size);
 
 	// ------------ Variaveis para resultado final -------------//
-	Point intersection = { 0.0, 0.0 };
+	int intersection;
 	float distance = 0;
 	float angle = 0.0;
 
@@ -81,7 +81,7 @@ int main() {
 	else
 	{
 		intersection = calculateIntersection(&model.bestModel,  &reference);
-		distance = square_root(squareDistanceBetweenPoints(&intersection, &start));
+		distance = square_root(squareDistanceBetweenPoints(intersection, start));
 		angle = getAngleFromModel (model.bestModel.a);
 	}
 

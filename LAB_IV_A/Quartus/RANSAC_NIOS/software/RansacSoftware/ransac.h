@@ -10,6 +10,9 @@
 
 #define X j
 #define Y j+1
+#define PACKING_COORD(x, y) (((x) & 0xFF) << 0) | (((y) & 0xFF) << 8)
+#define GET_X(packing) ((int)(packing) & 0xFF)
+#define GET_Y(packing) ((int)(packing) >> 8)
 #define MAX_POINTS 300
 
 #define END_BASE_DATA (int *) 0x0000
@@ -27,10 +30,6 @@ volatile int inliersOutliersMemory_counter;
 volatile int inliersOutliers_counter;
 volatile int squareDistanceBetweenPoints_counter;
 
-typedef struct {
-  int x;
-  int y;
-} Point;
 
 typedef struct {
   float a;
@@ -44,16 +43,18 @@ typedef struct {
 } RansacResult;
 
 
+
+
 float square_root(float number);
-Point calculateIntersection(Line* k, Line* l);
+int calculateIntersection(Line* k, Line* l);
 float getAngleFromModel(float a);
-Line leastSquare(Point* data, int size);
-float coefficientOfDetermination(Point* data, Line model, float avg_y, int data_size);
-void inliersOutliersMemory(int* data, Line model, Point* inliers, Point* outliers, int dataSize, int* inlierSize, int* outlierSize);
-void inliersOutliers(Point* data, Line model, Point* inliers, Point* outliers, int dataSize, int* inlierSize, int* outlierSize);
-void checkModel(Point* data, Point* temp, RansacResult* rs, int data_size, int temp_size);
-int squareDistanceBetweenPoints (Point* a, Point* b);
-RansacResult RANSAC(int* data, Point* botPos, Point* outliers, int data_size);
+Line leastSquare(int* data, int size);
+float coefficientOfDetermination(int* data, Line model, int avg_y, int data_size);
+void inliersOutliersMemory(int* data, Line model, int* inliers, int* outliers, int dataSize, int* inlierSize, int* outlierSize);
+void inliersOutliers(int* data, Line model, int* inliers, int* outliers, int dataSize, int* inlierSize, int* outlierSize);
+void checkModel(int* data, int* temp, RansacResult* rs, int data_size, int temp_size);
+int squareDistanceBetweenPoints (int a, int b);
+RansacResult RANSAC(int* data, int botPos, int* outliers, int data_size);
 
 
 

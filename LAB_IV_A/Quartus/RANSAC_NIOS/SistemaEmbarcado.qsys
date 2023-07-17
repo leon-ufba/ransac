@@ -153,6 +153,14 @@
          type = "String";
       }
    }
+   element nios_custom_instr_floating_point_2_0
+   {
+      datum _sortIndex
+      {
+         value = "9";
+         type = "int";
+      }
+   }
 }
 ]]></parameter>
  <parameter name="clockCrossingAdapter" value="HANDSHAKE" />
@@ -300,7 +308,7 @@
   <parameter name="cpuArchRev" value="1" />
   <parameter name="cpuID" value="0" />
   <parameter name="cpuReset" value="false" />
-  <parameter name="customInstSlavesSystemInfo" value="&lt;info/&gt;" />
+  <parameter name="customInstSlavesSystemInfo"><![CDATA[<info><slave name="nios_custom_instr_floating_point_2_0" baseAddress="224" addressSpan="16" clockCycleType="COMBINATORIAL" /><slave name="nios_custom_instr_floating_point_2_0_1" baseAddress="248" addressSpan="8" clockCycleType="VARIABLE" /></info>]]></parameter>
   <parameter name="customInstSlavesSystemInfo_nios_a" value="&lt;info/&gt;" />
   <parameter name="customInstSlavesSystemInfo_nios_b" value="&lt;info/&gt;" />
   <parameter name="customInstSlavesSystemInfo_nios_c" value="&lt;info/&gt;" />
@@ -504,6 +512,19 @@
   <parameter name="writeBufferDepth" value="64" />
   <parameter name="writeIRQThreshold" value="8" />
  </module>
+ <module
+   name="nios_custom_instr_floating_point_2_0"
+   kind="altera_nios_custom_instr_floating_point_2"
+   version="18.1"
+   enabled="1">
+  <parameter name="AUTO_DEVICE" value="EP4CE115F29C7" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="7" />
+  <parameter name="arithmetic_present" value="true" />
+  <parameter name="comparison_present" value="true" />
+  <parameter name="conversion_present" value="true" />
+  <parameter name="deviceFamily" value="Cyclone IV E" />
+  <parameter name="root_present" value="false" />
+ </module>
  <connection
    kind="avalon"
    version="18.1"
@@ -625,6 +646,24 @@
    start="Processador.irq"
    end="jtag_uart.irq">
   <parameter name="irqNumber" value="6" />
+ </connection>
+ <connection
+   kind="nios_custom_instruction"
+   version="18.1"
+   start="Processador.custom_instruction_master"
+   end="nios_custom_instr_floating_point_2_0.s1">
+  <parameter name="CIName">nios_custom_instr_floating_point_2_0</parameter>
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="224" />
+ </connection>
+ <connection
+   kind="nios_custom_instruction"
+   version="18.1"
+   start="Processador.custom_instruction_master"
+   end="nios_custom_instr_floating_point_2_0.s2">
+  <parameter name="CIName">nios_custom_instr_floating_point_2_0_1</parameter>
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="248" />
  </connection>
  <connection
    kind="reset"

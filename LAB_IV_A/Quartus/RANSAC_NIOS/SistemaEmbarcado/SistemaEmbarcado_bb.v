@@ -1,10 +1,10 @@
 
 module SistemaEmbarcado (
 	clk_clk,
-	reset_reset_n,
-	medidordesempenho_readdata);	
+	medidordesempenho_readdata,
+	reset_reset_n);	
 
 	input		clk_clk;
-	input		reset_reset_n;
 	output	[31:0]	medidordesempenho_readdata;
+	input		reset_reset_n;
 endmodule
