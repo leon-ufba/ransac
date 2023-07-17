@@ -120,23 +120,16 @@ float coefficientOfDetermination(int* data, Line model, int avg_y, int data_size
 void inliersOutliersMemory(int* data, Line model, int* inliers, int* outliers, int dataSize, int* inlierSize, int* outlierSize) {
 	*MEDIDOR_ESCRITA = 0; // para resetar a contagem
 	*MEDIDOR_ESCRITA = 1; // para iniciar a contagem
-
-	const float square2 = E * E * (model.a * model.a + 1.0);
-    int tempX, tempY, coord;
-    float dist;
-
+    float square2 = E * E * (model.a * model.a + 1.0);
     for (int k = 0; k < dataSize; k++) {
-    	coord = data[k];
-    	tempX = GET_X(coord);
-    	tempY = GET_Y(coord);
-
-        dist = (model.a * tempX - tempY + model.b);
-
+    	int tempX = data[k]&0xFF;
+    	int tempY = (data[k]>>8)&0xFF ;
+        float dist = (model.a * tempX - tempY + model.b);
         if (dist * dist <= square2) {
-        	inliers[*inlierSize] = coord;
+        	inliers[*inlierSize] = data[k];
             (*inlierSize)++;
         } else {
-        	outliers[*outlierSize] = coord;
+        	outliers[*outlierSize] = data[k];
             (*outlierSize)++;
         }
     }
@@ -148,19 +141,15 @@ void inliersOutliersMemory(int* data, Line model, int* inliers, int* outliers, i
 void inliersOutliers(int* data, Line model, int* inliers, int* outliers, int dataSize, int* inlierSize, int* outlierSize) {
 	*MEDIDOR_ESCRITA = 0; // para resetar a contagem
 	*MEDIDOR_ESCRITA = 1; // para iniciar a contagem
-
-	const float square2 = E * E * (model.a * model.a + 1.0);
-	float dist;
-	int coord;
+    float square2 = E * E * (model.a * model.a + 1.0);
 
     for (int k = 0; k < dataSize; k++) {
-    	coord = data[k];
-        dist = (model.a * GET_X(coord) - GET_Y(coord) + model.b);
+        float dist = (model.a * GET_X(data[k]) - GET_Y(data[k]) + model.b);
         if (dist * dist <= square2) {
-            inliers[*inlierSize] = coord;
+            inliers[*inlierSize] = data[k];
             (*inlierSize)++;
         } else {
-            outliers[*outlierSize] = coord;
+            outliers[*outlierSize] = data[k];
             (*outlierSize)++;
         }
     }

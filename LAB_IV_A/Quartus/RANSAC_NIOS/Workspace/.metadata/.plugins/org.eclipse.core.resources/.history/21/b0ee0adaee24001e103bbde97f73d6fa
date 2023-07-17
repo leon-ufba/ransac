@@ -43,6 +43,8 @@ typedef struct {
 } RansacResult;
 
 
+
+
 float square_root(float number);
 int calculateIntersection(Line* k, Line* l);
 float getAngleFromModel(float a);

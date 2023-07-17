@@ -149,18 +149,15 @@ void inliersOutliers(int* data, Line model, int* inliers, int* outliers, int dat
 	*MEDIDOR_ESCRITA = 0; // para resetar a contagem
 	*MEDIDOR_ESCRITA = 1; // para iniciar a contagem
 
-	const float square2 = E * E * (model.a * model.a + 1.0);
-	float dist;
-	int coord;
+	float square2 = E * E * (model.a * model.a + 1.0);
 
     for (int k = 0; k < dataSize; k++) {
-    	coord = data[k];
-        dist = (model.a * GET_X(coord) - GET_Y(coord) + model.b);
+        float dist = (model.a * GET_X(data[k]) - GET_Y(data[k]) + model.b);
         if (dist * dist <= square2) {
-            inliers[*inlierSize] = coord;
+            inliers[*inlierSize] = data[k];
             (*inlierSize)++;
         } else {
-            outliers[*outlierSize] = coord;
+            outliers[*outlierSize] = data[k];
             (*outlierSize)++;
         }
     }

@@ -1,9 +1,9 @@
-18:32:50 **** Incremental Build of configuration Nios II for project RansacSoftware ****
+19:20:37 **** Incremental Build of configuration Nios II for project RansacSoftware ****
 make all 
 Info: Building ../RansacSoftware_bsp/
 C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../RansacSoftware_bsp/
 [BSP build complete]
 [RansacSoftware build complete]
 
-18:32:51 Build Finished (took 495ms)
+19:20:37 Build Finished (took 567ms)
 
