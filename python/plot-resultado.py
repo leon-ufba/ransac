@@ -34,7 +34,6 @@ def read_results_file(filename):
             result['angle'] = float(file.readline().strip())
             result['distance'] = float(file.readline().strip())
             results.append(result)
-            # Descartar linha em branco
             file.readline()
         return results
 
@@ -91,11 +90,8 @@ def plot_cases(cases, results):
 
     plt.show()
 
-# Leitura dos arquivos de dados e resultados
-data_cases = read_data_file('FPGAin.txt')
-results = read_results_file('FPGAout.txt')
+
+data_cases = read_data_file('resultados\\FPGAin.txt')
+results = read_results_file('resultados\\FPGAout.txt')
 print(data_cases)
-# Plot dos dados originais e modelo para cada caso de teste
-#for case, result in zip(data_cases, results):
-#    plot_case(case, result)
 plot_cases(data_cases, results)
