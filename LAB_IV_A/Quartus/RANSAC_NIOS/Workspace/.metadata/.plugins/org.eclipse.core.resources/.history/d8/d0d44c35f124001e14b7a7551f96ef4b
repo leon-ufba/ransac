@@ -61,15 +61,14 @@ Line leastSquare(int* data, int size) {
         return line;
     }
 
-	float sx = 0.0;
-    float sy = 0.0;
-	float sxy = 0.0;
-	float sx2 = 0.0;
+	float sx = 0;
+    float sy = 0;
+	float sxy = 0;
+	float sx2 = 0;
 
     for (int i = 0; i < size; i++) {
-    	int coord = data[i];
-    	float x = GET_X(coord);
-    	float y = GET_Y(coord);
+    	float x = GET_X(data[i]);
+    	float y = GET_Y(data[i]);
 		sx += x;
 		sy += y;
 		sxy += x * y;
@@ -77,16 +76,14 @@ Line leastSquare(int* data, int size) {
     }
 
     float avg_y = sy / size;
-    float den = size * sx2 - sx * sx;
+    float den = (float)(size * sx2 - sx * sx);
 
     if (den == 0) {
         Line line = {INFINITY, avg_y};
         return line;
     }
-
     float a = (size * sxy - sx * sy) / den;
     float b = (sy / size) - a * (sx / size);
-
     Line line = {a, b};
 
     *MEDIDOR_ESCRITA = 2; // para pausar a contagem
@@ -103,12 +100,11 @@ float coefficientOfDetermination(int* data, Line model, int avg_y, int data_size
 	float ss_tot = 0.0;
 
 	for (int i = 0; i < data_size; i++) {
-		int coord = data[i];
-		float x = GET_X(coord);
-		float y = GET_Y(coord);
+		int x = GET_X(data[i]);
+		int y = GET_Y(data[i]);
 		float f = model.a * x + model.b;
 		float y_f = y - f;
-		float y_y = y - avg_y;
+		float y_y = (float)(y - avg_y);
 		ss_res += y_f * y_f;
 		ss_tot += y_y * y_y;
 	}

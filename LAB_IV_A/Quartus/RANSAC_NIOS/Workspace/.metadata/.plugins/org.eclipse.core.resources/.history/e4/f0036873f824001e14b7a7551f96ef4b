@@ -68,8 +68,8 @@ Line leastSquare(int* data, int size) {
 
     for (int i = 0; i < size; i++) {
     	int coord = data[i];
-    	float x = GET_X(coord);
-    	float y = GET_Y(coord);
+    	int x = GET_X(coord);
+    	int y = GET_Y(coord);
 		sx += x;
 		sy += y;
 		sxy += x * y;
@@ -104,11 +104,11 @@ float coefficientOfDetermination(int* data, Line model, int avg_y, int data_size
 
 	for (int i = 0; i < data_size; i++) {
 		int coord = data[i];
-		float x = GET_X(coord);
-		float y = GET_Y(coord);
+		int x = GET_X(coord);
+		int y = GET_Y(coord);
 		float f = model.a * x + model.b;
 		float y_f = y - f;
-		float y_y = y - avg_y;
+		float y_y = (float)(y - avg_y);
 		ss_res += y_f * y_f;
 		ss_tot += y_y * y_y;
 	}

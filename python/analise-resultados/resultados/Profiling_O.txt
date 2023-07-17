@@ -13,8 +13,8 @@ squareDistanceBetweenPoints 	0
 square_root 	1175
 calculateIntersection 	327
 getAngleFromModel 	205538
-leastSquare 	274211
-coefficientOfDetermination 	294327
+leastSquare 	256144
+coefficientOfDetermination 	278649
 inliersOutliersMemory 	73491
 inliersOutliers 	347212
 squareDistanceBetweenPoints 	44700
@@ -33,8 +33,8 @@ squareDistanceBetweenPoints 	0
 square_root 	1346
 calculateIntersection 	327
 getAngleFromModel 	212771
-leastSquare 	189140
-coefficientOfDetermination 	195810
+leastSquare 	176960
+coefficientOfDetermination 	185410
 inliersOutliersMemory 	77352
 inliersOutliers 	245225
 squareDistanceBetweenPoints 	41694
@@ -63,8 +63,8 @@ squareDistanceBetweenPoints 	0
 square_root 	1175
 calculateIntersection 	327
 getAngleFromModel 	212836
-leastSquare 	632240
-coefficientOfDetermination 	706110
+leastSquare 	589610
+coefficientOfDetermination 	668410
 inliersOutliersMemory 	105534
 inliersOutliers 	688204
 squareDistanceBetweenPoints 	20792
@@ -83,8 +83,8 @@ squareDistanceBetweenPoints 	0
 square_root 	491
 calculateIntersection 	327
 getAngleFromModel 	212846
-leastSquare 	299185
-coefficientOfDetermination 	324177
+leastSquare 	279320
+coefficientOfDetermination 	306887
 inliersOutliersMemory 	66869
 inliersOutliers 	469585
 squareDistanceBetweenPoints 	35626
@@ -103,8 +103,8 @@ squareDistanceBetweenPoints 	0
 square_root 	1346
 calculateIntersection 	327
 getAngleFromModel 	204242
-leastSquare 	126739
-coefficientOfDetermination 	140391
+leastSquare 	118561
+coefficientOfDetermination 	132903
 inliersOutliersMemory 	116893
 inliersOutliers 	481114
 squareDistanceBetweenPoints 	32368
@@ -133,8 +133,8 @@ squareDistanceBetweenPoints 	0
 square_root 	0
 calculateIntersection 	0
 getAngleFromModel 	0
-leastSquare 	459220
-coefficientOfDetermination 	506850
+leastSquare 	428480
+coefficientOfDetermination 	479810
 inliersOutliersMemory 	96641
 inliersOutliers 	512557
 squareDistanceBetweenPoints 	26389
