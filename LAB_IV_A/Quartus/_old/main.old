@@ -1,0 +1,52 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+#include "data.h"
+
+#define STEP coords
+#define MAX_LENGTH 400
+#define X j
+#define Y j+1
+
+
+int main() {
+
+	int *data = END_BASE_DATA;
+	FILE *entrada;
+	FILE *saida;
+	//char buffer[MAX_LENGTH];
+	int step;
+	int data_size, x, y;
+	//Point data[MAX_LENGTH];
+	char temp_x, temp_y;
+	char str[20];
+
+	entrada = fopen("/mnt/host/entrada.txt", "r");
+
+	while (!(feof(entrada))) {
+		fscanf(entrada, "%d", &step);
+		fscanf(entrada, "%d", &data_size);
+		for (int i = 0; i < data_size; i++) {
+			fscanf(entrada, "%d %d", &x, &y);
+			data[i] = (x&0xFF)|(y<<8);
+		}
+	}
+
+	fclose(entrada);
+
+	saida = fopen("/mnt/host/saida.txt", "w");
+
+	for (int i = 0; i<data_size; i+=1) {
+		temp_x = data[i]&0xFFFF;
+		temp_y = (data[i]>>16)&0xFFFF;
+		snprintf(str, sizeof(str), "%d", temp_x);
+		fprintf(saida, "%s", str);
+		fprintf(saida, "%c", '\n');
+	}
+	fclose(saida);
+
+
+	return 0;
+
+}

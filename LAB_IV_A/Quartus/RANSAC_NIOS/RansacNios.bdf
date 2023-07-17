@@ -1,0 +1,112 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+*/
+(header "graphic" (version "1.4"))
+(pin
+	(input)
+	(rect 88 296 256 312)
+	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
+	(text "CLOCK_50" (rect 5 0 60 12)(font "Arial" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
+	(annotation_block (location)(rect 32 312 88 336))
+)
+(pin
+	(input)
+	(rect 104 376 272 392)
+	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
+	(text "KEY[0]" (rect 5 0 40 12)(font "Arial" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
+	(annotation_block (location)(rect 40 392 104 416))
+)
+(symbol
+	(rect 432 232 880 416)
+	(text "SistemaEmbarcado" (rect 167 -1 301 15)(font "Arial" (font_size 10)))
+	(text "inst" (rect 8 168 25 180)(font "Arial" ))
+	(port
+		(pt 0 72)
+		(input)
+		(text "clk_clk" (rect 0 0 37 14)(font "Arial" (font_size 8)))
+		(text "clk_clk" (rect 4 61 41 75)(font "Arial" (font_size 8)))
+		(line (pt 0 72)(pt 192 72))
+	)
+	(port
+		(pt 0 152)
+		(input)
+		(text "reset_reset_n" (rect 0 0 80 14)(font "Arial" (font_size 8)))
+		(text "reset_reset_n" (rect 4 141 84 155)(font "Arial" (font_size 8)))
+		(line (pt 0 152)(pt 192 152))
+	)
+	(port
+		(pt 0 112)
+		(output)
+		(text "medidordesempenho_readdata[31..0]" (rect 0 0 211 14)(font "Arial" (font_size 8)))
+		(text "medidordesempenho_readdata[31..0]" (rect 4 101 215 115)(font "Arial" (font_size 8)))
+		(line (pt 0 112)(pt 192 112)(line_width 3))
+	)
+	(drawing
+		(text "clk" (rect 177 43 194 58)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "clk" (rect 197 67 211 79)(font "Arial" (color 0 0 0)))
+		(text "medidordesempenho" (rect 72 83 213 98)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "readdata" (rect 197 107 239 119)(font "Arial" (color 0 0 0)))
+		(text "reset" (rect 163 123 196 138)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "reset_n" (rect 197 147 233 159)(font "Arial" (color 0 0 0)))
+		(text " SistemaEmbarcado " (rect 362 168 464 180)(font "Arial" ))
+		(line (pt 192 32)(pt 256 32))
+		(line (pt 256 32)(pt 256 168))
+		(line (pt 192 168)(pt 256 168))
+		(line (pt 192 32)(pt 192 168))
+		(line (pt 193 52)(pt 193 76))
+		(line (pt 194 52)(pt 194 76))
+		(line (pt 193 92)(pt 193 116))
+		(line (pt 194 92)(pt 194 116))
+		(line (pt 193 132)(pt 193 156))
+		(line (pt 194 132)(pt 194 156))
+		(line (pt 0 0)(pt 448 0))
+		(line (pt 448 0)(pt 448 184))
+		(line (pt 0 184)(pt 448 184))
+		(line (pt 0 0)(pt 0 184))
+	)
+)
+(connector
+	(pt 272 384)
+	(pt 432 384)
+)
+(connector
+	(pt 256 304)
+	(pt 432 304)
+)

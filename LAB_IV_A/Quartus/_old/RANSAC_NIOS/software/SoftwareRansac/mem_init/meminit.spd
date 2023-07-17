@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+<file path="hdl_sim/SistemaEmbarcadoRansac_MemoriaDados.dat" type="DAT" initParamName="INIT_FILE" memoryPath="MemoriaDados" />
+<file path="hdl_sim/SistemaEmbarcadoRansac_MemoriaPrograma.dat" type="DAT" initParamName="INIT_FILE" memoryPath="MemoriaPrograma" />
+<file path="SistemaEmbarcadoRansac_MemoriaDados.hex" type="HEX" initParamName="INIT_FILE" memoryPath="MemoriaDados" />
+<file path="SistemaEmbarcadoRansac_MemoriaPrograma.hex" type="HEX" initParamName="INIT_FILE" memoryPath="MemoriaPrograma" />
+</simPackage>

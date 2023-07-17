@@ -1,0 +1,32 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/LAB_IV_A/Quartus/RANSAC_NIOS/software/SoftwareRansac/obj/default/runtime/sim/mentor
+vSistemaEmbarcadoRansac_PIO_Saida
+!s110 1687922904
+!i10b 1
+!s100 2EYoC0GZ77o220f;>TczZ0
+I9eA2Fck;3?c>CdYf_=P^z0
+VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1687917835
+8C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcadoRansac/testbench/SistemaEmbarcadoRansac_tb/simulation/submodules/SistemaEmbarcadoRansac_PIO_Saida.v
+FC:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcadoRansac/testbench/SistemaEmbarcadoRansac_tb/simulation/submodules/SistemaEmbarcadoRansac_PIO_Saida.v
+L0 21
+OV;L;10.5b;63
+r1
+!s85 0
+31
+!s108 1687922904.000000
+!s107 C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcadoRansac/testbench/SistemaEmbarcadoRansac_tb/simulation/submodules/SistemaEmbarcadoRansac_PIO_Saida.v|
+!s90 -reportprogress|300|C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcadoRansac/testbench/SistemaEmbarcadoRansac_tb/simulation/submodules/SistemaEmbarcadoRansac_PIO_Saida.v|-work|PIO_Saida|
+!i113 1
+o-work PIO_Saida
+tCvgOpt 0
+n@sistema@embarcado@ransac_@p@i@o_@saida

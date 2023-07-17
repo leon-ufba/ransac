@@ -1,0 +1,32 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/LAB_IV_A/Quartus/RANSAC_NIOS/software/SoftwareRansac/obj/default/runtime/sim/mentor
+vSistemaEmbarcadoRansac_PIO_Entrada
+!s110 1687922905
+!i10b 1
+!s100 TG_H[SoGlNbJB7[b4Wd[G1
+I8S7;S^T>TIoWA[Q0Q753A2
+VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1687917835
+8C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcadoRansac/testbench/SistemaEmbarcadoRansac_tb/simulation/submodules/SistemaEmbarcadoRansac_PIO_Entrada.v
+FC:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcadoRansac/testbench/SistemaEmbarcadoRansac_tb/simulation/submodules/SistemaEmbarcadoRansac_PIO_Entrada.v
+L0 21
+OV;L;10.5b;63
+r1
+!s85 0
+31
+!s108 1687922905.000000
+!s107 C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcadoRansac/testbench/SistemaEmbarcadoRansac_tb/simulation/submodules/SistemaEmbarcadoRansac_PIO_Entrada.v|
+!s90 -reportprogress|300|C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcadoRansac/testbench/SistemaEmbarcadoRansac_tb/simulation/submodules/SistemaEmbarcadoRansac_PIO_Entrada.v|-work|PIO_Entrada|
+!i113 1
+o-work PIO_Entrada
+tCvgOpt 0
+n@sistema@embarcado@ransac_@p@i@o_@entrada

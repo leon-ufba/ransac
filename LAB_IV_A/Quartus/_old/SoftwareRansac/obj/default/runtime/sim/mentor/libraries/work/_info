@@ -1,0 +1,73 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/LAB_IV_A/Quartus/RANSAC_NIOS/software/SoftwareRansac/obj/default/runtime/sim/mentor
+vRansacNios
+Z1 !s110 1689077398
+!i10b 1
+!s100 gKbBEK:^d5QQohozC^0Sn2
+IgO5KW[QN4kP]SDN<RnZ?j2
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1688344661
+8C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/mentor/../../../RansacNios.v
+FC:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/mentor/../../../RansacNios.v
+L0 19
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1689077398.000000
+!s107 C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/mentor/../../../RansacNios.v|
+!s90 -reportprogress|300|C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/mentor/../../../RansacNios.v|
+!i113 1
+Z5 tCvgOpt 0
+n@ransac@nios
+vRansacNiosTB
+R1
+!i10b 1
+!s100 hCTKEmI[n4hTDRHcfI0ZF1
+INe7WWJHiI8O]55ca6Yc=L1
+R2
+R0
+w1688346457
+8C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/mentor/../../../RansacNiosTB.v
+FC:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/mentor/../../../RansacNiosTB.v
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/mentor/../../../RansacNiosTB.v|
+!s90 -reportprogress|300|C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/mentor/../../../RansacNiosTB.v|
+!i113 1
+R5
+n@ransac@nios@t@b
+vSistemaEmbarcado_tb
+!s110 1689077386
+!i10b 1
+!s100 ;bFG:Rk6@`YYXjJ4E8VKd0
+IA7=hLD[5k5M=2DQ68B5md1
+R2
+R0
+w1688836571
+8C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/SistemaEmbarcado_tb.v
+FC:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/SistemaEmbarcado_tb.v
+L0 6
+R3
+r1
+!s85 0
+31
+!s108 1689077386.000000
+!s107 C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/SistemaEmbarcado_tb.v|
+!s90 -reportprogress|300|C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/SistemaEmbarcado_tb.v|
+!i113 1
+R5
+n@sistema@embarcado_tb

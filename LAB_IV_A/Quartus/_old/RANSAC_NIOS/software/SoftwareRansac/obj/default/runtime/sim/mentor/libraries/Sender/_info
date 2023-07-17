@@ -1,0 +1,54 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/LAB_IV_A/Quartus/RANSAC_NIOS/software/SoftwareRansac/obj/default/runtime/sim/mentor
+vSender
+Z1 !s110 1687926647
+!i10b 1
+!s100 aoPC0iLao<amSW<WS2ei:2
+I=Q8`Xm;Jnkl:Q8m02jQoK1
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1687926317
+8C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcadoRansac/testbench/SistemaEmbarcadoRansac_tb/simulation/submodules/Sender_Function.v
+FC:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcadoRansac/testbench/SistemaEmbarcadoRansac_tb/simulation/submodules/Sender_Function.v
+L0 1
+Z4 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z5 !s108 1687926647.000000
+!s107 C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcadoRansac/testbench/SistemaEmbarcadoRansac_tb/simulation/submodules/Sender_Function.v|
+!s90 -reportprogress|300|C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcadoRansac/testbench/SistemaEmbarcadoRansac_tb/simulation/submodules/Sender_Function.v|-work|Sender|
+!i113 1
+Z6 o-work Sender
+Z7 tCvgOpt 0
+n@sender
+vSender_Interface
+R1
+!i10b 1
+!s100 1abo9e_8>dh<l[A=c99zo3
+Ic@nIbd[3]7?@0V18oF1Z^1
+R2
+R0
+R3
+8C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcadoRansac/testbench/SistemaEmbarcadoRansac_tb/simulation/submodules/Sender_Interface.v
+FC:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcadoRansac/testbench/SistemaEmbarcadoRansac_tb/simulation/submodules/Sender_Interface.v
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcadoRansac/testbench/SistemaEmbarcadoRansac_tb/simulation/submodules/Sender_Interface.v|
+!s90 -reportprogress|300|C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcadoRansac/testbench/SistemaEmbarcadoRansac_tb/simulation/submodules/Sender_Interface.v|-work|Sender|
+!i113 1
+R6
+R7
+n@sender_@interface

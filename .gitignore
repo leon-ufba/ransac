@@ -2,3 +2,25 @@ output/main.exe
 output/test.exe
 python/__pycache__/ransac.cpython-311.pyc
 python/__pycache__/rotCoords.cpython-311.pyc
+
+Binarios Quartus
+.vscode/
+*.exe
+
+##
+!*.qpf
+!*.qsf
+!*.qws
+!*.bdf
+!*.vhd
+!*.v
+!*.ptf
+!*.bsf
+!**/class.ptf
+!*.tbd
+!*.sof
+## tbd
+!*.tcl
+LAB_IV_A/Quartus/RANSAC_NIOS/db/*
+LAB_IV_A/Quartus/RANSAC_NIOS/incremental_db/*
+LAB_IV_A/Quartus/RANSAC_NIOS/output_files/*

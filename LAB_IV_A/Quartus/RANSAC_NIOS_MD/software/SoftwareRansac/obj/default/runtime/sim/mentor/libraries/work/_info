@@ -1,0 +1,73 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Eduardo/Documents/UFBA/2023.1/ENGG57/ransac/LAB_IV_A/Quartus/RANSAC_NIOS/software/SoftwareRansac/obj/default/runtime/sim/mentor
+vRansacNios
+Z1 !s110 1689088789
+!i10b 1
+!s100 g`hInG0gkiWBT0J3@1CZV1
+I=P2RPT0YN:zcjLQoB3QQk0
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1689034706
+8C:/Users/Eduardo/Documents/UFBA/2023.1/ENGG57/ransac/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/mentor/../../../RansacNios.v
+FC:/Users/Eduardo/Documents/UFBA/2023.1/ENGG57/ransac/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/mentor/../../../RansacNios.v
+L0 19
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1689088789.000000
+!s107 C:/Users/Eduardo/Documents/UFBA/2023.1/ENGG57/ransac/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/mentor/../../../RansacNios.v|
+!s90 -reportprogress|300|C:/Users/Eduardo/Documents/UFBA/2023.1/ENGG57/ransac/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/mentor/../../../RansacNios.v|
+!i113 1
+Z5 tCvgOpt 0
+n@ransac@nios
+vRansacNiosTB
+R1
+!i10b 1
+!s100 mhUoVDa]Xg2k_HW75DDX11
+IO00o0`6hoKeYY:UEZNQU?2
+R2
+R0
+w1689035909
+8C:/Users/Eduardo/Documents/UFBA/2023.1/ENGG57/ransac/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/mentor/../../../RansacNiosTB.v
+FC:/Users/Eduardo/Documents/UFBA/2023.1/ENGG57/ransac/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/mentor/../../../RansacNiosTB.v
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/Eduardo/Documents/UFBA/2023.1/ENGG57/ransac/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/mentor/../../../RansacNiosTB.v|
+!s90 -reportprogress|300|C:/Users/Eduardo/Documents/UFBA/2023.1/ENGG57/ransac/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/mentor/../../../RansacNiosTB.v|
+!i113 1
+R5
+n@ransac@nios@t@b
+vSistemaEmbarcado_tb
+!s110 1689088739
+!i10b 1
+!s100 <aeTFF]QRDX4VST]P=J=B1
+IHMe`PXR`o8Cg_9PCVW4S11
+R2
+R0
+w1689033284
+8C:/Users/Eduardo/Documents/UFBA/2023.1/ENGG57/ransac/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/SistemaEmbarcado_tb.v
+FC:/Users/Eduardo/Documents/UFBA/2023.1/ENGG57/ransac/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/SistemaEmbarcado_tb.v
+L0 6
+R3
+r1
+!s85 0
+31
+!s108 1689088739.000000
+!s107 C:/Users/Eduardo/Documents/UFBA/2023.1/ENGG57/ransac/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/SistemaEmbarcado_tb.v|
+!s90 -reportprogress|300|C:/Users/Eduardo/Documents/UFBA/2023.1/ENGG57/ransac/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/SistemaEmbarcado_tb.v|
+!i113 1
+R5
+n@sistema@embarcado_tb

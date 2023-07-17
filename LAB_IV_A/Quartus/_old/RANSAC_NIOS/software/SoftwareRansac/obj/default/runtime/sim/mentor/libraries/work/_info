@@ -1,0 +1,73 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/LAB_IV_A/Quartus/RANSAC_NIOS/software/SoftwareRansac/obj/default/runtime/sim/mentor
+vRANSAC_NIOS
+Z1 !s110 1687926687
+!i10b 1
+!s100 D_[8Z;eL;INAPeM:ig5=D0
+Id__]g3XUogHOaFf2fCR3Y0
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1687926363
+8C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcadoRansac/testbench/mentor/../../../RANSAC_NIOS.v
+FC:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcadoRansac/testbench/mentor/../../../RANSAC_NIOS.v
+L0 19
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1687926687.000000
+!s107 C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcadoRansac/testbench/mentor/../../../RANSAC_NIOS.v|
+!s90 -reportprogress|300|C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcadoRansac/testbench/mentor/../../../RANSAC_NIOS.v|
+!i113 1
+Z5 tCvgOpt 0
+n@r@a@n@s@a@c_@n@i@o@s
+vRANSAC_NIOS_TB
+R1
+!i10b 1
+!s100 @Rcmd]ASRU1QlkF88^YR12
+I2c6:Zk0_6ZnLOS@>74M[@2
+R2
+R0
+w1687926398
+8C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcadoRansac/testbench/mentor/../../../RANSAC_NIOS_TB.v
+FC:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcadoRansac/testbench/mentor/../../../RANSAC_NIOS_TB.v
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcadoRansac/testbench/mentor/../../../RANSAC_NIOS_TB.v|
+!s90 -reportprogress|300|C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcadoRansac/testbench/mentor/../../../RANSAC_NIOS_TB.v|
+!i113 1
+R5
+n@r@a@n@s@a@c_@n@i@o@s_@t@b
+vSistemaEmbarcadoRansac_tb
+!s110 1687926648
+!i10b 1
+!s100 DWGWPWm1`^HBd0?4_^eVj1
+I^d5cB96g@YC@9W4g@BTh[0
+R2
+R0
+w1687926315
+8C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcadoRansac/testbench/SistemaEmbarcadoRansac_tb/simulation/SistemaEmbarcadoRansac_tb.v
+FC:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcadoRansac/testbench/SistemaEmbarcadoRansac_tb/simulation/SistemaEmbarcadoRansac_tb.v
+L0 6
+R3
+r1
+!s85 0
+31
+!s108 1687926648.000000
+!s107 C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcadoRansac/testbench/SistemaEmbarcadoRansac_tb/simulation/SistemaEmbarcadoRansac_tb.v|
+!s90 -reportprogress|300|C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcadoRansac/testbench/SistemaEmbarcadoRansac_tb/simulation/SistemaEmbarcadoRansac_tb.v|
+!i113 1
+R5
+n@sistema@embarcado@ransac_tb

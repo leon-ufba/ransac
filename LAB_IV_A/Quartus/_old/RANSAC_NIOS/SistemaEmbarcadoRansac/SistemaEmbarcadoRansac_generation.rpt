@@ -1,0 +1,130 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate C:\LAB_IV_A\Quartus\RANSAC_NIOS\SistemaEmbarcadoRansac.qsys --block-symbol-file --output-directory=C:\LAB_IV_A\Quartus\RANSAC_NIOS\SistemaEmbarcadoRansac --family="Cyclone IV E" --part=EP4CE115F29C7
+Progress: Loading RANSAC_NIOS/SistemaEmbarcadoRansac.qsys
+Progress: Reading input file
+Progress: Adding Clock [clock_source 18.1]
+Progress: Parameterizing module Clock
+Progress: Adding MemoriaDados [altera_avalon_onchip_memory2 18.1]
+Progress: Parameterizing module MemoriaDados
+Progress: Adding MemoriaPrograma [altera_avalon_onchip_memory2 18.1]
+Progress: Parameterizing module MemoriaPrograma
+Progress: Adding PIO_Entrada [altera_avalon_pio 18.1]
+Progress: Parameterizing module PIO_Entrada
+Progress: Adding PIO_Saida [altera_avalon_pio 18.1]
+Progress: Parameterizing module PIO_Saida
+Progress: Adding Processador [altera_nios2_gen2 18.1]
+Progress: Parameterizing module Processador
+Progress: Adding Receiver [Receiver 1.0]
+Progress: Parameterizing module Receiver
+Progress: Adding Sender [Sender 1.0]
+Progress: Parameterizing module Sender
+Progress: Adding jtag_uart [altera_avalon_jtag_uart 18.1]
+Progress: Parameterizing module jtag_uart
+Progress: Adding parallel_port [altera_up_avalon_parallel_port 18.0]
+Progress: Parameterizing module parallel_port
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: SistemaEmbarcadoRansac.jtag_uart: JTAG UART IP input clock need to be at least double (2x) the operating frequency of JTAG TCK on board
+Info: SistemaEmbarcadoRansac.parallel_port: The Parallel Port is now deprecated. The PIO component (Processor and Peripherals/Peripherals/PIO) should be used instead.
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate C:\LAB_IV_A\Quartus\RANSAC_NIOS\SistemaEmbarcadoRansac.qsys --synthesis=VERILOG --output-directory=C:\LAB_IV_A\Quartus\RANSAC_NIOS\SistemaEmbarcadoRansac\synthesis --family="Cyclone IV E" --part=EP4CE115F29C7
+Progress: Loading RANSAC_NIOS/SistemaEmbarcadoRansac.qsys
+Progress: Reading input file
+Progress: Adding Clock [clock_source 18.1]
+Progress: Parameterizing module Clock
+Progress: Adding MemoriaDados [altera_avalon_onchip_memory2 18.1]
+Progress: Parameterizing module MemoriaDados
+Progress: Adding MemoriaPrograma [altera_avalon_onchip_memory2 18.1]
+Progress: Parameterizing module MemoriaPrograma
+Progress: Adding PIO_Entrada [altera_avalon_pio 18.1]
+Progress: Parameterizing module PIO_Entrada
+Progress: Adding PIO_Saida [altera_avalon_pio 18.1]
+Progress: Parameterizing module PIO_Saida
+Progress: Adding Processador [altera_nios2_gen2 18.1]
+Progress: Parameterizing module Processador
+Progress: Adding Receiver [Receiver 1.0]
+Progress: Parameterizing module Receiver
+Progress: Adding Sender [Sender 1.0]
+Progress: Parameterizing module Sender
+Progress: Adding jtag_uart [altera_avalon_jtag_uart 18.1]
+Progress: Parameterizing module jtag_uart
+Progress: Adding parallel_port [altera_up_avalon_parallel_port 18.0]
+Progress: Parameterizing module parallel_port
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: SistemaEmbarcadoRansac.jtag_uart: JTAG UART IP input clock need to be at least double (2x) the operating frequency of JTAG TCK on board
+Info: SistemaEmbarcadoRansac.parallel_port: The Parallel Port is now deprecated. The PIO component (Processor and Peripherals/Peripherals/PIO) should be used instead.
+Info: SistemaEmbarcadoRansac: Generating SistemaEmbarcadoRansac "SistemaEmbarcadoRansac" for QUARTUS_SYNTH
+Info: MemoriaDados: Starting RTL generation for module 'SistemaEmbarcadoRansac_MemoriaDados'
+Info: MemoriaDados:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=SistemaEmbarcadoRansac_MemoriaDados --dir=C:/Users/Caroline/AppData/Local/Temp/alt9536_4756898605406513223.dir/0061_MemoriaDados_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/Caroline/AppData/Local/Temp/alt9536_4756898605406513223.dir/0061_MemoriaDados_gen//SistemaEmbarcadoRansac_MemoriaDados_component_configuration.pl  --do_build_sim=0  ]
+Info: MemoriaDados: Done RTL generation for module 'SistemaEmbarcadoRansac_MemoriaDados'
+Info: MemoriaDados: "SistemaEmbarcadoRansac" instantiated altera_avalon_onchip_memory2 "MemoriaDados"
+Info: MemoriaPrograma: Starting RTL generation for module 'SistemaEmbarcadoRansac_MemoriaPrograma'
+Info: MemoriaPrograma:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=SistemaEmbarcadoRansac_MemoriaPrograma --dir=C:/Users/Caroline/AppData/Local/Temp/alt9536_4756898605406513223.dir/0062_MemoriaPrograma_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/Caroline/AppData/Local/Temp/alt9536_4756898605406513223.dir/0062_MemoriaPrograma_gen//SistemaEmbarcadoRansac_MemoriaPrograma_component_configuration.pl  --do_build_sim=0  ]
+Info: MemoriaPrograma: Done RTL generation for module 'SistemaEmbarcadoRansac_MemoriaPrograma'
+Info: MemoriaPrograma: "SistemaEmbarcadoRansac" instantiated altera_avalon_onchip_memory2 "MemoriaPrograma"
+Info: Processador: "SistemaEmbarcadoRansac" instantiated altera_nios2_gen2 "Processador"
+Info: Sender: "SistemaEmbarcadoRansac" instantiated Sender "Sender"
+Info: jtag_uart: Starting RTL generation for module 'SistemaEmbarcadoRansac_jtag_uart'
+Info: jtag_uart:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=SistemaEmbarcadoRansac_jtag_uart --dir=C:/Users/Caroline/AppData/Local/Temp/alt9536_4756898605406513223.dir/0064_jtag_uart_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/Caroline/AppData/Local/Temp/alt9536_4756898605406513223.dir/0064_jtag_uart_gen//SistemaEmbarcadoRansac_jtag_uart_component_configuration.pl  --do_build_sim=0  ]
+Info: jtag_uart: Done RTL generation for module 'SistemaEmbarcadoRansac_jtag_uart'
+Info: jtag_uart: "SistemaEmbarcadoRansac" instantiated altera_avalon_jtag_uart "jtag_uart"
+Info: parallel_port: Starting Generation of Parallel Port
+Info: parallel_port: "SistemaEmbarcadoRansac" instantiated altera_up_avalon_parallel_port "parallel_port"
+Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_001: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_002: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_003: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_004: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_005: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_006: Inserting error_adapter: error_adapter_0
+Info: mm_interconnect_0: "SistemaEmbarcadoRansac" instantiated altera_mm_interconnect "mm_interconnect_0"
+Info: irq_mapper: "SistemaEmbarcadoRansac" instantiated altera_irq_mapper "irq_mapper"
+Info: rst_controller: "SistemaEmbarcadoRansac" instantiated altera_reset_controller "rst_controller"
+Info: cpu: Starting RTL generation for module 'SistemaEmbarcadoRansac_Processador_cpu'
+Info: cpu:   Generation command is [exec C:/intelFPGA_lite/18.1/quartus/bin64//eperlcmd.exe -I C:/intelFPGA_lite/18.1/quartus/bin64//perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/cpu_lib -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/nios_lib -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -- C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/generate_rtl.epl --name=SistemaEmbarcadoRansac_Processador_cpu --dir=C:/Users/Caroline/AppData/Local/Temp/alt9536_4756898605406513223.dir/0068_cpu_gen/ --quartus_bindir=C:/intelFPGA_lite/18.1/quartus/bin64/ --verilog --config=C:/Users/Caroline/AppData/Local/Temp/alt9536_4756898605406513223.dir/0068_cpu_gen//SistemaEmbarcadoRansac_Processador_cpu_processor_configuration.pl  --do_build_sim=0  ]
+Info: cpu: # 2023.06.28 01:25:02 (*) Starting Nios II generation
+Info: cpu: # 2023.06.28 01:25:02 (*)   Checking for plaintext license.
+Info: cpu: # 2023.06.28 01:25:03 (*)   Couldn't query license setup in Quartus directory C:/intelFPGA_lite/18.1/quartus/bin64/
+Info: cpu: # 2023.06.28 01:25:03 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
+Info: cpu: # 2023.06.28 01:25:03 (*)   LM_LICENSE_FILE environment variable is empty
+Info: cpu: # 2023.06.28 01:25:03 (*)   Plaintext license not found.
+Info: cpu: # 2023.06.28 01:25:03 (*)   No license required to generate encrypted Nios II/e.
+Info: cpu: # 2023.06.28 01:25:03 (*)   Elaborating CPU configuration settings
+Info: cpu: # 2023.06.28 01:25:03 (*)   Creating all objects for CPU
+Info: cpu: # 2023.06.28 01:25:03 (*)   Generating RTL from CPU objects
+Info: cpu: # 2023.06.28 01:25:03 (*)   Creating plain-text RTL
+Info: cpu: # 2023.06.28 01:25:04 (*) Done Nios II generation
+Info: cpu: Done RTL generation for module 'SistemaEmbarcadoRansac_Processador_cpu'
+Info: cpu: "Processador" instantiated altera_nios2_gen2_unit "cpu"
+Info: Processador_data_master_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "Processador_data_master_translator"
+Info: jtag_uart_avalon_jtag_slave_translator: "mm_interconnect_0" instantiated altera_merlin_slave_translator "jtag_uart_avalon_jtag_slave_translator"
+Info: Processador_data_master_agent: "mm_interconnect_0" instantiated altera_merlin_master_agent "Processador_data_master_agent"
+Info: jtag_uart_avalon_jtag_slave_agent: "mm_interconnect_0" instantiated altera_merlin_slave_agent "jtag_uart_avalon_jtag_slave_agent"
+Info: jtag_uart_avalon_jtag_slave_agent_rsp_fifo: "mm_interconnect_0" instantiated altera_avalon_sc_fifo "jtag_uart_avalon_jtag_slave_agent_rsp_fifo"
+Info: router: "mm_interconnect_0" instantiated altera_merlin_router "router"
+Info: router_001: "mm_interconnect_0" instantiated altera_merlin_router "router_001"
+Info: router_002: "mm_interconnect_0" instantiated altera_merlin_router "router_002"
+Info: router_006: "mm_interconnect_0" instantiated altera_merlin_router "router_006"
+Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux"
+Info: cmd_demux_001: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux_001"
+Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
+Info: cmd_mux_004: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_004"
+Info: Reusing file C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcadoRansac/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: rsp_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux"
+Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
+Info: Reusing file C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcadoRansac/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: rsp_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux_001"
+Info: Reusing file C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcadoRansac/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
+Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
+Info: SistemaEmbarcadoRansac: Done "SistemaEmbarcadoRansac" with 29 modules, 44 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

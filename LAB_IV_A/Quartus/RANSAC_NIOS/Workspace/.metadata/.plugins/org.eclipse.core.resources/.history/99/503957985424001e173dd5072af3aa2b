@@ -1,0 +1,99 @@
+/*
+ * main.c
+ *
+ *  Created on: 14 de jul de 2023
+ *      Author: Caroline
+ */
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include "ransac.h"
+
+
+int main() {
+
+	int *data = END_BASE_DATA;
+	FILE *entrada;
+	FILE *saida;
+	FILE *profiling;
+	char next_line;
+	int step;
+	int data_size, x, y;
+	Point outliers[MAX_POINTS];
+
+	entrada = fopen("/mnt/host/FPGAin.txt", "r");
+	saida = fopen("/mnt/host/FPGAout.txt", "w");
+	profiling = fopen("/mnt/host/Profiling.txt", "w");
+
+	if (entrada == NULL)
+	{
+		printf ("Cannot open file.\n");
+		exit (1);
+	}
+
+	while (!(feof(entrada))) {
+		fscanf(entrada, "%d", &step);
+		fscanf(entrada, "%d", &data_size);
+		for (int i = 0; i < data_size; i++) {
+			fscanf(entrada, "%d %d", &x, &y);
+			data[i] = (x&0xFF)|(y<<8);
+		}
+		fscanf(entrada, "%c", &next_line);
+
+
+	if(data_size > MAX_POINTS) data_size = MAX_POINTS;
+
+	// ------------ Variaveis para modelo de linha ------------//
+	//Posicao inical do robo
+	Point start;
+	start.x = 0;
+	start.y = 25;
+	RansacResult model;
+	Line reference;
+	reference.a = 0;
+	reference.b = 25;
+
+	// ------------ Inicializa Variaveis para profiling ------------//
+	square_root_counter = 0;
+	calculateIntersection_counter = 0;
+	getAngleFromModel_counter = 0;
+	leastSquare_counter = 0;
+	coefficientOfDetermination_counter = 0;
+	inliersOutliersMemory_counter = 0;
+	inliersOutliers_counter = 0;
+	squareDistanceBetweenPoints_counter = 0;
+
+	fprintf(profiling, "--Profiling STEP %d--\n\n", step);
+	model = RANSAC(data, &start, outliers, data_size);
+
+	// ------------ Variaveis para resultado final -------------//
+	Point intersection = { 0.0, 0.0 };
+	float distance = 0;
+	float angle = 0.0;
+
+	if  ((model.bestModel.a < 0.1)&&(model.bestModel.a > -0.1)){
+		distance = 50;
+	}
+	else
+	{
+		intersection = calculateIntersection(&model.bestModel,  &reference);
+		distance = square_root(squareDistanceBetweenPoints(&intersection, &start));
+		angle = getAngleFromModel (model.bestModel.a);
+	}
+
+	fprintf(saida, "%d\n", step);
+	fprintf(saida, "[%f, %f]\n", model.bestModel.a, model.bestModel.b );
+	fprintf(saida, "%f\n", model.bestFit);
+	fprintf(saida, "%d\n", model.bestQty);
+	fprintf(saida, "%f\n", angle);
+	fprintf(saida, "%f", distance);
+	fprintf(saida, "%c", '\n');
+	fprintf(saida, "%c", '\n');
+	}
+
+	fclose(entrada);
+	fclose(saida);
+
+	return 0;
+
+}
