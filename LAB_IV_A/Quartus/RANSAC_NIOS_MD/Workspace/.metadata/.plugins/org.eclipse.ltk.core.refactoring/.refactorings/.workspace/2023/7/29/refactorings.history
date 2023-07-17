@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;SoftwareRansac&apos;" deleteContents="false" description="Delete resource &apos;SoftwareRansac&apos;" element1="/SoftwareRansac" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1689539951923"/>&#x0A;<refactoring comment="Delete resource &apos;SoftwareRansac_bsp&apos;" deleteContents="false" description="Delete resource &apos;SoftwareRansac_bsp&apos;" element1="/SoftwareRansac_bsp" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1689539954250"/>
-</session>
