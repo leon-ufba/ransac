@@ -58,8 +58,10 @@ def main():
   viewFPGA= MapViewer("Hardware", dataset,4)
   viewFPGA.startViewer()
 
+  
+
   # Inicializa a integracao txt com o fpga
-  fpga = FPGAintegration('FPGAin', 'FPGAout')
+  fpga = FPGAintegration('FPGAin', 'FPGAout', view_range)
 
   #Loop iterativo da movimentaco do robo
   while run == True:
@@ -68,14 +70,16 @@ def main():
     initial_view_coord = np.array([0,view_range])
     translated_coords = viewed_coordinates - (np.array(bot_coords) - initial_view_coord)
 
-    
+    #Atualiza a vista atual 
     view.updateView(translated_coords, bot_coords, np.rad2deg(angle), view_range) 
-    #Atualiza a vista atual
+    
+    #Exporta os dados para o FPGA
+    fpga.exportData(step, bot_coords, len(translated_coords), translated_coords) 
 
     ransacRes = RANSAC(translated_coords, view_range) #Calcula o ransac
     
     model = ransacRes.bestModel
-    if(model.a == 0):
+    if(model.a < 0.1 and model.a > -0.1):
       delta = 2 * view_range
     else:
       delta = (view_range - model.b) / model.a
@@ -91,18 +95,18 @@ def main():
     print(bot_coords)
     printRansac(ransacRes) #Imprime os parametros do ransac
 
-    #Exporta os dados para o FPGA
-    fpga.exportData(step, bot_coords, len(translated_coords), translated_coords) 
 
     #Exporta os dados para simular a presenca de um hardware FPGA enviando os dados.
-    fpga.exportData2(step, [ransacRes.bestModel.a, ransacRes.bestModel.b], ransacRes.bestFit, ransacRes.bestQty, angle, delta, rotated_delta.tolist(), bot_coords.tolist())
+    FPGAangle = np.arctan(ransacRes.bestModel.a)
+    fpga.exportData2(step, [ransacRes.bestModel.a, ransacRes.bestModel.b], ransacRes.bestFit, ransacRes.bestQty, FPGAangle, delta, rotated_delta.tolist(), bot_coords.tolist())
     #Comentar a linha acima quando estiver com um FPGA gerando os txts
 
     #Importa os dados do fpga
     fpga.importData()
 
+
     #Atualiza a vista via hardware
-    receivedAngle = np.rad2deg(fpga.receivedData.angles[len(fpga.receivedData.steps)-1])
+    receivedAngle = np.rad2deg(fpga.receivedData.orientation[len(fpga.receivedData.steps)-1])
     viewFPGA.updateView(translated_coords, fpga.receivedData.new_bot_coords[len(fpga.receivedData.steps)-1], receivedAngle, view_range) 
 
     if STOPINGMODE == True: #Se o STOPINGMODE estiver ligado, espera o enter do usuario a cada ciclo para continuar

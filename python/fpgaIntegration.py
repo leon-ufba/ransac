@@ -11,10 +11,11 @@ class ReceivedData:
         self.deltas = []
         self.rot_deltas = []
         self.new_bot_coords = []
+        self.orientation = []
 
 class FPGAintegration:
 
-    def __init__(self, outputName, inputName):
+    def __init__(self, outputName, inputName, viewRange):
         
         self.outputName = outputName #nome para o arquivo txt de saida do codigo e entrada no fpga
         self.inputName = inputName #nome esperado para o arquivo gerado pelo fpga, que lido pelo codigo
@@ -27,7 +28,7 @@ class FPGAintegration:
             file.truncate(0)
         with open(self.inputFile, "w") as file:
             file.truncate(0)    
-
+        self.viewRange = viewRange
         self.receivedData = ReceivedData()
 
 
@@ -38,7 +39,7 @@ class FPGAintegration:
 
             # Append the text to the file
             file.write(str(step) + '\n')
-            file.write(str(bot_coords) + '\n')
+            #file.write(str(bot_coords) + '\n')
             file.write(str(numberOfDots) + '\n')
 
             #dots_string = np.array2string(dots, separator=',')
@@ -61,8 +62,8 @@ class FPGAintegration:
             file.write(str(best_qty) + '\n')
             file.write(str(angle) + '\n')
             file.write(str(delta) + '\n')
-            file.write(str(rot_delta) + '\n')
-            file.write(str(new_bot_coords) + '\n')
+            #file.write(str(rot_delta) + '\n')
+            #file.write(str(new_bot_coords) + '\n')
             file.write("\n")  
 
       
@@ -82,13 +83,15 @@ class FPGAintegration:
             best_qty = lines[line_index + 3].strip()
             angle = lines[line_index + 4].strip()
             delta_str = lines[line_index + 5].strip()
-            rot_delta_str = lines[line_index + 6].strip()[1:-1]  # Remove brackets []
-            new_bot_coords_str = lines[line_index + 7].strip()[1:-1]  # Remove brackets []
+            #rot_delta_str = lines[line_index + 6].strip()[1:-1]  # Remove brackets []
+            #new_bot_coords_str = lines[line_index + 7].strip()[1:-1]  # Remove brackets []
+
+            
 
             # Convert string representations to desired data types
             coefficients = list(map(float, coefficients_str.split(',')))
-            rot_delta = list(map(float, rot_delta_str.split(',')))
-            new_bot_coords = list(map(float, new_bot_coords_str.split(',')))
+            #rot_delta = list(map(float, rot_delta_str.split(',')))
+            #new_bot_coords = list(map(float, new_bot_coords_str.split(',')))
 
             # Append the variables to respective lists
             self.receivedData.steps.append(int(step))
@@ -97,8 +100,30 @@ class FPGAintegration:
             self.receivedData.best_qtys.append(int(best_qty))
             self.receivedData.angles.append(float(angle))
             self.receivedData.deltas.append(float(delta_str))
-            self.receivedData.rot_deltas.append(rot_delta)
+
+            if len(self.receivedData.new_bot_coords)>1:
+                self.receivedData.orientation.append(self.receivedData.orientation[len(self.receivedData.orientation)-1] +np.arctan(coefficients[0]))
+            else:
+                self.receivedData.orientation.append(0 +np.arctan(coefficients[0]))
+            rotated_delta = np.array([float(delta_str) * np.cos(float(angle)), float(delta_str) * np.sin(-float(angle))])
+
+            coefficients = np.array(coefficients)
+            if len(self.receivedData.new_bot_coords)>1:
+                new_bot_coords = (self.receivedData.new_bot_coords[len(self.receivedData.new_bot_coords)-1] + rotated_delta)
+                #self.receivedData.orientation.append(self.receivedData.orientation[len(self.receivedData.orientation)-1] -np.arctan(coefficients[0]))
+            else:
+                new_bot_coords = (np.array([0,self.viewRange]) + rotated_delta)
+                #self.receivedData.orientation.append(0 -np.arctan(coefficients[0]))
             self.receivedData.new_bot_coords.append(new_bot_coords)
 
+            #print(self.receivedData.new_bot_coords[len(self.receivedData.new_bot_coords)-1])
+            self.receivedData.orientation.append(float(angle))
+            #self.receivedData.rot_deltas.append(rot_delta)
+            #self.receivedData.new_bot_coords.append(new_bot_coords)
+
             # Move to the next set of lines
-            line_index += 9
+            line_index += 7
+        print("\nROTATED DELTA")
+        print(rotated_delta)
+        print("NEW BOT COORDS TYPE")
+        print(new_bot_coords)

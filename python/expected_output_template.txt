@@ -4,8 +4,6 @@
 <Best Qty>
 <Angle>
 <Delta>
-<Rot Delta X,Y>
-<New Bot Coords X,Y>
 
 <Step>
 <Best Model (Parâmetros da reta: Ax+B)>
@@ -13,8 +11,6 @@
 <Best Qty>
 <Angle>
 <Delta X,Y>
-<Rot Delta X,Y>
-<New Bot Coords X,Y>
 
 <Step>
 <Best Model (Parâmetros da reta: Ax+B)>
@@ -22,7 +18,6 @@
 <Best Qty>
 <Angle>
 <Delta X,Y>
-<Rot Delta X,Y>
-<New Bot Coords X,Y>
+
 
 EOF
