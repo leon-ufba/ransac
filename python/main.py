@@ -56,7 +56,7 @@ def main():
 
   # Inicializa a visao que tem como input o ransac calculado via hardware (txt do fpga)
   viewFPGA= MapViewer("Hardware", dataset,4)
-  viewFPGA.startViewer()
+  #viewFPGA.startViewer()
 
   # Inicializa a integracao txt com o fpga
   fpga = FPGAintegration('FPGAin', 'FPGAout')
@@ -66,7 +66,7 @@ def main():
   initial_view_coord = np.array([0,view_range])
   translated_coords = viewed_coordinates - (np.array(bot_coords) - initial_view_coord)
   view.updateView(translated_coords, bot_coords, np.rad2deg(angle), view_range)
-  viewFPGA.updateView(translated_coords, bot_coords, np.rad2deg(angle), view_range)
+  #viewFPGA.updateView(translated_coords, bot_coords, np.rad2deg(angle), view_range)
 
 
   #Loop iterativo da movimentaco do robo
@@ -117,17 +117,17 @@ def main():
     if breakCondition == True:
       print("Condicoes de parada encontradas")
       print(reason)
-      view.updateView([], oldBot_coords, np.rad2deg(angle), view_range) #Vista preta para indicar parada
+      #view.updateView([], oldBot_coords, np.rad2deg(angle), view_range) #Vista preta para indicar parada
       view.saveFigure()
       input("Pressione enter para encerrar...")
       break
-
-    view.updateView(translated_coords, bot_coords, np.rad2deg(angle), view_range) 
+    
     #Atualiza a vista atual
+    view.updateView(translated_coords, bot_coords, np.rad2deg(angle), view_range) 
 
     #Atualiza a vista via hardware
     receivedAngle = np.rad2deg(fpga.receivedData.angles[len(fpga.receivedData.steps)-1])
-    viewFPGA.updateView(translated_coords, fpga.receivedData.new_bot_coords[len(fpga.receivedData.steps)-1], receivedAngle, view_range) 
+    #viewFPGA.updateView(translated_coords, fpga.receivedData.new_bot_coords[len(fpga.receivedData.steps)-1], receivedAngle, view_range) 
 
     
     step +=1
