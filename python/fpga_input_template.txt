@@ -1,22 +1,13 @@
 <Step>
-<Step Bot Coords X,Y>
-<Quantidade de inliers>
-<inliers[]>
-<Quantidade de outliers>
-<outliers[]>
+<Quantidade de pontos>
+<pontos[] (1 ponto por linha)>
 
 <Step>
-<Step Bot Coords X,Y>
-<Quantidade de inliers>
-<inliers[]>
-<Quantidade de outliers>
-<outliers[]>
+<Quantidade de pontos>
+<pontos[] (1 ponto por linha)>
 
 <Step>
-<Step Bot Coords X,Y>
-<Quantidade de inliers>
-<inliers[]>
-<Quantidade de outliers>
-<outliers[]>
+<Quantidade de pontos>
+<pontos[] (1 ponto por linha)>
 
 EOF

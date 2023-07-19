@@ -3,7 +3,7 @@
 <Best Fit>
 <Best Qty>
 <Angle>
-<Delta X,Y>
+<Delta>
 <Rot Delta X,Y>
 <New Bot Coords X,Y>
 

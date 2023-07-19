@@ -1,7 +1,12 @@
 import numpy as np
-from PIL import Image
 from rotCoords import viewedCoords, rotate
 from ransac import RANSAC
+from mapViewer import MapViewer
+from fpgaIntegration import FPGAintegration
+
+
+STOPINGMODE = False
+#Se o STOPINGMODE estiver ligado, espera o enter do usuario a cada ciclo para continuar
 
 def printRansac(rs):
   print("\n------------------------")
@@ -11,79 +16,121 @@ def printRansac(rs):
   print("------------------------\n")
   return
 
+def checkBreakConditions(view_range, delta, bot_coords, walkedDistance):
+  breakCondition = False
+  reason = ""
+  if walkedDistance > view_range*2*10*2:
+      breakCondition = True
+      reason = "Distancia andada superior a " + str(view_range*2*10*2)
+  if delta <= 0:
+      breakCondition = True    
+      reason = "Delta igual ou inferior a zero."    
+  if delta > view_range*2:
+      breakCondition = True    
+      reason = "Delta superior a visada."
+  if bot_coords[0] > view_range*2*10 or bot_coords[1] > view_range*2*10:
+      breakCondition = True  
+      reason = "Andou para fora area de operacao"  
+  if bot_coords[0] < 0 or bot_coords[1] < 0:
+      breakCondition = True  
+      reason = "Andou para fora area de operacao"    
 
-def testRansac():
-  dataX = [
-    2,3,4,5,2,3,4,5
-    # -0.848, -0.800, -0.704, -0.632, -0.488, -0.472, -0.368, -0.336, -0.280, -0.200,
-    # -0.008, -0.084,  0.024,  0.100,  0.124,  0.148,  0.232,  0.236,  0.324,  0.356,
-    #  0.368,  0.440,  0.512,  0.548,  0.660,  0.640,  0.712,  0.752,  0.776,  0.880,
-    #  0.920,  0.944, -0.108, -0.168, -0.720, -0.784, -0.224, -0.604, -0.740, -0.044,
-    #  0.388, -0.020,  0.752,  0.416, -0.080, -0.348,  0.988,  0.776,  0.680,  0.880,
-    # -0.816, -0.424, -0.932,  0.272, -0.556, -0.568, -0.600, -0.716, -0.796, -0.880,
-    # -0.972, -0.916,  0.816,  0.892,  0.956,  0.980,  0.988,  0.992,  0.004,  0.111
-  ]
-  dataY = [
-    2,4,6,8,8,6,4,2
-    # -0.917, -0.833, -0.801, -0.665, -0.605, -0.545, -0.509, -0.433, -0.397, -0.281,
-    # -0.205, -0.169, -0.053, -0.065,  0.035,  0.083,  0.059,  0.175,  0.179,  0.191,
-    #  0.259,  0.287,  0.359,  0.395,  0.483,  0.539,  0.543,  0.603,  0.667,  0.679,
-    #  0.751,  0.803, -0.265, -0.341,  0.111, -0.113,  0.547,  0.791,  0.551,  0.347,
-    #  0.975,  0.943, -0.249, -0.769, -0.625, -0.861, -0.749, -0.945, -0.493,  0.163,
-    # -0.469,  0.067,  0.891,  0.623, -0.609, -0.677, -0.721, -0.745, -0.885, -0.897,
-    # -0.969, -0.949,  0.707,  0.783,  0.859,  0.979,  0.811,  0.891, -0.137,  0.111
-  ]
-
-  data = np.column_stack([dataX, dataY])
-  ransacRes = RANSAC(data)
-  printRansac(ransacRes)
-  return
-
-def plotView(view_coords, origin, view_range):
-  height, width = (view_range * 2, view_range * 2)
-  new_img = np.ones((height, width), dtype='int') * 127
-  rounded_coords = (np.rint(view_coords)).astype(int)
-  for c in rounded_coords:
-    if(0 <= c[0] and c[0] < width and 0 <= c[1] and c[1] < height):
-      new_img[c[1]][c[0]] = 0 # Note: SCREEN COORDS ARE INVERTED (y, x)
-  im = Image.fromarray(new_img)
-  im.show()
-  # im.convert('RGB').save("out_test.bmp")
-  return
-
+  return breakCondition, reason
 
 def main():
-  dataset = 'dataset_test_2'
-  view_range = 500
+  global dataset
+  dataset = 'dataset_test_3'
+  view_range = 50 #Largura do quadrado de visao
+  view_range = int(view_range/2)
   bot_coords = np.array([0,view_range])
   angle = 0
   delta = 0
+  walkedDistance = 0
+  run = True
+  step = 0
+  global fig, axes
+  
+  # Inicializa a visao que tem como input o ransac calculado via software
+  view = MapViewer("Software", dataset,4) 
+  view.startViewer()
 
-  for i in range(10):
+  # Inicializa a visao que tem como input o ransac calculado via hardware (txt do fpga)
+  viewFPGA= MapViewer("Hardware", dataset,4)
+  #viewFPGA.startViewer()
+
+  # Inicializa a integracao txt com o fpga
+  fpga = FPGAintegration('FPGAin', 'FPGAout')
+
+  #Exporta as condicoes iniciais para o FPGA
+  viewed_coordinates = viewedCoords(dataset, origin=bot_coords, angle=angle, view_range=view_range)
+  initial_view_coord = np.array([0,view_range])
+  translated_coords = viewed_coordinates - (np.array(bot_coords) - initial_view_coord)
+  view.updateView(translated_coords, bot_coords, np.rad2deg(angle), view_range)
+  #viewFPGA.updateView(translated_coords, bot_coords, np.rad2deg(angle), view_range)
+
+
+  #Loop iterativo da movimentaco do robo
+  while run == True:
+    oldBot_coords = bot_coords
     viewed_coordinates = viewedCoords(dataset, origin=bot_coords, angle=angle, view_range=view_range)
-    
     initial_view_coord = np.array([0,view_range])
     translated_coords = viewed_coordinates - (np.array(bot_coords) - initial_view_coord)
-    plotView(translated_coords, bot_coords, view_range)
-    # print(translated_coords)
-    ransacRes = RANSAC(translated_coords, view_range)
-    printRansac(ransacRes)
 
+       #Exporta os dados para o FPGA
+    fpga.exportData(step, bot_coords, len(translated_coords), translated_coords) 
+
+    ransacRes = RANSAC(translated_coords, view_range) #Calcula o ransac
+    
     model = ransacRes.bestModel
-    if(model.a == 0):
+    if(model.a <0.1 and model.a > -0.1):
       delta = 2 * view_range
     else:
       delta = (view_range - model.b) / model.a
     rotated_delta = np.array([delta * np.cos(angle), delta * np.sin(-angle)])
     angle += -np.arctan(model.a)
-    print(delta, angle)
-    bot_coords = bot_coords + rotated_delta
 
+    bot_coords = bot_coords + rotated_delta #Atualiza as coordenadas com o novo delta
+
+    #Imprime os dados
+    print('Step ' + str(step))
+    print(delta, angle)
     print(rotated_delta)
     print(bot_coords)
+    printRansac(ransacRes) #Imprime os parametros do ransac
 
-    # input()
+    #Exporta os dados para simular a presenca de um hardware FPGA enviando os dados.
+    fpga.exportData2(step, [ransacRes.bestModel.a, ransacRes.bestModel.b], ransacRes.bestFit, ransacRes.bestQty, angle, delta, rotated_delta.tolist(), bot_coords.tolist())
+    #Comentar a linha acima quando estiver com um FPGA gerando os txts
 
+    #Importa os dados do fpga
+    fpga.importData()
+
+    if STOPINGMODE == True: #Se o STOPINGMODE estiver ligado, espera o enter do usuario a cada ciclo para continuar
+      if input("Pressione enter para continuar ou digite x para parar:\n") == "x":
+        run = False
+        break
+    
+
+    #Checa as condicoes de parada
+    walkedDistance += delta
+    breakCondition, reason = checkBreakConditions(view_range, delta, bot_coords, walkedDistance)
+    if breakCondition == True:
+      print("Condicoes de parada encontradas")
+      print(reason)
+      #view.updateView([], oldBot_coords, np.rad2deg(angle), view_range) #Vista preta para indicar parada
+      view.saveFigure()
+      input("Pressione enter para encerrar...")
+      break
+    
+    #Atualiza a vista atual
+    view.updateView(translated_coords, bot_coords, np.rad2deg(angle), view_range) 
+
+    #Atualiza a vista via hardware
+    receivedAngle = np.rad2deg(fpga.receivedData.angles[len(fpga.receivedData.steps)-1])
+    #viewFPGA.updateView(translated_coords, fpga.receivedData.new_bot_coords[len(fpga.receivedData.steps)-1], receivedAngle, view_range) 
+
+    
+    step +=1
   return
 
 
