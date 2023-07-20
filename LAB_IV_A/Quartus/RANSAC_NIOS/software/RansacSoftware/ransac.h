@@ -8,8 +8,6 @@
 #ifndef RANSAC_H_
 #define RANSAC_H_
 
-#define X j
-#define Y j+1
 #define PACKING_COORD(x, y) (((x) & 0xFF) << 0) | (((y) & 0xFF) << 8)
 #define GET_X(packing) ((int)(packing) & 0xFF)
 #define GET_Y(packing) ((int)(packing) >> 8)

@@ -1,0 +1,39 @@
+module Inliers_Interface(clk, reset_n, write, writedata, read, readdata, write_address);
+
+input clk, reset_n, write, read;
+input [31:0] writedata;
+input [3:0] write_address;
+
+output [31:0] readdata;
+
+reg [31:0] scale_factor, line_a, line_b, x, y, threshold;
+
+Inliers_Check inst (.scale_factor(scale_factor), .line_a(line_a), .line_b(line_b), .x(x), .y(y), .threshold(threshold), .inlier_out(inlier_out));
+
+assign readdata = {31'h00000000, inlier_out};
+
+always @(negedge clk) begin
+        if (reset_n) begin
+            // Reset all variables to default values
+            scale_factor <= 0;
+            line_a <= 0;
+            line_b <= 0;
+            x <= 0;
+            y <= 0;
+            threshold <= 0;
+        end 
+		  else if (write) begin
+            case (write_address)
+                3'b000: scale_factor <= writedata;
+                3'b001: line_a <= writedata;
+                3'b010: line_b <= writedata;
+                3'b011: x <= writedata;       
+                3'b100: y <= writedata;
+                3'b101: threshold <= writedata;
+            endcase
+        end
+    end
+
+
+
+endmodule

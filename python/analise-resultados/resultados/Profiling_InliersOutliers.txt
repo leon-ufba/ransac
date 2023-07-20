@@ -1,0 +1,140 @@
+
+--Profiling STEP 0--
+square_root 	0
+calculateIntersection 	0
+getAngleFromModel 	2478
+leastSquare 	0
+coefficientOfDetermination 	0
+inliersOutliersMemory 	75796
+inliersOutliers 	0
+squareDistanceBetweenPoints 	0
+
+--Profiling STEP 1--
+square_root 	1175
+calculateIntersection 	327
+getAngleFromModel 	206395
+leastSquare 	229218
+coefficientOfDetermination 	247688
+inliersOutliersMemory 	73491
+inliersOutliers 	638528
+squareDistanceBetweenPoints 	44700
+
+--Profiling STEP 2--
+square_root 	0
+calculateIntersection 	0
+getAngleFromModel 	2478
+leastSquare 	0
+coefficientOfDetermination 	0
+inliersOutliersMemory 	76714
+inliersOutliers 	0
+squareDistanceBetweenPoints 	0
+
+--Profiling STEP 3--
+square_root 	1346
+calculateIntersection 	327
+getAngleFromModel 	214572
+leastSquare 	128015
+coefficientOfDetermination 	129787
+inliersOutliersMemory 	77352
+inliersOutliers 	393965
+squareDistanceBetweenPoints 	41694
+
+--Profiling STEP 4--
+square_root 	0
+calculateIntersection 	0
+getAngleFromModel 	2478
+leastSquare 	0
+coefficientOfDetermination 	0
+inliersOutliersMemory 	75796
+inliersOutliers 	0
+squareDistanceBetweenPoints 	0
+
+--Profiling STEP 5--
+square_root 	0
+calculateIntersection 	0
+getAngleFromModel 	179807
+leastSquare 	118010
+coefficientOfDetermination 	116410
+inliersOutliersMemory 	75162
+inliersOutliers 	244140
+squareDistanceBetweenPoints 	25557
+
+--Profiling STEP 6--
+square_root 	1175
+calculateIntersection 	327
+getAngleFromModel 	214706
+leastSquare 	474450
+coefficientOfDetermination 	534728
+inliersOutliersMemory 	105534
+inliersOutliers 	1245658
+squareDistanceBetweenPoints 	19354
+
+--Profiling STEP 7--
+square_root 	0
+calculateIntersection 	0
+getAngleFromModel 	2478
+leastSquare 	0
+coefficientOfDetermination 	0
+inliersOutliersMemory 	98287
+inliersOutliers 	0
+squareDistanceBetweenPoints 	0
+
+--Profiling STEP 8--
+square_root 	491
+calculateIntersection 	327
+getAngleFromModel 	214295
+leastSquare 	317250
+coefficientOfDetermination 	350728
+inliersOutliersMemory 	66869
+inliersOutliers 	871418
+squareDistanceBetweenPoints 	38667
+
+--Profiling STEP 9--
+square_root 	0
+calculateIntersection 	0
+getAngleFromModel 	2478
+leastSquare 	0
+coefficientOfDetermination 	0
+inliersOutliersMemory 	98746
+inliersOutliers 	0
+squareDistanceBetweenPoints 	0
+
+--Profiling STEP 10--
+square_root 	1346
+calculateIntersection 	327
+getAngleFromModel 	206040
+leastSquare 	170055
+coefficientOfDetermination 	221505
+inliersOutliersMemory 	116893
+inliersOutliers 	943372
+squareDistanceBetweenPoints 	32410
+
+--Profiling STEP 11--
+square_root 	0
+calculateIntersection 	0
+getAngleFromModel 	2478
+leastSquare 	0
+coefficientOfDetermination 	0
+inliersOutliersMemory 	104678
+inliersOutliers 	0
+squareDistanceBetweenPoints 	0
+
+--Profiling STEP 12--
+square_root 	0
+calculateIntersection 	0
+getAngleFromModel 	2478
+leastSquare 	0
+coefficientOfDetermination 	0
+inliersOutliersMemory 	98259
+inliersOutliers 	0
+squareDistanceBetweenPoints 	0
+
+--Profiling STEP 13--
+square_root 	0
+calculateIntersection 	0
+getAngleFromModel 	183262
+leastSquare 	428480
+coefficientOfDetermination 	479810
+inliersOutliersMemory 	96641
+inliersOutliers 	978050
+squareDistanceBetweenPoints 	26375

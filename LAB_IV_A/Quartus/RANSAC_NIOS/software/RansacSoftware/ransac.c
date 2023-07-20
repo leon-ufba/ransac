@@ -228,20 +228,20 @@ RansacResult RANSAC(int* data, int botPos, int* outliers, int data_size) {
 
     inliersOutliersMemory(data, rs.bestModel, inliers, outliers, data_size, &inlinersSize, &outlierSize);
 
-    if (outlierSize <= 25) {
+    if (outlierSize <= 15) { // valor de corte para evitar loops na seleção dos pontos randomicos
         rs.bestFit = INFINITY;
         rs.bestQty = data_size;
         return rs;
     }
 
     int temp_size = MIN_POINTS;
-    int temp[temp_size]; // alocação tamanho P
+    int temp[temp_size]; // alocacaoo tamanho P
 
-    //Posição inicial do robô
+    //Posicaoo inicial do robo
     temp[0] = outliers[0];
     //Execute for N iterations
     while(loopCounter < N) {
-		//Sorteia 2 coordenadas que tenham uma distância minima entre si
+		//Sorteia 2 coordenadas que tenham uma distancia minima entre si
 		if(temp_dist_points < MIN_DIST_POINTS) {
 		for (int j = 1; j < temp_size; j++) {
 			temp_index = rand() % outlierSize;

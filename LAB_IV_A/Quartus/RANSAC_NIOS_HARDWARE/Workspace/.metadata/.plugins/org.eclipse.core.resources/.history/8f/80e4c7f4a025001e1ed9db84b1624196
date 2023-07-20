@@ -1,0 +1,47 @@
+/*
+ * main.c
+ *
+ *  Created on: 14 de jul de 2023
+ *      Author: Caroline
+ */
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include "ransac.h"
+
+void inliersOutliersHardware(Line line, int px, int py){
+	float threshold = 3;
+	int threshold_fixed = (int)(threshold * SCALE_FACTOR) * (int)(threshold * SCALE_FACTOR);
+	int * ponteiro = INLIERS_ESCRITA;
+	ponteiro[0]  = line.a;
+	ponteiro[4]  = line.b;
+	ponteiro[8]  = px;
+	ponteiro[12] = py;
+	ponteiro[16] = threshold_fixed;
+
+	if(*INLIERS_LEITURA) {
+		printf("inlier");
+	} else {
+       printf("outlier");
+	}
+}
+
+int main() {
+
+
+	Line line;
+
+
+	line.a = (int)(1.2 * SCALE_FACTOR);   // slope of the line
+	line.b = (int)(3.0 * SCALE_FACTOR);   // y-intercept of the line
+
+	int px = (int)(2.5 * SCALE_FACTOR);  // x-coordinate of the point
+	int py = (int)(1.8 * SCALE_FACTOR);  // y-coordinate of the point
+
+	inliersOutliersHardware(line, px, py);
+
+
+
+	return 0;
+
+}

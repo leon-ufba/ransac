@@ -8,6 +8,6 @@
   </columns>
  </systemtable>
  <library
-   expandedCategories="Project,Library/Basic Functions,Library/Processors and Peripherals,Library/Basic Functions/Simulation; Debug and Verification,Library,Library/Basic Functions/Simulation; Debug and Verification/Simulation,Library/Processors and Peripherals/Co-Processors,Library/Processors and Peripherals/Co-Processors/Nios II Custom Instructions,Library/Processors and Peripherals/Embedded Processors" />
- <window width="1570" height="929" x="179" y="20" />
+   expandedCategories="Library,Library/Basic Functions,Library/Basic Functions/On Chip Memory,Project" />
+ <window width="1570" height="929" x="-1798" y="71" />
 </preferences>

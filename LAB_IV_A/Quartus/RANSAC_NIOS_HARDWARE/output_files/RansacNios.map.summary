@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Tue Jul 18 18:23:00 2023
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : RansacNios
+Top-level Entity Name : RansacNios
+Family : Cyclone IV E
+Total logic elements : 5,748
+    Total combinational functions : 5,292
+    Dedicated logic registers : 1,658
+Total registers : 1658
+Total pins : 2
+Total virtual pins : 0
+Total memory bits : 2,173,952
+Embedded Multiplier 9-bit elements : 40
+Total PLLs : 0

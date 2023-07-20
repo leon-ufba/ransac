@@ -24,9 +24,9 @@ int main() {
 	int outliers[MAX_POINTS];
 
 	entrada = fopen("/mnt/host/resultados/FPGAin.txt", "r");
-	saida = fopen("/mnt/host/resultados/FPGAout_O.txt", "w");
-	profiling = fopen("/mnt/host/resultados/Profiling_O.txt", "w");
-	profilingCSV = fopen("/mnt/host/resultados/Profiling_O.csv", "w");
+	saida = fopen("/mnt/host/resultados/FPGAout_otimizacao_memoria.txt", "w");
+	profiling = fopen("/mnt/host/resultados/Profiling_otimizacao_memoria.txt", "w");
+	profilingCSV = fopen("/mnt/host/resultados/Profiling_otimizacao_memoria.csv", "w");
 
 	if (entrada == NULL)
 	{

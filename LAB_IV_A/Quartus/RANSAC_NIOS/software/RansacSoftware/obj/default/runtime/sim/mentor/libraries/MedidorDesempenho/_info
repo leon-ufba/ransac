@@ -1,0 +1,54 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/LAB_IV_A/Quartus/RANSAC_NIOS/software/RansacSoftware/obj/default/runtime/sim/mentor
+vClock_Counter
+Z1 !s110 1689696910
+!i10b 1
+!s100 hAbh9<HJh558ZEmMP>40@1
+I=^6[mCBlmeig=hUOGnX=z3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1689600951
+8C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/Clock_Counter.v
+FC:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/Clock_Counter.v
+L0 1
+Z4 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z5 !s108 1689696910.000000
+!s107 C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/Clock_Counter.v|
+!s90 -reportprogress|300|C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/Clock_Counter.v|-work|MedidorDesempenho|
+!i113 1
+Z6 o-work MedidorDesempenho
+Z7 tCvgOpt 0
+n@clock_@counter
+vClock_Counter_Interface
+R1
+!i10b 1
+!s100 ReeJOOzL4RA0?mW5e30PD2
+I`leaKRJhf1en9H50=T2090
+R2
+R0
+R3
+8C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/Clock_Counter_Interface.v
+FC:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/Clock_Counter_Interface.v
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/Clock_Counter_Interface.v|
+!s90 -reportprogress|300|C:/LAB_IV_A/Quartus/RANSAC_NIOS/SistemaEmbarcado/testbench/SistemaEmbarcado_tb/simulation/submodules/Clock_Counter_Interface.v|-work|MedidorDesempenho|
+!i113 1
+R6
+R7
+n@clock_@counter_@interface
